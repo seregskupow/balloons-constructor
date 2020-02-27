@@ -1,0 +1,52 @@
+[
+    {
+        "type":"standart12",
+        "name":"Шар 12\"",
+        "price":"200"
+    },
+    {
+        "type":"standart12Img",
+        "name":"Шар 12\" с рисунком",
+        "price":"220"
+    },
+    {
+        "type":"standart12Heart",
+        "name":"Шар 12\" сердце",
+        "price":"220"
+    },
+    {
+        "type":"standart12Confetti",
+        "name":"Шар 12\" с конфетти",
+        "price":"260"
+    },
+    {
+        "type":"sphere18",
+        "name":"Сфера 18\"",
+        "price":"300"
+    },
+    {
+        "type":"foil18",
+        "name":"Фольга 18\"",
+        "price":"330"
+    },
+    {
+        "type":"figure",
+        "name":"Фигура",
+        "price":"400"
+    },
+    {
+        "type":"numeral",
+        "name":"Цифра",
+        "price":"200"
+    },
+    {
+        "type":"number",
+        "name":"Число",
+        "price":"370"
+    },
+    {
+        "type":"walker",
+        "name":"Ходилка",
+        "price":"400"
+    }
+]
