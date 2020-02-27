@@ -1,0 +1,13 @@
+.controls-panel{
+    width:90%;
+    margin: 0 auto;
+    margin-top:20px;
+    & .controls-panel-wrapper{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        & .control-panel-item{
+            margin: 10px 20px;
+        }
+    }
+}

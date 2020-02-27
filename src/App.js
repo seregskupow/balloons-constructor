@@ -1,12 +1,18 @@
 import React from "react";
+import {MainContext} from './context/context'
+import MainSection from './components/MainSection'
+import balloonCategories from './data/balloonCategories.json'
+import balloonsImages from './data/balloonsImgs.json'
 import "./scss/main.scss";
 import "materialize-css";
 
 function App() {
   return (
-    <>
-      <a className="waves-effect waves-light btn">button</a>
-    </>
+    <MainContext.Provider value={{
+      balloonsImages, balloonCategories
+    }}>
+      <MainSection />
+    </MainContext.Provider>
   );
 }
 

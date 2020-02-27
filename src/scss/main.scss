@@ -1,6 +1,37 @@
 @import "~materialize-css/dist/css/materialize.min.css";
+@import '~materialize-css/extras/noUiSlider/nouislider.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import "variables";
+@import "controls";
+@import "drawComponent";
 
-h1{
-    color:red;
+////////////////////////App-body//////////////////
+#app-body{
+    width:80vw;
+    max-height: 60vh;
+    
+    //border:2px solid #00bcd4;
 }
+////////////////////////App-body//////////////////
+///////////////////////NavBar////////////////////
+.navbar{
+    width:100%;
+    height:60px;
+    // background-color: #7ee8fa;
+    // background-image: linear-gradient(315deg, #7ee7faab 0%, #80ff729f 74%);
+    background:#00897b;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    border-radius: 5px;
+    & .navbar-wrapper{
+        width:80%;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        & .app-name{
+            text-align: center;
+        }
+    }
+}
+///////////////////////NavBar////////////////////

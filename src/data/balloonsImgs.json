@@ -139,71 +139,66 @@
             "categories": [
                 {
                     "categoryName": "Шары без рисунка",
-                    "imgs": []
+                    "imgs": [
+                        {
+                            "id": "21067",
+                            "src": "https://sharograf.ru/images/flexmetal-301500P.jpg"
+                        },
+                        {
+                            "id": "30157",
+                            "src": "https://sharograf.ru/images/flexmetal-301500RSL.jpg"
+                        },
+                        {
+                            "id": "86325",
+                            "src": "https://sharograf.ru/images/flexmetal-301500R.jpg"
+                        },
+                        {
+                            "id": "13027",
+                            "src": "https://sharograf.ru/images/flexmetal-301500VE.jpg"
+                        }
+                    ]
                 },
                 {
                     "categoryName": "Шары на День Рождения",
-                    "imgs": []
+                    "imgs": [
+                        {
+                            "id": "87624",
+                            "src": "https://sharograf.ru/images/anagram-f18-28591.jpg"
+                        },
+                        {
+                            "id": "96345",
+                            "src": "https://sharograf.ru/images/anagram-f18-34452.jpg"
+                        },
+                        {
+                            "id": "78634",
+                            "src": "https://sharograf.ru/images/conver-f18-70601.jpg"
+                        },
+                        {
+                            "id": "63728",
+                            "src": "https://sharograf.ru/images/conver-f18-70791.jpg"
+                        }
+                    ]
                 },
                 {
                     "categoryName": "Шары для Детей",
-                    "imgs": []
-                },
-                {
-                    "categoryName": "Шары Любовь",
-                    "imgs": []
-                },
-                {
-                    "categoryName": "Шары для Семьи",
-                    "imgs": []
-                },
-                {
-                    "categoryName": "Шары Молодежные",
-                    "imgs": []
-                },
-                {
-                    "categoryName": "Шары праздничные",
-                    "imgs": []
-                }
-            ]
-        }
-    },
-    {
-        "figure": {
-            "categories": [
-                {
-                    "categoryName": "Стандарт",
-                    "imgs": []
-                }
-            ]
-        }
-    },
-    {
-        "numeral": {
-            "categories": [
-                {
-                    "categoryName": "Стандарт",
-                    "imgs": []
-                }
-            ]
-        }
-    },
-    {
-        "number": {
-            "categories": [
-                {
-                    "categoryName": "Стандарт",
-                    "imgs": []
-                }
-            ]
-        }
-    },
-    {
-        "walke": {
-            "categories": [
-                {
-                    "categoryName": "Стандарт",
-                    "imgs": []
+                    "imgs": [
+                        {
+                            "id": "89635",
+                            "src": "https://sharograf.ru/images/anagram-f18-02510.jpg"
+                        },
+                        {
+                            "id": "87524",
+                            "src": "https://sharograf.ru/images/anagram-f18-155600.jpg"
+                        },
+                        {
+                            "id": "30247",
+                            "src": "https://sharograf.ru/images/anagram-f18-26437.jpg"
+                        },
+                        {
+                            "id": "86374",
+                            "src": "https://sharograf.ru/images/anagram-f18-24813.jpg"
+                        }
+                    ]
                 }
             ]
         }

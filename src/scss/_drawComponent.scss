@@ -1,0 +1,14 @@
+.draw-component-wrapper{
+    width:90%;
+    height:40vh;
+    margin: 0 auto;
+    padding-top:20px;
+    padding-bottom: 20px;
+    & .plane{
+        width: 100%;
+        height: 100%;
+        background:#e9e9e9;
+        border:2px dotted #2bbbad;
+        border-radius:10px ;
+    }
+}
