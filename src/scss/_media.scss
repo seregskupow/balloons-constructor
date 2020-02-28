@@ -1,0 +1,10 @@
+$breakpoint-1: 768px;
+@media (max-width: $breakpoint-1) {
+    .app-main-container{
+        flex-direction: column-reverse;
+        
+    }
+    .balloons-container{
+        width:60%!important;
+    }
+}

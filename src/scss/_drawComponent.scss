@@ -1,14 +1,172 @@
-.draw-component-wrapper{
-    width:90%;
-    height:40vh;
-    margin: 0 auto;
-    padding-top:20px;
-    padding-bottom: 20px;
-    & .plane{
-        width: 100%;
-        height: 100%;
-        background:#e9e9e9;
-        border:2px dotted #2bbbad;
-        border-radius:10px ;
+@mixin left {
+  left: 20%;
+  transform: translateX(-50%) rotate(-30deg);
+}
+@mixin right {
+  left: 80%;
+  transform: translateX(-50%) rotate(30deg);
+}
+@mixin center{
+  left:50%;
+  transform: translateX(-50%);
+}
+.draw-component-wrapper {
+  width: 90%;
+  height: 60vh;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  & .plane {
+    width: 100%;
+    height: 100%;
+    background: #e9e9e9;
+    border: 2px dotted #2bbbad;
+    border-radius: 10px;
+
+    & .balloons-container {
+      margin: 0 auto;
+      position: relative;
+      width: 40%;
+      height: 100%;
+      //border: 2px solid black;
+      //transform:scale(1);
+      & .balloon {
+        //max-height: 100px;
+        
+        position: absolute;
+        //width: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        &:hover {
+          z-index: 20!important;
+          
+        }
+        & svg{
+          transition: all .3s ease-in-out;
+          height:150px; 
+          opacity:0.9;
+
+          &:hover{
+            transform:scale(1.09);
+            opacity:1;
+          }
+        }
+      }
     }
+    & .bouquet {
+      & .balloon {
+        & ellipse:hover {
+          fill: red !important;
+          cursor: pointer;
+          //transform:translateZ(30px);
+        }
+        &:nth-child(1) {
+          bottom: 30px;
+          @include center;
+          z-index: 7;
+          & ellipse {
+            fill: rgb(83, 83, 202);
+  
+          }
+        }
+        &:nth-child(2) {
+          bottom: 5px;
+          @include right;
+          z-index: 8;
+
+          & ellipse {
+            fill: rgb(56, 160, 120);
+          }
+        }
+        &:nth-child(3) {
+          bottom: 5px;
+          @include left;
+          z-index: 8;
+          & ellipse {
+            fill: rgb(195, 147, 84);
+          }
+        }
+        &:nth-child(4) {
+          bottom: 100px;
+          @include center;
+          z-index:5;
+          & ellipse {
+            fill: rgb(185, 75, 167);
+          }
+        }
+        &:nth-child(5) {
+          bottom: 75px;
+          @include right;
+          z-index:6;
+          & ellipse {
+            fill: rgb(143, 194, 114);
+          }
+        }
+        &:nth-child(6) {
+          bottom: 75px;
+          @include left;
+          z-index:6;
+          & ellipse {
+            fill: rgb(70, 181, 185);
+          }
+        }
+        &:nth-child(7) {
+          bottom:170px;
+          @include center;
+          z-index:3;
+          & ellipse {
+            fill: rgb(87, 167, 163);
+          }
+        }
+        &:nth-child(8) {
+          bottom: 150px;
+          @include right;
+          z-index:4;
+          & ellipse {
+            fill: rgb(168, 103, 163);
+          }
+        }
+        &:nth-child(9) {
+          bottom: 150px;
+          @include left;
+          z-index:4;
+          & ellipse {
+            fill: rgb(182, 118, 118);
+          }
+        }
+        &:nth-child(10) {
+          bottom: 240px;
+          @include center;
+          z-index:1;
+          & ellipse {
+            fill: rgb(74, 170, 74);
+          }
+        }
+        &:nth-child(11) {
+          bottom: 215px;
+          @include right;
+          z-index:2;
+          & ellipse {
+            fill: rgb(76, 102, 158);
+          }
+        }
+        &:nth-child(12) {
+          bottom: 215px;
+          @include left;
+          z-index:2;
+          & ellipse {
+            fill: rgb(75, 153, 86);
+          }
+        }
+        &:nth-child(13) {
+          bottom: 310px;
+          @include center;
+          z-index:0;
+          & ellipse {
+            fill: rgb(184, 81, 137);
+          }
+        }
+      }
+    }
+  }
 }

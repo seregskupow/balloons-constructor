@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import { MainContext } from "../../context/context";
-export default function Controls() {
+export default function Controls({createFigure}) {
   const { balloonCategories } = useContext(MainContext);
   const [startValue, setStartValue] = useState("Выберите вид композиции");
   const [sliderValue,setSValue]=useState(3);
@@ -36,7 +36,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
                 <li 
                   onClick={() => {
                     setStartValue(item.name);
-                    //createFigure(item.value,sliderValue)
+                    createFigure(sliderValue)
                   }}
                 >
                   <a href="#!">{item.name}</a>
@@ -49,7 +49,8 @@ document.getElementsByTagName('head')[0].appendChild(script);
         <div className="control-panel-item">
           <form action="#">
             <p class="range-field">
-              <input type="range" id="test5" value={sliderValue} min="3" max="9" onChange={e=>setSValue(e.target.value)}/>
+              <input type="range" disabled={startValue==="Выберите вид композиции"} id="test5" value={sliderValue} min="3" max="13" onChange={e=>{setSValue(e.target.value)
+              createFigure(e.target.value)}}/>
                 <label htmlFor="test5">{sliderValue}</label>
             </p>
           </form>
@@ -59,9 +60,11 @@ document.getElementsByTagName('head')[0].appendChild(script);
             class="waves-effect waves-light btn"
             onClick={() => {
               setStartValue("Выберите вид композиции");
+              setSValue(3)
+              createFigure(0)
             }}
           >
-            Создать еще
+            Создать новую
           </a>
         </div>
         <div className="control-panel-item">
