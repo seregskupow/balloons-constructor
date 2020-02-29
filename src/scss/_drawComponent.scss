@@ -10,6 +10,15 @@
   left:50%;
   transform: translateX(-50%);
 }
+@mixin f-left{
+  left: 30%;
+  transform: translateX(-50%) rotate(-12deg);
+}
+
+@mixin f-right{
+  left: 70%;
+  transform: translateX(-50%) rotate(12deg);
+}
 .draw-component-wrapper {
   width: 90%;
   height: 60vh;
@@ -43,7 +52,7 @@
         }
         & svg{
           transition: all .3s ease-in-out;
-          height:150px; 
+          
           opacity:0.9;
 
           &:hover{
@@ -55,6 +64,9 @@
     }
     & .bouquet {
       & .balloon {
+        & svg{
+          height:160px; 
+        }
         & ellipse:hover {
           fill: red !important;
           cursor: pointer;
@@ -164,6 +176,256 @@
           z-index:0;
           & ellipse {
             fill: rgb(184, 81, 137);
+          }
+        }
+      }
+    }
+    & .fontaine {
+      & .balloon {
+        & svg{
+          height:160px; 
+        }
+        & ellipse:hover {
+          fill: red !important;
+          cursor: pointer;
+          //transform:translateZ(30px);
+        }
+        // &:last-child{
+        //   left:50%!important;
+        //   transform: translateX(-50%)!important;
+        //   & ellipse {
+        //     fill: rgb(0, 2, 1)!important;
+        //   }
+        // }
+        &:nth-child(1) {
+          bottom: 0px;
+          @include f-left;
+          z-index: 13;
+          & ellipse {
+            fill: rgb(83, 83, 202);
+  
+          }
+        }
+        &:nth-child(2) {
+          bottom: 30px;
+          @include f-right;
+          z-index: 12;
+
+          & ellipse {
+            fill: rgb(56, 160, 120);
+          }
+        }
+        &:nth-child(3) {
+          bottom: 60px;
+          @include f-left;
+          z-index: 11;
+          & ellipse {
+            fill: rgb(195, 147, 84);
+          }
+        }
+        &:nth-child(4) {
+          bottom: 90px;
+          @include f-right;
+          z-index:10;
+          & ellipse {
+            fill: rgb(185, 75, 167);
+          }
+        }
+        &:nth-child(5) {
+          bottom: 120px;
+          @include f-left;
+          z-index:9;
+          & ellipse {
+            fill: rgb(143, 194, 114);
+          }
+        }
+        &:nth-child(6) {
+          bottom: 150px;
+          @include f-right;
+          z-index:8;
+          & ellipse {
+            fill: rgb(70, 181, 185);
+          }
+        }
+        &:nth-child(7) {
+          bottom:180px;
+          @include f-left;
+          z-index:7;
+          & ellipse {
+            fill: rgb(87, 167, 163);
+          }
+        }
+        &:nth-child(8) {
+          bottom: 210px;
+          @include f-right;
+          z-index:6;
+          & ellipse {
+            fill: rgb(168, 103, 163);
+          }
+        }
+        &:nth-child(9) {
+          bottom: 240px;
+          @include f-left;
+          z-index:5;
+          & ellipse {
+            fill: rgb(182, 118, 118);
+          }
+        }
+        &:nth-child(10) {
+          bottom: 270px;
+          @include f-right;
+          z-index:4;
+          & ellipse {
+            fill: rgb(74, 170, 74);
+          }
+        }
+        &:nth-child(11) {
+          bottom: 300px;
+          @include f-left;
+          z-index:3;
+          & ellipse {
+            fill: rgb(76, 102, 158);
+          }
+        }
+        &:nth-child(12) {
+          bottom: 330px;
+          @include f-right;
+          z-index:2;
+          & ellipse {
+            fill: rgb(75, 153, 86);
+          }
+        }
+        &:nth-child(13) {
+          bottom: 360px;
+          @include f-left;
+          z-index:1;
+          & ellipse {
+            fill: rgb(5, 5, 5);
+          }
+        }
+      }
+    }
+    & .cascade {
+      & .balloon {
+        & svg{
+          height:160px; 
+        }
+        & ellipse:hover {
+          fill: red !important;
+          cursor: pointer;
+          //transform:translateZ(30px);
+        }
+        &:last-child{
+          left:50%!important;
+          transform: translateX(-50%)!important;
+          & ellipse {
+            fill: rgb(0, 2, 1)!important;
+          }
+        }
+        &:nth-child(1) {
+          bottom: 0px;
+          @include f-left;
+          z-index: 13;
+          & ellipse {
+            fill: rgb(83, 83, 202);
+  
+          }
+        }
+        &:nth-child(2) {
+          bottom: 30px;
+          @include f-right;
+          z-index: 12;
+
+          & ellipse {
+            fill: rgb(56, 160, 120);
+          }
+        }
+        &:nth-child(3) {
+          bottom: 60px;
+          @include f-left;
+          z-index: 11;
+          & ellipse {
+            fill: rgb(195, 147, 84);
+          }
+        }
+        &:nth-child(4) {
+          bottom: 90px;
+          @include f-right;
+          z-index:10;
+          & ellipse {
+            fill: rgb(185, 75, 167);
+          }
+        }
+        &:nth-child(5) {
+          bottom: 120px;
+          @include f-left;
+          z-index:9;
+          & ellipse {
+            fill: rgb(143, 194, 114);
+          }
+        }
+        &:nth-child(6) {
+          bottom: 150px;
+          @include f-right;
+          z-index:8;
+          & ellipse {
+            fill: rgb(70, 181, 185);
+          }
+        }
+        &:nth-child(7) {
+          bottom:180px;
+          @include f-left;
+          z-index:7;
+          & ellipse {
+            fill: rgb(87, 167, 163);
+          }
+        }
+        &:nth-child(8) {
+          bottom: 210px;
+          @include f-right;
+          z-index:6;
+          & ellipse {
+            fill: rgb(168, 103, 163);
+          }
+        }
+        &:nth-child(9) {
+          bottom: 240px;
+          @include f-left;
+          z-index:5;
+          & ellipse {
+            fill: rgb(182, 118, 118);
+          }
+        }
+        &:nth-child(10) {
+          bottom: 270px;
+          @include f-right;
+          z-index:4;
+          & ellipse {
+            fill: rgb(74, 170, 74);
+          }
+        }
+        &:nth-child(11) {
+          bottom: 300px;
+          @include f-left;
+          z-index:3;
+          & ellipse {
+            fill: rgb(76, 102, 158);
+          }
+        }
+        &:nth-child(12) {
+          bottom: 330px;
+          @include f-right;
+          z-index:2;
+          & ellipse {
+            fill: rgb(75, 153, 86);
+          }
+        }
+        &:nth-child(13) {
+          bottom: 360px;
+          @include f-left;
+          z-index:1;
+          & ellipse {
+            fill: rgb(5, 5, 5);
           }
         }
       }

@@ -1,19 +1,27 @@
 import React, { useEffect, useContext, useState } from "react";
 import { MainContext } from "../../context/context";
-export default function Controls({createFigure}) {
+export default function Controls({ createFigure }) {
   const { balloonCategories } = useContext(MainContext);
   const [startValue, setStartValue] = useState("Выберите вид композиции");
-  const [sliderValue,setSValue]=useState(3);
-  const categories = [{name:"Букет",value:"bouquet"},{name:"Каскад",value:"cascade"},{name:"Фонтан",value:"fountain"},{name:"Фигура",value:"figure"},{name:"Цифра",value:"numeral"},{name:"Число",value:"number"},{name:"Ходилка",value:"walker"}]
+  const [sliderValue, setSValue] = useState(3);
+  const [figureClass,setFC] = useState("");
+  const categories = [
+    { name: "Букет", value: "bouquet" },
+    { name: "Каскад", value: "cascade" },
+    { name: "Фонтан", value: "fontaine" },
+    { name: "Фигура", value: "figure" },
+    { name: "Цифра", value: "numeral" },
+    { name: "Число", value: "number" },
+    { name: "Ходилка", value: "walker" }
+  ];
   const initializeDropDown = () => {
     var elems = document.querySelectorAll(".dropdown-trigger");
     var instances = window.M.Dropdown.init(elems, {
       closeOnClick: true
     });
-    var script = document.createElement('script');
+    var script = document.createElement("script");
     script.src = "../src/additional/nouislider.js";
-document.getElementsByTagName('head')[0].appendChild(script);
-
+    document.getElementsByTagName("head")[0].appendChild(script);
   };
   useEffect(() => {
     initializeDropDown();
@@ -31,12 +39,13 @@ document.getElementsByTagName('head')[0].appendChild(script);
             {startValue}
           </a>
           <ul id="dropdown1" class="dropdown-content">
-            {categories.map(item => (
+            {categories.map((item,index) => (
               <>
-                <li 
+                <li
                   onClick={() => {
                     setStartValue(item.name);
-                    createFigure(sliderValue)
+                    createFigure(sliderValue,categories[index].value);
+                    setFC(categories[index].value)
                   }}
                 >
                   <a href="#!">{item.name}</a>
@@ -49,9 +58,19 @@ document.getElementsByTagName('head')[0].appendChild(script);
         <div className="control-panel-item">
           <form action="#">
             <p class="range-field">
-              <input type="range" disabled={startValue==="Выберите вид композиции"} id="test5" value={sliderValue} min="3" max="13" onChange={e=>{setSValue(e.target.value)
-              createFigure(e.target.value)}}/>
-                <label htmlFor="test5">{sliderValue}</label>
+              <input
+                type="range"
+                disabled={startValue === "Выберите вид композиции"}
+                id="test5"
+                value={sliderValue}
+                min="3"
+                max="13"
+                onChange={e => {
+                  setSValue(e.target.value);
+                  createFigure(e.target.value,figureClass);
+                }}
+              />
+              <label htmlFor="test5">{sliderValue}</label>
             </p>
           </form>
         </div>
@@ -60,8 +79,8 @@ document.getElementsByTagName('head')[0].appendChild(script);
             class="waves-effect waves-light btn"
             onClick={() => {
               setStartValue("Выберите вид композиции");
-              setSValue(3)
-              createFigure(0)
+              setSValue(3);
+              createFigure(0);
             }}
           >
             Создать новую
