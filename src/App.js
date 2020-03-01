@@ -6,6 +6,7 @@ import balloonsImages from './data/balloonsImgs.json'
 import "./scss/main.scss";
 import "materialize-css";
 
+
 function App() {
   return (
     <MainContext.Provider value={{

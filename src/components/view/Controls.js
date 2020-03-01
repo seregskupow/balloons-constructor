@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useState } from "react";
 import { MainContext } from "../../context/context";
-export default function Controls({ createFigure }) {
+import Balloon from '../drawPanelElements/Balloon'
+export default function Controls({createFigure,saveCart,cart}) {
   const { balloonCategories } = useContext(MainContext);
   const [startValue, setStartValue] = useState("Выберите вид композиции");
   const [sliderValue, setSValue] = useState(3);
@@ -43,9 +44,30 @@ export default function Controls({ createFigure }) {
               <>
                 <li
                   onClick={() => {
+                    let itemClass = categories[index].value;
+                    console.log(itemClass)
+                    if(itemClass==="numeral"||itemClass==="walker"||itemClass==="figure"){
+                      setSValue(1)
+                      createFigure(1,itemClass);
+                    }
+                    else if(itemClass==="number"){
+                      setSValue(2);
+                      createFigure(2,itemClass);
+                    }
+                    else{
+                      if(sliderValue>=3){
+                        createFigure(sliderValue,itemClass);
+                      }
+                      else{
+                        createFigure(3,itemClass);
+                         setSValue(3);
+                      }
+                      
+                      
+                    }
                     setStartValue(item.name);
-                    createFigure(sliderValue,categories[index].value);
-                    setFC(categories[index].value)
+                    console.log(sliderValue)
+                    setFC(itemClass)
                   }}
                 >
                   <a href="#!">{item.name}</a>
@@ -60,14 +82,15 @@ export default function Controls({ createFigure }) {
             <p class="range-field">
               <input
                 type="range"
-                disabled={startValue === "Выберите вид композиции"}
+                disabled={startValue === "Выберите вид композиции"||figureClass==="numeral"||figureClass==="number"||figureClass==="walker"||figureClass==="figure"}
                 id="test5"
                 value={sliderValue}
-                min="3"
-                max="13"
+                step={figureClass==="cascade"?2:1}
+                min={figureClass==="numeral"||figureClass==="number"||figureClass==="walker"||figureClass==="figure"?1:3}
+                max={13}
                 onChange={e => {
-                  setSValue(e.target.value);
-                  createFigure(e.target.value,figureClass);
+                  setSValue(+e.target.value);
+                  createFigure(+e.target.value,figureClass);
                 }}
               />
               <label htmlFor="test5">{sliderValue}</label>
@@ -87,10 +110,10 @@ export default function Controls({ createFigure }) {
           </a>
         </div>
         <div className="control-panel-item">
-          <a class="waves-effect waves-light btn">Сохранить</a>
+          <a class="waves-effect waves-light btn" onClick={saveCart}>Сохранить</a>
         </div>
         <div className="control-panel-item save-btn">
-          <p className="flow-text">Всего:</p>
+          <p className="flow-text">Всего: {cart.length}</p>
         </div>
       </div>
     </div>
