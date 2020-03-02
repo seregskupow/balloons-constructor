@@ -18,6 +18,7 @@ export default class MainSection extends Component {
         this.createFigure = this.createFigure.bind(this);
         this.deleteBalloon = this.deleteBalloon.bind(this);
         this.saveCart = this.saveCart.bind(this);
+        this.changeBalloonImg = this.changeBalloonImg.bind(this);
       }
 saveCart(){
   this.setState({cart:this.state.balloons})
@@ -43,18 +44,22 @@ createFigure(count,type){
     }
     this.setState({type:type,balloons:balloons,count})
 }
+changeBalloonImg(id,src){
+  console.log(id)
+let balloons = this.state.balloons;
+ balloons[id].img=src;
+ this.setState({balloons})
+ console.log(this.state.balloons)
+}
 deleteBalloon(index){
   let balloons = this.state.balloons;
-  if(index>2){
-    this.setState({balloons:balloons.filter(item=>item.index!==index)})
-  }
 }
   render() {
     return (
       <section id="app-body" className="grey lighten-5">
         <NavBar cart={this.state.cart}/>
         <div className="app-main-container">
-            <DrawComponent  deleteBalloon={this.deleteBalloon} balloons={this.state.balloons} type={this.state.type}/>
+            <DrawComponent  changeBalloonImg={this.changeBalloonImg}BadeleteBalloon={this.deleteBalloon} balloons={this.state.balloons} type={this.state.type}/>
              <Controls  cart={this.state.cart} saveCart={this.saveCart} createFigure={this.createFigure}/>  
         </div>
       </section>

@@ -1,0 +1,21 @@
+.dropdown-content {
+  width: 200px !important;
+}
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  & .menu-item {
+    display: flex;
+    flex-direction: column;
+    & .menu-item-imgs {
+      display: flex;
+      flex-wrap: wrap;
+      & .img-container {
+        & img {
+          max-height: 100px;
+        }
+      }
+    }
+  }
+}

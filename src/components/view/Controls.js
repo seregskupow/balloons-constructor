@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useState } from "react";
 import { MainContext } from "../../context/context";
 import Balloon from '../drawPanelElements/Balloon'
+import BalloonContextMenu from '../drawPanelElements/BalloonContextMenu'
 export default function Controls({createFigure,saveCart,cart}) {
   const { balloonCategories } = useContext(MainContext);
   const [startValue, setStartValue] = useState("Выберите вид композиции");
@@ -106,14 +107,17 @@ export default function Controls({createFigure,saveCart,cart}) {
               createFigure(0);
             }}
           >
-            Создать новую
+            Очистить
           </a>
         </div>
         <div className="control-panel-item">
-          <a class="waves-effect waves-light btn" onClick={saveCart}>Сохранить</a>
+          <a class="waves-effect waves-light btn" onClick={saveCart}>Добавить в корзину</a>
         </div>
         <div className="control-panel-item save-btn">
           <p className="flow-text">Всего: {cart.length}</p>
+        </div>
+        <div className="control-panel-item">
+          <BalloonContextMenu/>
         </div>
       </div>
     </div>

@@ -1,206 +1,194 @@
-[
-    {
-        "standart12": {
-            "categories": [
-                {
-                    "categoryName": "standart",
-                    "imgs": [
-                        {
-                            "id": "12583",
-                            "src": "https://sharograf.ru/images/sempertex-r12-005.jpg"
-                        },
-                        {
-                            "id": "86315",
-                            "src": "https://sharograf.ru/images/sempertex-r12-009.jpg"
-                        },
-                        {
-                            "id": "84521",
-                            "src": "https://sharograf.ru/images/sempertex-r12-020.jpg"
-                        },
-                        {
-                            "id": "87515",
-                            "src": "https://sharograf.ru/images/sempertex-r12-040.jpg"
-                        }
-                    ]
-                }
-            ]
-        }
+{
+    "standart12": {
+        "categories": [
+            {
+                "categoryName": "standart",
+                "imgs": [
+                    {
+                        "id": "12583",
+                        "src": "https://sharograf.ru/images/sempertex-r12-005.png"
+                    },
+                    {
+                        "id": "86315",
+                        "src": "https://sharograf.ru/images/sempertex-r12-009.png"
+                    },
+                    {
+                        "id": "84521",
+                        "src": "https://sharograf.ru/images/sempertex-r12-020.png"
+                    },
+                    {
+                        "id": "87515",
+                        "src": "https://sharograf.ru/images/sempertex-r12-040.png"
+                    }
+                ]
+            }
+        ]
     },
-    {
-        "standart12Img": {
-            "categories": [
-                {
-                    "categoryName": "standart",
-                    "imgs": [
-                        {
-                            "id": "87514",
-                            "src": "https://sharograf.ru/images/sempertex-confetti-390.jpg"
-                        },
-                        {
-                            "id": "25672",
-                            "src": "https://sharograf.ru/images/sempertex-dots-041.jpg"
-                        },
-                        {
-                            "id": "32147",
-                            "src": "https://sharograf.ru/images/sempertex-smiley-020.jpg"
-                        },
-                        {
-                            "id": "32467",
-                            "src": "https://sharograf.ru/images/qualatex-39922.jpg"
-                        }
-                    ]
-                }
-            ]
-        }
+    "standart12Img": {
+        "categories": [
+            {
+                "categoryName": "standart",
+                "imgs": [
+                    {
+                        "id": "87514",
+                        "src": "https://sharograf.ru/images/sempertex-confetti-390.png"
+                    },
+                    {
+                        "id": "25672",
+                        "src": "https://sharograf.ru/images/sempertex-dots-041.png"
+                    },
+                    {
+                        "id": "32147",
+                        "src": "https://sharograf.ru/images/sempertex-smiley-020.png"
+                    },
+                    {
+                        "id": "32467",
+                        "src": "https://sharograf.ru/images/qualatex-39922.png"
+                    }
+                ]
+            }
+        ]
     },
-    {
-        "standart12Heart": {
-            "categories": [
-                {
-                    "categoryName": "standart",
-                    "imgs": [
-                        {
-                            "id": "21547",
-                            "src": "https://sharograf.ru/images/heart-r12-fuchsia.jpg"
-                        },
-                        {
-                            "id": "32567",
-                            "src": "https://sharograf.ru/images/heart-r12-pink.jpg"
-                        },
-                        {
-                            "id": "25701",
-                            "src": "https://sharograf.ru/images/sempertex-smiley-020.jpg"
-                        },
-                        {
-                            "id": "03657",
-                            "src": "https://sharograf.ru/images/heart-r12-white.jpg"
-                        }
-                    ]
-                }
-            ]
-        }
+    "standart12Heart": {
+        "categories": [
+            {
+                "categoryName": "standart",
+                "imgs": [
+                    {
+                        "id": "21547",
+                        "src": "https://sharograf.ru/images/heart-r12-fuchsia.png"
+                    },
+                    {
+                        "id": "32567",
+                        "src": "https://sharograf.ru/images/heart-r12-pink.png"
+                    },
+                    {
+                        "id": "25701",
+                        "src": "https://sharograf.ru/images/sempertex-smiley-020.png"
+                    },
+                    {
+                        "id": "03657",
+                        "src": "https://sharograf.ru/images/heart-r12-white.png"
+                    }
+                ]
+            }
+        ]
     },
-    {
-        "standart12Confetti": {
-            "categories": [
-                {
-                    "categoryName": "standart",
-                    "imgs": [
-                        {
-                            "id": "86324",
-                            "src": "https://sharograf.ru/images/confetti-r12-101.jpg"
-                        },
-                        {
-                            "id": "23147",
-                            "src": "https://sharograf.ru/images/confetti-r12-102.jpg"
-                        },
-                        {
-                            "id": "01247",
-                            "src": "https://sharograf.ru/images/confetti-r12-111.jpg"
-                        },
-                        {
-                            "id": "02364",
-                            "src": "https://sharograf.ru/images/confetti-r12-112.jpg"
-                        }
-                    ]
-                }
-            ]
-        }
+    "standart12Confetti": {
+        "categories": [
+            {
+                "categoryName": "standart",
+                "imgs": [
+                    {
+                        "id": "86324",
+                        "src": "https://sharograf.ru/images/confetti-r12-101.png"
+                    },
+                    {
+                        "id": "23147",
+                        "src": "https://sharograf.ru/images/confetti-r12-102.png"
+                    },
+                    {
+                        "id": "01247",
+                        "src": "https://sharograf.ru/images/confetti-r12-111.png"
+                    },
+                    {
+                        "id": "02364",
+                        "src": "https://sharograf.ru/images/confetti-r12-112.png"
+                    }
+                ]
+            }
+        ]
     },
-    {
-        "sphere18": {
-            "categories": [
-                {
-                    "categoryName": "standart",
-                    "imgs": [
-                        {
-                            "id": "01254",
-                            "src": "https://sharograf.ru/images/bubble-r18-007.jpg"
-                        },
-                        {
-                            "id": "05786",
-                            "src": "https://sharograf.ru/images/bubble-r18-009.jpg"
-                        },
-                        {
-                            "id": "75204",
-                            "src": "https://sharograf.ru/images/bubble-r18-102.jpg"
-                        },
-                        {
-                            "id": "63257",
-                            "src": "https://sharograf.ru/images/bubble-r18-105.jpg"
-                        }
-                    ]
-                }
-            ]
-        }
+    "sphere18": {
+        "categories": [
+            {
+                "categoryName": "standart",
+                "imgs": [
+                    {
+                        "id": "01254",
+                        "src": "https://sharograf.ru/images/bubble-r18-007.png"
+                    },
+                    {
+                        "id": "05786",
+                        "src": "https://sharograf.ru/images/bubble-r18-009.png"
+                    },
+                    {
+                        "id": "75204",
+                        "src": "https://sharograf.ru/images/bubble-r18-102.png"
+                    },
+                    {
+                        "id": "63257",
+                        "src": "https://sharograf.ru/images/bubble-r18-105.png"
+                    }
+                ]
+            }
+        ]
     },
-    {
-        "foil18": {
-            "categories": [
-                {
-                    "categoryName": "Шары без рисунка",
-                    "imgs": [
-                        {
-                            "id": "21067",
-                            "src": "https://sharograf.ru/images/flexmetal-301500P.jpg"
-                        },
-                        {
-                            "id": "30157",
-                            "src": "https://sharograf.ru/images/flexmetal-301500RSL.jpg"
-                        },
-                        {
-                            "id": "86325",
-                            "src": "https://sharograf.ru/images/flexmetal-301500R.jpg"
-                        },
-                        {
-                            "id": "13027",
-                            "src": "https://sharograf.ru/images/flexmetal-301500VE.jpg"
-                        }
-                    ]
-                },
-                {
-                    "categoryName": "Шары на День Рождения",
-                    "imgs": [
-                        {
-                            "id": "87624",
-                            "src": "https://sharograf.ru/images/anagram-f18-28591.jpg"
-                        },
-                        {
-                            "id": "96345",
-                            "src": "https://sharograf.ru/images/anagram-f18-34452.jpg"
-                        },
-                        {
-                            "id": "78634",
-                            "src": "https://sharograf.ru/images/conver-f18-70601.jpg"
-                        },
-                        {
-                            "id": "63728",
-                            "src": "https://sharograf.ru/images/conver-f18-70791.jpg"
-                        }
-                    ]
-                },
-                {
-                    "categoryName": "Шары для Детей",
-                    "imgs": [
-                        {
-                            "id": "89635",
-                            "src": "https://sharograf.ru/images/anagram-f18-02510.jpg"
-                        },
-                        {
-                            "id": "87524",
-                            "src": "https://sharograf.ru/images/anagram-f18-155600.jpg"
-                        },
-                        {
-                            "id": "30247",
-                            "src": "https://sharograf.ru/images/anagram-f18-26437.jpg"
-                        },
-                        {
-                            "id": "86374",
-                            "src": "https://sharograf.ru/images/anagram-f18-24813.jpg"
-                        }
-                    ]
-                }
-            ]
-        }
+    "foil18": {
+        "categories": [
+            {
+                "categoryName": "Шары без рисунка",
+                "imgs": [
+                    {
+                        "id": "21067",
+                        "src": "https://sharograf.ru/images/flexmetal-301500P.png"
+                    },
+                    {
+                        "id": "30157",
+                        "src": "https://sharograf.ru/images/flexmetal-301500RSL.png"
+                    },
+                    {
+                        "id": "86325",
+                        "src": "https://sharograf.ru/images/flexmetal-301500R.png"
+                    },
+                    {
+                        "id": "13027",
+                        "src": "https://sharograf.ru/images/flexmetal-301500VE.png"
+                    }
+                ]
+            },
+            {
+                "categoryName": "Шары на День Рождения",
+                "imgs": [
+                    {
+                        "id": "87624",
+                        "src": "https://sharograf.ru/images/anagram-f18-28591.png"
+                    },
+                    {
+                        "id": "96345",
+                        "src": "https://sharograf.ru/images/anagram-f18-34452.png"
+                    },
+                    {
+                        "id": "78634",
+                        "src": "https://sharograf.ru/images/conver-f18-70601.png"
+                    },
+                    {
+                        "id": "63728",
+                        "src": "https://sharograf.ru/images/conver-f18-70791.png"
+                    }
+                ]
+            },
+            {
+                "categoryName": "Шары для Детей",
+                "imgs": [
+                    {
+                        "id": "89635",
+                        "src": "https://sharograf.ru/images/anagram-f18-02510.png"
+                    },
+                    {
+                        "id": "87524",
+                        "src": "https://sharograf.ru/images/anagram-f18-155600.png"
+                    },
+                    {
+                        "id": "30247",
+                        "src": "https://sharograf.ru/images/anagram-f18-26437.png"
+                    },
+                    {
+                        "id": "86374",
+                        "src": "https://sharograf.ru/images/anagram-f18-24813.png"
+                    }
+                ]
+            }
+        ]
     }
-]
+}
