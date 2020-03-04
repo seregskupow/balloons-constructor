@@ -5,6 +5,8 @@ export default function BalloonContextMenu({
   balloonData={},
   changeBalloonImg,
   copyBalloon,
+  deleteBalloon,
+  clearBalloonImg,
   copiedBalloon={}
 }) {
   const { balloonCategories, balloonsImages } = useContext(MainContext);
@@ -42,6 +44,18 @@ export default function BalloonContextMenu({
             <li class="divider" tabindex="-1"></li>
           </>
         )}
+        {img && (
+          <>
+            <li onClick={() => clearBalloonImg(index)}>
+              <a href="#!">Удалить картинку</a>
+            </li>
+            <li class="divider" tabindex="-1"></li>
+          </>
+        )}
+        <li onClick={() => deleteBalloon(index)}>
+              <a href="#!">Удалить шарик</a>
+            </li>
+            <li class="divider" tabindex="-1"></li>
         {balloonCategories.map(item => (
           <>
             <li

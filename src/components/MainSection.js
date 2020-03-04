@@ -21,6 +21,7 @@ export default class MainSection extends Component {
         this.saveCart = this.saveCart.bind(this);
         this.changeBalloonImg = this.changeBalloonImg.bind(this);
         this.copyBalloon = this.copyBalloon.bind(this)
+        this.clearBalloonImg = this.clearBalloonImg.bind(this)
       }
 saveCart(){
   this.setState({cart:this.state.balloons})
@@ -46,18 +47,34 @@ createFigure(count,type){
     }
     this.setState({type:type,balloons:balloons,count})
 }
+clearBalloonImg(index){
+  let balloons = this.state.balloons,
+  shouldChange =balloons.find(item=>item.index===index),
+  itemIndex = balloons.indexOf(shouldChange);
+  shouldChange={index,img:"",price:"",id:"",type: balloons[index].type};
+  balloons[itemIndex] = shouldChange;
+  this.setState({balloons})
+}
 changeBalloonImg(index,id,src,price,type){
-  console.log('data',index,id,src)
-let balloons = this.state.balloons;
- balloons[index].img=src;
- balloons[index].id=id;
- balloons[index].price=price;
- balloons[index].type=type;
+let balloons = this.state.balloons,
+shouldChange =balloons.find(item=>item.index===index),
+itemIndex = balloons.indexOf(shouldChange);
+if(shouldChange){
+  shouldChange.img=src;
+  shouldChange.id=id;
+  shouldChange.price=price;
+  shouldChange.type=type;
+}
+ balloons[itemIndex] = shouldChange;
  this.setState({balloons})
- console.log(this.state.balloons)
+
 }
 deleteBalloon(index){
   let balloons = this.state.balloons;
+  if(balloons.length>3){  
+    this.setState({balloons:balloons.filter(item=>item.index!==index)})
+  }
+  
 }
 copyBalloon(id,img,price,type){
   this.setState({copiedBalloon:{img,price,id,type}})
@@ -68,7 +85,7 @@ copyBalloon(id,img,price,type){
       <section id="app-body" className="grey lighten-5">
         <NavBar cart={this.state.cart}/>
         <div className="app-main-container">
-            <DrawComponent copiedBalloon={this.state.copiedBalloon} copyBalloon={this.copyBalloon} changeBalloonImg={this.changeBalloonImg} deleteBalloon={this.deleteBalloon} balloons={this.state.balloons} type={this.state.type}/>
+            <DrawComponent clearBalloonImg={this.clearBalloonImg} copiedBalloon={this.state.copiedBalloon} copyBalloon={this.copyBalloon} changeBalloonImg={this.changeBalloonImg} deleteBalloon={this.deleteBalloon} balloons={this.state.balloons} type={this.state.type}/>
              <Controls  cart={this.state.cart} saveCart={this.saveCart} createFigure={this.createFigure}/>  
         </div>
       </section>
