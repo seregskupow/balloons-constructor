@@ -1,8 +1,15 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { MainContext } from "../../context/context";
-export default function BalloonContextMenu({balloonId,changeBalloonImg}) {
+export default function BalloonContextMenu({
+  balloonData={},
+  changeBalloonImg,
+  copyBalloon,
+  copiedBalloon={}
+}) {
   const { balloonCategories, balloonsImages } = useContext(MainContext);
+  console.log(balloonData)
+  const { id, img, price, type,index } = balloonData;
   const [display, setDisplay] = useState(false);
   const [category, setCategory] = useState("");
   return (
@@ -14,7 +21,27 @@ export default function BalloonContextMenu({balloonId,changeBalloonImg}) {
       >
         Виберите тип шара
       </div> */}
-      <ul id="dropdown2" className="dropdown-content" style={{position:"absolute"}}>
+      <ul
+        id="dropdown2"
+        className="dropdown-content"
+        style={{ position: "absolute" }}
+      >
+        {img && (
+          <>
+            <li onClick={() => copyBalloon(id, img, price, type)}>
+              <a href="#!">Копировать</a>
+            </li>
+            <li class="divider" tabindex="-1"></li>
+          </>
+        )}
+        {copiedBalloon.img && (
+          <>
+            <li onClick={() => changeBalloonImg(index,copiedBalloon.id, copiedBalloon.img, copiedBalloon.price, copiedBalloon.type)}>
+              <a href="#!">Вставить</a>
+            </li>
+            <li class="divider" tabindex="-1"></li>
+          </>
+        )}
         {balloonCategories.map(item => (
           <>
             <li
@@ -39,7 +66,7 @@ export default function BalloonContextMenu({balloonId,changeBalloonImg}) {
             setDisplay(false);
           }}
         >
-          Закрыть{" "}
+          <a href="#!">Закрыть</a>
         </li>
       </ul>
       <BalloonsOptions display={display}>
@@ -58,8 +85,15 @@ export default function BalloonContextMenu({balloonId,changeBalloonImg}) {
                 )}
                 <div className="menu-item-imgs">
                   {item.imgs.map(img => (
-                    <div className="img-container" data-id={img.id} >
-                      <img src={img.src} alt="" onClick={()=>{changeBalloonImg(balloonId,img.src);setDisplay(false)}}/>
+                    <div className="img-container" data-id={img.id}>
+                      <img
+                        src={img.src}
+                        alt=""
+                        onClick={() => {
+                          changeBalloonImg(index,id, img.src, img.price);
+                          setDisplay(false);
+                        }}
+                      />
                     </div>
                   ))}
                 </div>
@@ -78,8 +112,8 @@ const BalloonsOptions = styled.div`
   overflow: auto;
   /* height: 40vh; */
   width: 30vw;
-  position:absolute;
-  z-index:100;
+  position: absolute;
+  z-index: 100;
   top: 0;
   left: 0;
   background: #e9e9e9;

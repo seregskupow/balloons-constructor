@@ -3,7 +3,8 @@ import BalloonSVG from "../../data/samplesImgs/round.svg";
 import { ReactComponent as Round } from "../../data/samplesImgs/round.svg";
 import { ReactComponent as Number } from "../../data/samplesImgs/number.svg";
 import { ReactComponent as Figure } from "../../data/samplesImgs/figure.svg";
-export default function Balloon({ type, index, img, deleteBalloon,setBId }) {
+export default function Balloon({ balloon, deleteBalloon,setBData }) {
+  const {img,id,price,index,type} = balloon;
   let removeEl = el => {
     // el.parentElement.removeChild([...el.parentElement.children].indexOf(el));
     console.log(el);
@@ -14,7 +15,7 @@ export default function Balloon({ type, index, img, deleteBalloon,setBId }) {
   } else if (type === "figure" || type === "walker") {
     balloonType = <Figure />;
   } else if (img !== "") {
-    balloonType = <img src={img} height="150px" />;
+    balloonType = <img className="balloon-img" src={img} height="150px" />;
   } else {
     balloonType = <Round />;
   }
@@ -37,8 +38,7 @@ export default function Balloon({ type, index, img, deleteBalloon,setBId }) {
         data-target="dropdown2"
         data-index={index}
         onClick={e => {
-          setBId(index);
-          e.target.style.border = "2px solid black";
+          setBData(balloon)
         }}
       >
         {balloonType}

@@ -50,6 +50,14 @@
         &:hover {
           z-index: 20 !important;
         }
+        & .balloon-img {
+          transition: all 0.3s ease-in-out;
+          opacity: 0.9;
+          &:hover {
+            transform: scale(1.09);
+            opacity: 1;
+          }
+        }
         & svg {
           transition: all 0.3s ease-in-out;
 
@@ -435,8 +443,8 @@
         bottom: 50%;
         & svg {
           height: 260px;
-          & path{
-            fill:pink;
+          & path {
+            fill: pink;
           }
         }
       }
@@ -447,9 +455,9 @@
         bottom: 50%;
         & svg {
           height: 260px;
-          
-          & path{
-            fill:rgb(94, 255, 0);
+
+          & path {
+            fill: rgb(94, 255, 0);
           }
         }
         &:nth-child(2) {
