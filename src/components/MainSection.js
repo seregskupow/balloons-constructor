@@ -13,7 +13,8 @@ export default class MainSection extends Component {
             type:"",
             balloons:[],
             cart:[],
-            copiedBalloon:{img:"",price:"",id:""}
+            copiedBalloon:{img:"",price:"",id:""},
+            totalPrice:0
            
         };
         this.createFigure = this.createFigure.bind(this);
@@ -50,10 +51,11 @@ createFigure(count,type){
 clearBalloonImg(index){
   let balloons = this.state.balloons,
   shouldChange =balloons.find(item=>item.index===index),
-  itemIndex = balloons.indexOf(shouldChange);
+  itemIndex = balloons.indexOf(shouldChange),
+  price = shouldChange.price;
   shouldChange={index,img:"",price:"",id:"",type: balloons[index].type};
   balloons[itemIndex] = shouldChange;
-  this.setState({balloons})
+  this.setState({balloons,totalPrice:this.state.totalPrice-price})
 }
 changeBalloonImg(index,id,src,price,type){
 let balloons = this.state.balloons,
@@ -66,13 +68,14 @@ if(shouldChange){
   shouldChange.type=type;
 }
  balloons[itemIndex] = shouldChange;
- this.setState({balloons})
+ this.setState({balloons,totalPrice:this.state.totalPrice+price})
 
 }
 deleteBalloon(index){
-  let balloons = this.state.balloons;
+  let balloons = this.state.balloons,
+  shouldDelete =balloons.find(item=>item.index===index);
   if(balloons.length>3){  
-    this.setState({balloons:balloons.filter(item=>item.index!==index)})
+    this.setState({balloons:balloons.filter(item=>item.index!==index),totalPrice:this.state.totalPrice-shouldDelete.price})
   }
   
 }
@@ -83,10 +86,10 @@ copyBalloon(id,img,price,type){
   render() {
     return (
       <section id="app-body" className="grey lighten-5">
-        <NavBar cart={this.state.cart}/>
+        <NavBar totalPrice={this.state.totalPrice}/>
         <div className="app-main-container">
             <DrawComponent clearBalloonImg={this.clearBalloonImg} copiedBalloon={this.state.copiedBalloon} copyBalloon={this.copyBalloon} changeBalloonImg={this.changeBalloonImg} deleteBalloon={this.deleteBalloon} balloons={this.state.balloons} type={this.state.type}/>
-             <Controls  cart={this.state.cart} saveCart={this.saveCart} createFigure={this.createFigure}/>  
+             <Controls  balloonsCount = {this.state.balloons.length} totalPrice={this.state.totalPrice} saveCart={this.saveCart} createFigure={this.createFigure}/>  
         </div>
       </section>
     );
