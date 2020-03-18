@@ -30,6 +30,7 @@ saveCart(){
 createFigure(count,type){
   let balloons;
   let legitCount;
+  let price = this.state.totalPrice;
   if(type===this.state.type||(type==="bouquet"&&(this.state.type==="cascade"||this.state.type==="fontaine"))||(type==="fontaine"&&(this.state.type==="cascade"||this.state.type==="bouquet"))||(type==="cascade"&&(this.state.type==="bouquet"||this.state.type==="fontaine"))){
     balloons=this.state.balloons;
     legitCount = this.state.count;
@@ -44,9 +45,11 @@ createFigure(count,type){
       }
     }
     else if(count<legitCount){
+      price-=balloons[count].price
       balloons.splice(count,legitCount-count)
     }
-    this.setState({type:type,balloons:balloons,count})
+    if(count===0) price=0;
+    this.setState({type:type,balloons:balloons,count,totalPrice:price})
 }
 clearBalloonImg(index){
   let balloons = this.state.balloons,
@@ -60,15 +63,17 @@ clearBalloonImg(index){
 changeBalloonImg(index,id,src,price,type){
 let balloons = this.state.balloons,
 shouldChange =balloons.find(item=>item.index===index),
-itemIndex = balloons.indexOf(shouldChange);
-if(shouldChange){
+itemIndex = balloons.indexOf(shouldChange),
+addPrice=0;
+if(shouldChange && shouldChange.img!==src){
   shouldChange.img=src;
   shouldChange.id=id;
   shouldChange.price=price;
   shouldChange.type=type;
+  addPrice=price;
 }
  balloons[itemIndex] = shouldChange;
- this.setState({balloons,totalPrice:this.state.totalPrice+price})
+ this.setState({balloons,totalPrice:this.state.totalPrice+addPrice})
 
 }
 deleteBalloon(index){

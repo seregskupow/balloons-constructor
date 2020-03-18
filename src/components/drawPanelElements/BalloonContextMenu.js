@@ -9,11 +9,12 @@ export default function BalloonContextMenu({
   clearBalloonImg,
   copiedBalloon={}
 }) {
-  const { balloonCategories, balloonsImages } = useContext(MainContext);
+  const { balloonCategories, balloonsImages,dropdown } = useContext(MainContext);
   console.log(balloonData)
   const { id, img, price, type,index } = balloonData;
   const [display, setDisplay] = useState(false);
   const [category, setCategory] = useState("");
+  let randomTarget = Math.random();
   return (
     <>
       {/* <div
@@ -24,7 +25,7 @@ export default function BalloonContextMenu({
         Виберите тип шара
       </div> */}
       <ul
-        id="dropdown2"
+        id={dropdown}
         className="dropdown-content"
         style={{ position: "absolute" }}
       >

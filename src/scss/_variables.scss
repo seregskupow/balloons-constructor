@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Marck+Script&display=swap');
+
+$maingreen:#b2dee1;
+$darkgreen:#7d9799;
+$darkestgreen:#586869;
+$white:rgb(255, 255, 255);
+
+.btn{
+    background:$maingreen!important;
+    color:$darkgreen!important;
+    font-family: "Lora", serif!important;
+}

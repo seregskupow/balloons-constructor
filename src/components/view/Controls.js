@@ -21,14 +21,15 @@ export default function Controls({
     { name: "Число", value: "number" },
     { name: "Ходилка", value: "walker" }
   ];
+  let randomTarget = Math.random();
   const initializeDropDown = () => {
     var elems = document.querySelectorAll(".dropdown-trigger");
     var instances = window.M.Dropdown.init(elems, {
       closeOnClick: true
     });
-    var script = document.createElement("script");
-    script.src = "../src/additional/nouislider.js";
-    document.getElementsByTagName("head")[0].appendChild(script);
+    // var script = document.createElement("script");
+    // script.src = "../src/additional/nouislider.js";
+    // document.getElementsByTagName("head")[0].appendChild(script);
   };
   useEffect(() => {
     initializeDropDown();
@@ -40,12 +41,12 @@ export default function Controls({
           <a
             class="dropdown-trigger btn"
             href="#"
-            data-target="dropdown1"
+            data-target={randomTarget}
             style={{ width: "300px" }}
           >
             {startValue}
           </a>
-          <ul id="dropdown1" class="dropdown-content">
+          <ul id={randomTarget} class="dropdown-content">
             {categories.map((item, index) => (
               <>
                 <li
@@ -106,7 +107,7 @@ export default function Controls({
                 }
                 max={13}
                 onChange={e => {
-                  setSValue(+e.target.value);
+                  //setSValue(+e.target.value);
                   createFigure(+e.target.value, figureClass);
                 }}
               />

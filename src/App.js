@@ -7,10 +7,11 @@ import "./scss/main.scss";
 import "materialize-css";
 
 
-function App() {
+function App({dropdown}) {
+  
   return (
     <MainContext.Provider value={{
-      balloonsImages, balloonCategories
+      balloonsImages, balloonCategories,dropdown
     }}>
       <MainSection />
     </MainContext.Provider>

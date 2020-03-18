@@ -18,6 +18,7 @@
         margin:0 auto;
         width:90%;
         display: flex;
+        flex-direction: column-reverse;
     }
 }
 ////////////////////////App-body//////////////////
@@ -27,7 +28,7 @@
     height:60px;
     // background-color: #7ee8fa;
     // background-image: linear-gradient(315deg, #7ee7faab 0%, #80ff729f 74%);
-    background:#00897b;
+    background:$maingreen;
     display: flex;
     align-items:center;
     justify-content: center;
@@ -39,6 +40,8 @@
         align-items:center;
         & .app-name{
             text-align: center;
+            font-family: 'Marck Script', cursive;
+            color:$darkgreen;
         }
     }
 }

@@ -1,14 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useContext } from "react";
 import BalloonSVG from "../../data/samplesImgs/round.svg";
 import { ReactComponent as Round } from "../../data/samplesImgs/round.svg";
 import { ReactComponent as Number } from "../../data/samplesImgs/number.svg";
 import { ReactComponent as Figure } from "../../data/samplesImgs/figure.svg";
+import { MainContext } from '../../context/context'
 export default function Balloon({ balloon, deleteBalloon,setBData }) {
-  const {img,id,price,index,type} = balloon;
+  const {img,id,price,index,type,randomTarget} = balloon;
+  const { dropdown } = useContext(MainContext);
   let removeEl = el => {
     // el.parentElement.removeChild([...el.parentElement.children].indexOf(el));
     console.log(el);
   };
+
   let balloonType;
   if (type === "number" || type === "numeral") {
     balloonType = <Number />;
@@ -35,7 +38,7 @@ export default function Balloon({ balloon, deleteBalloon,setBData }) {
     <>
       <div
         className="balloon dropdown-trigger"
-        data-target="dropdown2"
+        data-target={dropdown}
         data-index={index}
         onClick={e => {
           setBData(balloon)
