@@ -15,9 +15,9 @@
 }
 .dropdown-content{
     & li{
-        cursor:pointer;
+        cursor:pointer!important;
         & a{
-            cursor:pointer;
+            cursor:pointer!important;
         }
     }
 }
