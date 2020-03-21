@@ -26,8 +26,8 @@ export default function BalloonContextMenu({
       </div> */}
       <ul
         id={dropdown}
-        className="dropdown-content"
-        style={{ position: "absolute" }}
+        className="dropdown-contentt"
+        style={{ position: "absolute" ,display:display === false ? `none` : `flex`}}
       >
         {img && (
           <>

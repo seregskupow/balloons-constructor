@@ -46,7 +46,7 @@ export default function Controls({
           >
             {startValue}
           </a>
-          <ul id={randomTarget} class="dropdown-content">
+          <ul id={randomTarget} className="dropdown-contentt">
             {categories.map((item, index) => (
               <>
                 <li
