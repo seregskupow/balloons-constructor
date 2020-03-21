@@ -13,3 +13,11 @@
         }
     }
 }
+.dropdown-content{
+    & li{
+        cursor:pointer;
+        & a{
+            cursor:pointer;
+        }
+    }
+}
