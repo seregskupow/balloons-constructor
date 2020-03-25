@@ -1,9 +1,9 @@
 @mixin left {
-  left: 20%;
+  left: 10%;
   transform: translateX(-50%) rotate(-30deg);
 }
 @mixin right {
-  left: 80%;
+  left: 90%;
   transform: translateX(-50%) rotate(30deg);
 }
 @mixin center {
@@ -18,6 +18,36 @@
 @mixin f-right {
   left: 70%;
   transform: translateX(-50%) rotate(12deg);
+}
+.balloon-select{
+  min-width: 200px;
+  background:$maingreen!important;
+  & option{
+    transition: all .3s ease-in-out;
+    &:hover{
+      background:$maingreen!important;
+    }
+  }
+}
+.ball-context-menu{
+  background:white;
+  & li{
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    & p{
+      font-size: 20px;
+      padding:5px;
+      color:$darkgreen;
+      transition: all .3s ease-in-out;
+     
+    }
+    &:hover{
+      background:$maingreen;
+      & p{
+        color:$darkestgreen;
+      }
+    }
+  }
 }
 .draw-component-wrapper {
   width: 90%;

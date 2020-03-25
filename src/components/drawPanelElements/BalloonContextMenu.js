@@ -14,7 +14,6 @@ export default function BalloonContextMenu({
   const { id, img, price, type,index } = balloonData;
   const [display, setDisplay] = useState(false);
   const [category, setCategory] = useState("");
-  let randomTarget = Math.random();
   return (
     <>
       {/* <div
@@ -26,13 +25,13 @@ export default function BalloonContextMenu({
       </div> */}
       <ul
         id={dropdown}
-        className="dropdown-contentt"
-        style={{ position: "absolute" ,display:display === false ? `none` : `flex`}}
+        className="ball-context-menu"
+        style={{zIndex:"30",display:display === false ? `none` : `block`}}
       >
         {img && (
           <>
             <li onClick={() => copyBalloon(id, img, price, type)}>
-              <a href="#!">Копировать</a>
+              <p>Копировать</p> 
             </li>
             <li class="divider" tabindex="-1"></li>
           </>
@@ -40,7 +39,7 @@ export default function BalloonContextMenu({
         {copiedBalloon.img && (
           <>
             <li onClick={() => changeBalloonImg(index,copiedBalloon.id, copiedBalloon.img, copiedBalloon.price, copiedBalloon.type)}>
-              <a href="#!">Вставить</a>
+              <p>Вставить</p> 
             </li>
             <li class="divider" tabindex="-1"></li>
           </>
@@ -48,15 +47,15 @@ export default function BalloonContextMenu({
         {img && (
           <>
             <li onClick={() => clearBalloonImg(index)}>
-              <a href="#!">Удалить картинку</a>
+              <p>Удалить картинку</p>  
             </li>
             <li class="divider" tabindex="-1"></li>
           </>
         )}
         <li onClick={() => deleteBalloon(index)}>
-              <a href="#!">Удалить шарик</a>
+             <p>Удалить шарик</p> 
             </li>
-            <li class="divider" tabindex="-1"></li>
+            <li className="divider" tabIndex="-1"></li>
         {balloonCategories.map(item => (
           <>
             <li
@@ -71,9 +70,9 @@ export default function BalloonContextMenu({
               }}
               type={item.type}
             >
-              <a href="#!">{item.name}</a>
+              <p>{item.name}</p> 
             </li>
-            <li class="divider" tabindex="-1"></li>
+            <li className="divider" tabIndex="-1"></li>
           </>
         ))}
         <li
@@ -81,26 +80,26 @@ export default function BalloonContextMenu({
             setDisplay(false);
           }}
         >
-          <a href="#!">Закрыть</a>
+          <p>Закрыть</p> 
         </li>
       </ul>
-      <BalloonsOptions display={display}>
-        <a
-          class="waves-effect waves-light btn"
+      <BalloonsOptions displayMenu={display}>
+        <a href="#!"
+          className="waves-effect waves-light btn"
           onClick={() => setDisplay(false)}
         >
           Закрыть
         </a>
         {category &&
           balloonsImages[category].categories.map(item => (
-            <div className="menu-container">
+            <div key={Math.random()} className="menu-container">
               <div className="menu-item">
                 {item.categoryName === "standart" ? null : (
                   <h3>{item.categoryName}</h3>
                 )}
                 <div className="menu-item-imgs">
                   {item.imgs.map(img => (
-                    <div className="img-container" data-id={img.id}>
+                    <div key={img.id} className="img-container" data-id={img.id}>
                       <img
                         src={img.src}
                         alt=""
@@ -121,7 +120,7 @@ export default function BalloonContextMenu({
 }
 
 const BalloonsOptions = styled.div`
-  display: ${props => (props.display === false ? `none` : `flex`)};
+  display: ${props => (props.displayMenu === false ? `none` : `flex`)};
   flex-wrap: wrap;
   max-height: 300px;
   overflow: auto;

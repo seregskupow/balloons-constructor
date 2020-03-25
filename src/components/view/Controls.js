@@ -1,6 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
-import { MainContext } from "../../context/context";
-import Balloon from "../drawPanelElements/Balloon";
+import React, {useState } from "react";
 import BalloonContextMenu from "../drawPanelElements/BalloonContextMenu";
 export default function Controls({
   createFigure,
@@ -8,9 +6,7 @@ export default function Controls({
   totalPrice,
   balloonsCount
 }) {
-  const { balloonCategories } = useContext(MainContext);
   const [startValue, setStartValue] = useState("Выберите вид композиции");
-  const [sliderValue, setSValue] = useState(3);
   const [figureClass, setFC] = useState("");
   const categories = [
     { name: "Букет", value: "bouquet" },
@@ -22,69 +18,58 @@ export default function Controls({
     { name: "Ходилка", value: "walker" }
   ];
   let randomTarget = Math.random();
-  const initializeDropDown = () => {
-    var elems = document.querySelectorAll(".dropdown-trigger");
-    var instances = window.M.Dropdown.init(elems, {
-      closeOnClick: true
-    });
-    // var script = document.createElement("script");
-    // script.src = "../src/additional/nouislider.js";
-    // document.getElementsByTagName("head")[0].appendChild(script);
-  };
-  useEffect(() => {
-    initializeDropDown();
-  }, []);
+  
+ 
   return (
     <div className="controls-panel">
       <div className="controls-panel-wrapper">
-        <div className="control-panel-item dropdown">
-          <a
+        <div className="control-panel-item">
+          {/* <a
             class="dropdown-trigger btn"
             href="#"
             data-target={randomTarget}
             style={{ width: "300px" }}
           >
             {startValue}
-          </a>
-          <ul id={randomTarget} className="dropdown-contentt">
-            {categories.map((item, index) => (
-              <>
-                <li
-                  onClick={() => {
-                    let itemClass = categories[index].value;
-                    console.log(itemClass);
-                    if (
-                      itemClass === "numeral" ||
-                      itemClass === "walker" ||
-                      itemClass === "figure"
-                    ) {
-                      setSValue(1);
-                      createFigure(1, itemClass);
-                    } else if (itemClass === "number") {
-                      setSValue(2);
-                      createFigure(2, itemClass);
-                    } else {
-                      if (balloonsCount >= 3) {
-                        createFigure(balloonsCount, itemClass);
-                      } else {
-                        createFigure(3, itemClass);
-                        setSValue(3);
-                      }
-                    }
-                    setStartValue(item.name);
-                    setFC(itemClass);
-                  }}
-                >
-                  <a href="#!">{item.name}</a>
-                </li>
-                <li class="divider" tabindex="-1"></li>
-              </>
+          </a> */}
+          <select id={randomTarget} className="balloon-select"
+          onChange={(e) => {
+            let itemClass = e.target.value;
+            console.log(itemClass);
+            if (
+              itemClass === "numeral" ||
+              itemClass === "walker" ||
+              itemClass === "figure"
+            ) {
+              
+              createFigure(1, itemClass);
+            } else if (itemClass === "number") {
+              
+              createFigure(2, itemClass);
+            } else {
+              if (balloonsCount >= 3) {
+                createFigure(balloonsCount, itemClass);
+              } else {
+                createFigure(3, itemClass);
+                
+              }
+            }
+            setStartValue("");
+            setFC(itemClass);
+          }}>
+            <option value="default" selected disabled hidden>{startValue}</option>
+            {categories.map((item, index) => (  
+                <option key={index} value = {item.value}>
+                  {item.name}
+                </option>
+                
+              
             ))}
-          </ul>
+          </select>
         </div>
         <div className="control-panel-item">
           <form action="#">
-            <p class="range-field">
+            <p className="range-field">
               <input
                 type="range"
                 disabled={
@@ -116,19 +101,19 @@ export default function Controls({
           </form>
         </div>
         <div className="control-panel-item">
-          <a
-            class="waves-effect waves-light btn"
+          <a href="#!"
+            className="waves-effect waves-light btn"
             onClick={() => {
               setStartValue("Выберите вид композиции");
-              setSValue(3);
               createFigure(0);
+              document.getElementById(randomTarget).value="default";
             }}
           >
             Очистить
           </a>
         </div>
         <div className="control-panel-item">
-          <a class="waves-effect waves-light btn" onClick={saveCart}>
+          <a className="waves-effect waves-light btn" href="#!" onClick={saveCart}>
             Добавить в корзину
           </a>
         </div>
