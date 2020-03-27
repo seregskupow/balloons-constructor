@@ -19,16 +19,7 @@
   left: 70%;
   transform: translateX(-50%) rotate(12deg);
 }
-.balloon-select{
-  min-width: 200px;
-  background:$maingreen!important;
-  & option{
-    transition: all .3s ease-in-out;
-    &:hover{
-      background:$maingreen!important;
-    }
-  }
-}
+
 .ball-context-menu{
   background:white;
   & li{
@@ -466,11 +457,22 @@
       }
     }
     & .figure,
-    & .numeral,
+    & .numeral{
+      & .balloon {
+        @include center;
+        top:30%;
+        & svg {
+          height: 260px;
+          & path {
+            fill: pink;
+          }
+        }
+      }
+    }
     & .walker {
       & .balloon {
         @include center;
-        bottom: 50%;
+        top:50%;
         & svg {
           height: 260px;
           & path {
@@ -482,16 +484,19 @@
     & .number {
       & .balloon {
         @include center;
-        bottom: 50%;
+        top:30%;
         & svg {
-          height: 260px;
+          height: 210px;
 
           & path {
             fill: rgb(94, 255, 0);
           }
         }
+        &:nth-child(1){
+          left: 10%;
+        }
         &:nth-child(2) {
-          left: 100px;
+          left: 90%;
         }
       }
     }

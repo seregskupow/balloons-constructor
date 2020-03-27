@@ -6,11 +6,11 @@ import { MainContext } from '../../context/context'
 export default function Balloon({ balloon,setBData }) {
   const {img,index,type} = balloon;
   const { dropdown } = useContext(MainContext);
-
+  console.log(type.includes("figure"))
   let balloonType;
-  if (type === "number" || type === "numeral") {
+  if (type.includes("number") || type.includes("numeral")) {
     balloonType = <Number />;
-  } else if (type === "figure" || type === "walker") {
+  } else if (type.includes("figure") || type.includes("walker")) {
     balloonType = <Figure />;
   } else if (img !== "") {
     balloonType = <img className="balloon-img" alt="ballon-img" src={img} height="160px" />;

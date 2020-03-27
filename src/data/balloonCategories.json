@@ -30,22 +30,22 @@
         "price":"330"
     },
     {
-        "type":"figure",
+        "type":"figure.special/1",
         "name":"Фигура",
         "price":"400"
     },
     {
-        "type":"numeral",
+        "type":"numeral.special&standart/1",
         "name":"Цифра",
         "price":"200"
     },
     {
-        "type":"number",
+        "type":"number.special/2",
         "name":"Число",
         "price":"370"
     },
     {
-        "type":"walker",
+        "type":"walker.special/1",
         "name":"Ходилка",
         "price":"400"
     }

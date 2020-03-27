@@ -7,12 +7,31 @@
     & .controls-panel-wrapper{
         display:flex;
         flex-wrap: wrap;
-        justify-content: start;
+        justify-content: center;
         & .control-panel-item{
             margin: 10px 20px;
+            &:nth-child(1){
+                width:100%;
+            }
+            &:nth-child(2){
+                width:35%;
+            }
+            &:nth-child(3){
+                width:35%;
+            }
         }
     }
 }
+.balloon-select{
+    width:100%;
+    background:$maingreen!important;
+    & option{
+      transition: all .3s ease-in-out;
+      &:hover{
+        background:$maingreen!important;
+      }
+    }
+  }
 .dropdown-content{
     & li{
         cursor:pointer!important;

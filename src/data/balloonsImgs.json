@@ -222,5 +222,34 @@
                 ]
             }
         ]
+    },
+    "figure": {
+        "categories": [
+            {
+                "categoryName": "standart",
+                "imgs": [
+                    {
+                        "id": "12583",
+                        "src": "https://sharograf.ru/images/sempertex-r12-005.png",
+                        "price":200
+                    },
+                    {
+                        "id": "86315",
+                        "src": "https://sharograf.ru/images/sempertex-r12-009.png",
+                        "price":205
+                    },
+                    {
+                        "id": "84521",
+                        "src": "https://sharograf.ru/images/sempertex-r12-020.png",
+                        "price":300
+                    },
+                    {
+                        "id": "87515",
+                        "src": "https://sharograf.ru/images/sempertex-r12-040.png",
+                        "price":100
+                    }
+                ]
+            }
+        ]
     }
 }

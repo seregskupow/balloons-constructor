@@ -4,18 +4,19 @@ export default function Controls({
   createFigure,
   saveCart,
   totalPrice,
-  balloonsCount
+  balloonsCount,
+  figureClass,
+  setFigureClass
 }) {
   const [startValue, setStartValue] = useState("Выберите вид композиции");
-  const [figureClass, setFC] = useState("");
   const categories = [
     { name: "Букет", value: "bouquet" },
     { name: "Каскад", value: "cascade" },
     { name: "Фонтан", value: "fontaine" },
-    { name: "Фигура", value: "figure" },
-    { name: "Цифра", value: "numeral" },
-    { name: "Число", value: "number" },
-    { name: "Ходилка", value: "walker" }
+    { name: "Фигура", value: "figure.special/1" },
+    { name: "Цифра", value: "numeral.special&standart/1" },
+    { name: "Число", value: "number.special/2" },
+    { name: "Ходилка", value: "walker.special/1" }
   ];
   let randomTarget = Math.random();
   
@@ -24,29 +25,17 @@ export default function Controls({
     <div className="controls-panel">
       <div className="controls-panel-wrapper">
         <div className="control-panel-item">
-          {/* <a
-            class="dropdown-trigger btn"
-            href="#"
-            data-target={randomTarget}
-            style={{ width: "300px" }}
-          >
-            {startValue}
-          </a> */}
           <select id={randomTarget} className="balloon-select"
           onChange={(e) => {
             let itemClass = e.target.value;
-            console.log(itemClass);
-            if (
-              itemClass === "numeral" ||
-              itemClass === "walker" ||
-              itemClass === "figure"
-            ) {
+            if (itemClass.includes('special')) {
+              createFigure(+itemClass.split('/').pop(), itemClass);
+            } 
+            // else if (itemClass === "number") {
               
-              createFigure(1, itemClass);
-            } else if (itemClass === "number") {
-              
-              createFigure(2, itemClass);
-            } else {
+            //   createFigure(2, itemClass);
+            // } 
+            else {
               if (balloonsCount >= 3) {
                 createFigure(balloonsCount, itemClass);
               } else {
@@ -55,7 +44,7 @@ export default function Controls({
               }
             }
             setStartValue("");
-            setFC(itemClass);
+            setFigureClass(itemClass);
           }}>
             <option value="default" selected disabled hidden>{startValue}</option>
             {categories.map((item, index) => (  
@@ -74,19 +63,13 @@ export default function Controls({
                 type="range"
                 disabled={
                   startValue === "Выберите вид композиции" ||
-                  figureClass === "numeral" ||
-                  figureClass === "number" ||
-                  figureClass === "walker" ||
-                  figureClass === "figure"
+                  figureClass.includes('special')
                 }
                 id="test5"
                 value={balloonsCount}
                 step={figureClass === "cascade" ? 2 : 1}
                 min={
-                  figureClass === "numeral" ||
-                  figureClass === "number" ||
-                  figureClass === "walker" ||
-                  figureClass === "figure"
+                  figureClass.includes('special')
                     ? 1
                     : 3
                 }
