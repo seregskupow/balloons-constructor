@@ -41,7 +41,7 @@
     },
     {
         "type":"number.special/2",
-        "name":"Число",
+        "name":"Цифра",
         "price":"370"
     },
     {

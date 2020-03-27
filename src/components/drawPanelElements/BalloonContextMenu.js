@@ -22,16 +22,8 @@ export default function BalloonContextMenu({
   }else{
     menuToRender = balloonCategories.filter(item=>!item.type.includes('special') || item.type.includes('standart'))
   }
-  console.log(menuToRender)
   return (
     <>
-      {/* <div
-        className="dropdown-trigger"
-        data-target="dropdown2"
-        style={{ width: "300px" }}
-      >
-        Виберите тип шара
-      </div> */}
       <ul
         id={dropdown}
         className="ball-context-menu"
@@ -65,12 +57,12 @@ export default function BalloonContextMenu({
              <p>Удалить шарик</p> 
             </li>
             <li className="divider" tabIndex="-1"></li>
-        {balloonCategories.map(item => (
+        {menuToRender.map(item => (
           <>
             <li
               //class="collection-item"
               onClick={() => {
-                if(balloonsImages[item.type]!==undefined){
+                if(balloonsImages[item.type.split('.').shift()]!==undefined){
                   if (category === item.type) {
                     setDisplay(!display);
                   } else {

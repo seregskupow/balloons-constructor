@@ -4,9 +4,8 @@ import { ReactComponent as Number } from "../../data/samplesImgs/number.svg";
 import { ReactComponent as Figure } from "../../data/samplesImgs/figure.svg";
 import { MainContext } from '../../context/context'
 export default function Balloon({ balloon,setBData }) {
-  const {img,index,type} = balloon;
+  const {img,index,type=""} = balloon;
   const { dropdown } = useContext(MainContext);
-  console.log(type.includes("figure"))
   let balloonType;
   if (type.includes("number") || type.includes("numeral")) {
     balloonType = <Number />;
@@ -30,7 +29,7 @@ export default function Balloon({ balloon,setBData }) {
           drop.style.display = "block";
           var rect = e.target.getBoundingClientRect();
           console.log(rect);
-          drop.style.top = rect.y+"px"-drop.offsetHeight;
+          drop.style.top = rect.y+"px";
           drop.style.left = rect.x+"px";
         }}
       >

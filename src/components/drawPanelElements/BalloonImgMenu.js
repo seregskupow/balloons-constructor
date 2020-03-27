@@ -4,13 +4,14 @@ import { MainContext } from "../../context/context";
 export default function BalloonImgMenu({
   balloonData = {},
   display = false,
-  category,
+  category="",
   setDisplay = function() {},
   changeBalloonImg
 }) {
   const { id, img, price, type, index } = balloonData;
   const { balloonsImages } = useContext(MainContext);
-  category = category.includes('special') ? category.split('.').shift() : category; 
+  category = category.includes('special') ? category.split('.').shift() : category;
+  category= category==="number" ? "numeral" : category; 
   return (
     <BalloonsOptions displayMenu={display}>
       <div className="close-btn">

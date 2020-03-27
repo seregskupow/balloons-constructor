@@ -4,7 +4,7 @@ import BalloonContextMenu from "../drawPanelElements/BalloonContextMenu";
 import BalloonImgMenu from "../drawPanelElements/BalloonImgMenu";
 import { findAllByDisplayValue } from "@testing-library/react";
 export default function DrawComponent({
-  type,
+  type="",
   balloons,
   deleteBalloon,
   changeBalloonImg,
