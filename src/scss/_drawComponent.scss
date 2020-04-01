@@ -20,22 +20,66 @@
   transform: translateX(-50%) rotate(12deg);
 }
 
-.ball-context-menu{
-  background:white;
-  & li{
+.ball-context-menu {
+  background: white;
+  border-radius: 20px;
+  box-shadow: $mainShadow;
+  overflow: hidden;
+
+  & li {
     cursor: pointer;
-    transition: all .3s ease-in-out;
-    & p{
+    transition: all 0.3s ease-in-out;
+    & p {
       font-size: 20px;
-      padding:5px;
-      color:$darkgreen;
-      transition: all .3s ease-in-out;
-     
+      padding: 5px;
+      color: $darkgreen;
+      transition: all 0.3s ease-in-out;
     }
-    &:hover{
-      background:$maingreen;
-      & p{
-        color:$darkestgreen;
+    &:hover {
+      background: $maingreen;
+      box-shadow: inset $mainShadow;
+      & p {
+        color: $white;
+      }
+    }
+  }
+}
+.balloon-img-menu {
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  z-index: 100;
+  
+  left:0;
+  box-shadow: $mainShadow;
+  background: $lightGreen;
+  /* border: 2px dotted #2bbbad; */
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  transition: all 0.3s ease;
+  & .balloon-img-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    width:90%;
+    margin-top:20px;
+    & .menu-container{
+      margin-top:20px;
+      & .menu-item{
+        & .menu-item-imgs{
+          & .img-container{
+            margin:0 10px;
+            & img{
+              transition: transform .3s ease;
+              cursor:pointer;
+              &:hover{
+                transform:scale(1.1);
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -50,9 +94,14 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background: #e9e9e9;
-    border: 2px dotted #2bbbad;
-    border-radius: 10px;
+    background: white;
+    //border: 2px dotted #2bbbad;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    box-shadow: $mainShadow;
+    //inset  0 1px 1px rgba(0, 0, 0, 0.062),inset  0 -1px 1px rgba(0, 0, 0, 0.082),
+    //inset    0 1px 2px rgba(0, 0, 0, 0.12),inset  0 -1px 2px rgba(0, 0, 0, 0.109),
+    //inset    0 1px 4px rgba(0,0,0,0.12),inset  0 -1px 4px rgba(0,0,0,0.12);
 
     & .balloons-container {
       position: relative;
@@ -457,10 +506,10 @@
       }
     }
     & .figure,
-    & .numeral{
+    & .numeral {
       & .balloon {
         @include center;
-        top:30%;
+        top: 30%;
         & svg {
           height: 260px;
           & path {
@@ -472,7 +521,7 @@
     & .walker {
       & .balloon {
         @include center;
-        top:50%;
+        top: 50%;
         & svg {
           height: 260px;
           & path {
@@ -484,7 +533,7 @@
     & .number {
       & .balloon {
         @include center;
-        top:30%;
+        top: 30%;
         & svg {
           height: 210px;
 
@@ -492,7 +541,7 @@
             fill: rgb(94, 255, 0);
           }
         }
-        &:nth-child(1){
+        &:nth-child(1) {
           left: 10%;
         }
         &:nth-child(2) {

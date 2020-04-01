@@ -3,11 +3,25 @@
 
 $maingreen:#b2dee1;
 $darkgreen:#7d9799;
+$lightGreen:#d1ebed;
 $darkestgreen:#586869;
 $white:rgb(255, 255, 255);
+$maingradient:linear-gradient(315deg, #7cffcb 0%, #74f2ce 74%);
+$mainShadow: 0 6px 15px rgba(0, 0, 0, 0.068), 0 6px 15px rgba(0, 0, 0, 0.054);
+$farShadow:0 3px 8px rgba(0, 0, 0, 0.068), 0 3px 8px rgba(0, 0, 0, 0.054);
+$nearShadow:0 1px 4px rgba(0, 0, 0, 0.116), 0 1px 4px rgba(0, 0, 0, 0.144);
 
 .btn{
-    background:$maingreen!important;
-    color:$darkgreen!important;
+    // background:$maingreen!important;
+    background-color:$white;
+    
+    border-radius: 15px;
+    color:$darkgreen;
     font-family: "Lora", serif!important;
+    box-shadow: $farShadow;
+    &:hover{
+        color:$white;
+        background:$maingreen;
+        box-shadow: $nearShadow;
+    }
 }

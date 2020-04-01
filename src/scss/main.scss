@@ -1,56 +1,86 @@
 @import "~materialize-css/dist/css/materialize.min.css";
-@import '~materialize-css/extras/noUiSlider/nouislider.css';
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import "~materialize-css/extras/noUiSlider/nouislider.css";
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 @import "variables";
 @import "media";
 @import "controls";
 @import "drawComponent";
 @import "balloonsCompositions";
 @import "contextMenu";
+@import "orderMenu";
 
 ////////////////////////App-body//////////////////
-select{
-    display: block!important;
+select {
+    display: block !important;
 }
-body{
+body {
     position: relative;
-    & .ball-context-menu{
+    & .ball-context-menu {
         position: absolute;
     }
 }
-#app-body{
-    width:100%;
+#app-body {
+    width: 100%;
     //max-height: 60vh;
-    max-width:600px;
+    max-width: 600px;
     //border:2px solid #00bcd4;
-    & .app-main-container{
-        margin:0 auto;
-        width:90%;
+    border-radius: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.171);
+    position: relative;
+    overflow: hidden;
+    & .bg-curve {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: $lightGreen;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        box-shadow: $farShadow;
+        z-index: -1;
+    }
+    position: relative;
+    & .app-main-container {
+        margin: 0 auto;
+        width: 100%;
         display: flex;
         flex-direction: column-reverse;
+        position: relative;
     }
 }
 ////////////////////////App-body//////////////////
 ///////////////////////NavBar////////////////////
-.navbar{
-    width:100%;
-    height:60px;
+.navbar {
+    width: 100%;
+    height: 60px;
     // background-color: #7ee8fa;
     // background-image: linear-gradient(315deg, #7ee7faab 0%, #80ff729f 74%);
-    background:$maingreen;
+    background: $maingreen;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
-    border-radius: 5px;
-    & .navbar-wrapper{
-        width:80%;
+    border-radius: 20px;
+    z-index: 11;
+    box-shadow: $farShadow;
+    & .navbar-wrapper {
+        width: 80%;
         display: flex;
         justify-content: space-between;
-        align-items:center;
-        & .app-name{
+        align-items: center;
+
+        & .app-name {
             text-align: center;
-            font-family: 'Marck Script', cursive;
-            color:$darkgreen;
+            font-family: "Marck Script", cursive;
+            color: $darkgreen;
+            background: $lightGreen;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.151), inset 0 -1px 1px rgba(0, 0, 0, 0.103),
+                inset 0 1px 2px rgba(0, 0, 0, 0.089), inset 0 -1px 2px rgba(0, 0, 0, 0.151),
+                inset 0 1px 6px rgba(0, 0, 0, 0.082), inset 0 -1px 6px rgba(0, 0, 0, 0.137);
+            padding: 4px 10px;
+            border-radius: 20px;
         }
     }
 }

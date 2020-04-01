@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import BalloonContextMenu from "../drawPanelElements/BalloonContextMenu";
 export default function Controls({
   createFigure,
@@ -19,40 +19,41 @@ export default function Controls({
     { name: "Ходилка", value: "walker.special/1" }
   ];
   let randomTarget = Math.random();
-  
- 
+
   return (
     <div className="controls-panel">
       <div className="controls-panel-wrapper">
         <div className="control-panel-item">
-          <select id={randomTarget} className="balloon-select"
-          onChange={(e) => {
-            let itemClass = e.target.value;
-            if (itemClass.includes('special')) {
-              createFigure(+itemClass.split('/').pop(), itemClass);
-            } 
-            // else if (itemClass === "number") {
-              
-            //   createFigure(2, itemClass);
-            // } 
-            else {
-              if (balloonsCount >= 3) {
-                createFigure(balloonsCount, itemClass);
-              } else {
-                createFigure(3, itemClass);
-                
+          <select
+            id={randomTarget}
+            className="balloon-select"
+            onChange={e => {
+              let itemClass = e.target.value;
+              if (itemClass.includes("special")) {
+                createFigure(+itemClass.split("/").pop(), itemClass);
               }
-            }
-            setStartValue("");
-            setFigureClass(itemClass);
-          }}>
-            <option value="default" selected disabled hidden>{startValue}</option>
-            {categories.map((item, index) => (  
-                <option key={index} value = {item.value}>
-                  {item.name}
-                </option>
-                
-              
+              // else if (itemClass === "number") {
+
+              //   createFigure(2, itemClass);
+              // }
+              else {
+                if (balloonsCount >= 3) {
+                  createFigure(balloonsCount, itemClass);
+                } else {
+                  createFigure(3, itemClass);
+                }
+              }
+              setStartValue("");
+              setFigureClass(itemClass);
+            }}
+          >
+            <option value="default" selected disabled hidden>
+              {startValue}
+            </option>
+            {categories.map((item, index) => (
+              <option key={index} value={item.value}>
+                {item.name}
+              </option>
             ))}
           </select>
         </div>
@@ -63,16 +64,12 @@ export default function Controls({
                 type="range"
                 disabled={
                   startValue === "Выберите вид композиции" ||
-                  figureClass.includes('special')
+                  figureClass.includes("special")
                 }
                 id="test5"
                 value={balloonsCount}
                 step={figureClass === "cascade" ? 2 : 1}
-                min={
-                  figureClass.includes('special')
-                    ? 1
-                    : 3
-                }
+                min={figureClass.includes("special") ? 1 : 3}
                 max={13}
                 onChange={e => {
                   //setSValue(+e.target.value);
@@ -84,25 +81,33 @@ export default function Controls({
           </form>
         </div>
         <div className="control-panel-item">
-          <a href="#!"
+        
+          <a
+            
             className="waves-effect waves-light btn"
             onClick={() => {
               setStartValue("Выберите вид композиции");
               createFigure(0);
-              document.getElementById(randomTarget).value="default";
+              document.getElementById(randomTarget).value = "default";
             }}
           >
             Очистить
           </a>
         </div>
         <div className="control-panel-item">
-          <a className="waves-effect waves-light btn" href="#!" onClick={saveCart}>
-            Добавить в корзину
+  
+          <a
+            className="waves-effect waves-light btn" 
+            onClick={saveCart}>
+            Заказать
           </a>
+          
         </div>
         <div className="control-panel-item save-btn">
-          <p className="flow-text">Всего: {totalPrice} руб.</p>
+          <p className="flow-text total">Всего: {totalPrice} грн.</p>
         </div>
+       
+
         <div className="control-panel-item">
           <BalloonContextMenu />
         </div>

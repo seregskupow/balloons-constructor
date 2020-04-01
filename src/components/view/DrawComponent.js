@@ -34,15 +34,15 @@ export default function DrawComponent({
         changeBalloonImg={changeBalloonImg}
         
       />
-      <div className="draw-component-wrapper">
-        <div className="plane">
-          <BalloonImgMenu
+       <BalloonImgMenu
             balloonData={balloonData}
             setDisplay={setDisplay}
             display={display}
             category={category}
             changeBalloonImg={changeBalloonImg}
           />
+      <div className="draw-component-wrapper">
+        <div className="plane">
           <div className={`balloons-container ${type}`}>
             {/* {count>0 && Array(+count).fill(<Balloon type={type}/>)} */}
             {/* {Array(13).fill(<Round/>)} */}

@@ -1,20 +1,29 @@
 .controls-panel{
     position: relative;
-    width:90%;
+    width:100%;
     margin: 0 auto;
-    margin-top:20px;
+    margin-top:0px;
     font-family: "Lora", serif!important;
     & .controls-panel-wrapper{
         display:flex;
         flex-wrap: wrap;
         justify-content: center;
         & .control-panel-item{
+            & .total{
+                color:$darkgreen;
+                background:$white;
+                box-shadow: inset  0 1px 1px rgba(0, 0, 0, 0.062),inset  0 -1px 1px rgba(0, 0, 0, 0.082),
+                inset    0 1px 2px rgba(0, 0, 0, 0.061),inset  0 -1px 2px rgba(0, 0, 0, 0.041),
+                inset    0 1px 6px rgba(0, 0, 0, 0.048),inset  0 -1px 6px rgba(0, 0, 0, 0.082);
+                padding:10px;
+                border-radius: 20px;
+            }
             margin: 10px 20px;
             &:nth-child(1){
                 width:100%;
             }
             &:nth-child(2){
-                width:35%;
+                width:70%;
             }
             &:nth-child(3){
                 width:35%;
@@ -24,12 +33,18 @@
 }
 .balloon-select{
     width:100%;
-    background:$maingreen!important;
+    background:$white!important;
+    border-radius:20px;
+    transition: all .3s ease-in-out;
+    box-shadow: $farShadow;
     & option{
       transition: all .3s ease-in-out;
       &:hover{
         background:$maingreen!important;
       }
+    }
+    & ul{
+        border-radius:20px!important;
     }
   }
 .dropdown-content{

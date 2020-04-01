@@ -16,7 +16,21 @@ export default function Balloon({ balloon,setBData }) {
   } else {
     balloonType = <Round />;
   }
- 
+  const findAncestor = (el, cls) => {
+    while ((el = el.parentElement) && !el.classList.contains(cls));
+    return el;
+  };
+  const positionMenu = (el)=>{
+    const drop = document.getElementById(dropdown);
+          drop.style.display = "block";
+          var rect = el.getBoundingClientRect(),
+          container = findAncestor(el,"balloon"),
+          scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          console.log(container.offsetTop);
+          console.log(container.offsetHeight)
+          drop.style.bottom = Math.abs(container.offsetTop-container.offsetHeight)+"px";
+          drop.style.left = container.offsetLeft+"px";
+  }
   return (
     <>
       <div
@@ -25,12 +39,7 @@ export default function Balloon({ balloon,setBData }) {
         data-index={index}
         onClick={e => {
           setBData(balloon)
-          const drop = document.getElementById(dropdown);
-          drop.style.display = "block";
-          var rect = e.target.getBoundingClientRect();
-          console.log(rect);
-          drop.style.top = rect.y+"px";
-          drop.style.left = rect.x+"px";
+          positionMenu(e.target)
         }}
       >
         {balloonType}

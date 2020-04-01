@@ -4,6 +4,7 @@ import { MainContext } from "../context/context";
 //import Balloon from './drawPanelElements/Balloon'
 import Controls from "./view/Controls";
 import DrawComponent from "./view/DrawComponent";
+import OrderMenu from "./view/OrderMenu";
 export default class MainSection extends Component {
   static contextType = MainContext;
   constructor(props) {
@@ -15,7 +16,7 @@ export default class MainSection extends Component {
       cart: [],
       copiedBalloon: { img: "", price: "", id: "" },
       totalPrice: 0,
-      figureClass:""
+      figureClass: ""
     };
     this.createFigure = this.createFigure.bind(this);
     this.deleteBalloon = this.deleteBalloon.bind(this);
@@ -26,7 +27,7 @@ export default class MainSection extends Component {
     this.setFigureClass = this.setFigureClass.bind(this);
   }
   setFigureClass(classToSet) {
-    this.setState({figureClass:classToSet})
+    this.setState({ figureClass: classToSet });
   }
   saveCart() {
     this.setState({ cart: this.state.balloons });
@@ -106,9 +107,11 @@ export default class MainSection extends Component {
   }
   render() {
     return (
-      <section id="app-body" className="grey lighten-5">
-        <NavBar totalPrice={this.state.totalPrice} />
+      <section id="app-body" className="">
+        <div className="bg-curve"></div>
+        <NavBar totalPrice={this.state.totalPrice} />       
         <div className="app-main-container">
+          {/* <OrderMenu /> */}
           <DrawComponent
             figureClass={this.state.figureClass}
             clearBalloonImg={this.clearBalloonImg}
