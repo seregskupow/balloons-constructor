@@ -53,7 +53,7 @@ export default function BalloonImgMenu({
                         src={img.src}
                         alt=""
                         onClick={() => {
-                          changeBalloonImg(index, id, img.src, img.price);
+                          changeBalloonImg(index, img.id, img.src, img.price,category);
                           setDisplay(false);
                         }}
                       />

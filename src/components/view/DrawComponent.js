@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import Balloon from "../drawPanelElements/Balloon";
 import BalloonContextMenu from "../drawPanelElements/BalloonContextMenu";
 import BalloonImgMenu from "../drawPanelElements/BalloonImgMenu";
 import { findAllByDisplayValue } from "@testing-library/react";
+
 export default function DrawComponent({
   type="",
   balloons,
@@ -11,7 +13,8 @@ export default function DrawComponent({
   copyBalloon,
   copiedBalloon,
   clearBalloonImg,
-  figureClass
+  figureClass,
+  orderDisplay
 }) {
   const [balloonData, setBData] = useState({});
   const [display, setDisplay] = useState(false);
@@ -42,7 +45,7 @@ export default function DrawComponent({
             changeBalloonImg={changeBalloonImg}
           />
       <div className="draw-component-wrapper">
-        <div className="plane">
+        <Plane translate={orderDisplay} className="plane">
           <div className={`balloons-container ${type}`}>
             {/* {count>0 && Array(+count).fill(<Balloon type={type}/>)} */}
             {/* {Array(13).fill(<Round/>)} */}
@@ -59,8 +62,11 @@ export default function DrawComponent({
               />
             ))}
           </div>
-        </div>
+        </Plane>
       </div>
     </>
   );
 }
+const Plane = styled.div`
+transform:translateX(${props=>props.translate===true?"-120%":"0%"});
+`;

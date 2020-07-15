@@ -27,7 +27,7 @@ export default function BalloonContextMenu({
       <ul
         id={dropdown}
         className="ball-context-menu"
-        style={{zIndex:"30",display:menuDisplay === false ? `none` : `block`}}
+        style={{zIndex:"30",display:display === false ? `none` : `block`}}
       >
         {img && (
           <>

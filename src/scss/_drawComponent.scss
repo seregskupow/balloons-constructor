@@ -1,9 +1,9 @@
 @mixin left {
-  left: 10%;
+  left: calc(50% - 100px);
   transform: translateX(-50%) rotate(-30deg);
 }
 @mixin right {
-  left: 90%;
+  left: calc(50% + 100px);
   transform: translateX(-50%) rotate(30deg);
 }
 @mixin center {
@@ -11,15 +11,92 @@
   transform: translateX(-50%);
 }
 @mixin f-left {
-  left: 30%;
+  left: calc(50% - 20px);
   transform: translateX(-50%) rotate(-12deg);
 }
 
 @mixin f-right {
-  left: 70%;
+  left: calc(50% + 20px);
   transform: translateX(-50%) rotate(12deg);
 }
+@mixin c-left {
+  left: calc(50% - 30px);
+  transform: translateX(-50%) rotate(-12deg);
+}
 
+@mixin c-right {
+  left: calc(50% + 30px);
+  transform: translateX(-50%) rotate(12deg);
+}
+@mixin yellow {
+  & .cls-1{
+    fill:rgb(190, 140, 0);
+  }
+  & .cls-2{
+    fill:rgb(255, 188, 4);
+  }
+  & .cls-3{
+    fill:rgb(253, 226, 152);
+  }
+}
+@mixin green{
+  & .cls-1{
+    fill:rgb(0, 139, 70) ;
+  }
+  & .cls-2{
+    fill:rgb(0, 190, 95);
+  }
+  & .cls-3{
+    fill:rgb(53, 251, 152);
+  }
+  & ellipse {
+    fill: rgb(56, 160, 120);
+  }
+}
+@mixin blue{
+  & .cls-1{
+    fill:rgb(1, 113, 141);
+  }
+  & .cls-2{
+    fill:rgb(0, 152, 190);
+  }
+  & .cls-3{
+    fill:rgb(102, 224, 255);
+  }
+}
+@mixin pink{
+  & .cls-1{
+    fill:rgb(165, 98, 154);
+  }
+  & .cls-2{
+    fill:rgb(207, 116, 192);
+  }
+  & .cls-3{
+    fill:rgb(228, 172, 218);
+  }
+}
+@mixin red{
+  & .cls-1{
+    fill:rgb(148, 61, 61);
+  }
+  & .cls-2{
+    fill:rgb(197, 80, 80);
+  }
+  & .cls-3{
+    fill:rgb(236, 152, 152);
+  }
+}
+@mixin violet{
+  & .cls-1{
+    fill:rgb(113, 59, 144);
+  }
+  & .cls-2{
+    fill:rgb(154, 80, 197);
+  }
+  & .cls-3{
+    fill:rgb(184, 140, 209);
+  }
+}
 .ball-context-menu {
   background: white;
   border-radius: 20px;
@@ -95,26 +172,17 @@
     width: 100%;
     height: 100%;
     background: white;
-    //border: 2px dotted #2bbbad;
     transition: all 0.3s ease;
     border-radius: 20px;
     box-shadow: $mainShadow;
-    //inset  0 1px 1px rgba(0, 0, 0, 0.062),inset  0 -1px 1px rgba(0, 0, 0, 0.082),
-    //inset    0 1px 2px rgba(0, 0, 0, 0.12),inset  0 -1px 2px rgba(0, 0, 0, 0.109),
-    //inset    0 1px 4px rgba(0,0,0,0.12),inset  0 -1px 4px rgba(0,0,0,0.12);
 
     & .balloons-container {
       position: relative;
       margin: 0 auto;
       width: 40%;
       height: 100%;
-      //border: 2px solid black;
-      //transform:scale(1);
       & .balloon {
-        //max-height: 100px;
-
         position: absolute;
-        //width: 50px;
         left: 50%;
         transform: translateX(-50%);
         &:hover {
@@ -152,115 +220,101 @@
         }
         &:nth-child(1) {
           bottom: 30px;
-          @include center;
           z-index: 7;
-          & ellipse {
-            fill: rgb(83, 83, 202);
-          }
+          @include center;
+          @include yellow;
         }
         &:nth-child(2) {
           bottom: 5px;
-          @include right;
           z-index: 8;
-
-          & ellipse {
-            fill: rgb(56, 160, 120);
-          }
+          @include right;
+          @include green;
+          
         }
         &:nth-child(3) {
           bottom: 5px;
           @include left;
+          @include blue;
           z-index: 8;
-          & ellipse {
-            fill: rgb(195, 147, 84);
-          }
         }
         &:nth-child(4) {
-          bottom: 100px;
+          bottom: 130px;
           @include center;
+          @include violet;
           z-index: 5;
-          & ellipse {
-            fill: rgb(185, 75, 167);
-          }
         }
         &:nth-child(5) {
-          bottom: 75px;
+          bottom: 105px;
           @include right;
+          @include blue;
           z-index: 6;
-          & ellipse {
-            fill: rgb(143, 194, 114);
-          }
         }
         &:nth-child(6) {
-          bottom: 75px;
+          bottom: 105px;
           @include left;
+          @include green;
           z-index: 6;
-          & ellipse {
-            fill: rgb(70, 181, 185);
-          }
         }
         &:nth-child(7) {
-          bottom: 170px;
+          bottom: 200px;
           @include center;
+          @include pink;
           z-index: 3;
-          & ellipse {
-            fill: rgb(87, 167, 163);
-          }
         }
         &:nth-child(8) {
-          bottom: 150px;
+          bottom: 180px;
           @include right;
+          @include red;
           z-index: 4;
-          & ellipse {
-            fill: rgb(168, 103, 163);
-          }
         }
         &:nth-child(9) {
-          bottom: 150px;
+          bottom: 180px;
           @include left;
+          @include red;
           z-index: 4;
-          & ellipse {
-            fill: rgb(182, 118, 118);
-          }
         }
         &:nth-child(10) {
-          bottom: 240px;
+          bottom: 270px;
           @include center;
+          @include green;
           z-index: 1;
-          & ellipse {
-            fill: rgb(74, 170, 74);
-          }
         }
         &:nth-child(11) {
-          bottom: 215px;
+          bottom: 245px;
           @include right;
+          @include blue;
           z-index: 2;
-          & ellipse {
-            fill: rgb(76, 102, 158);
-          }
         }
         &:nth-child(12) {
-          bottom: 215px;
+          bottom: 245px;
           @include left;
+          @include yellow;
           z-index: 2;
-          & ellipse {
-            fill: rgb(75, 153, 86);
-          }
         }
         &:nth-child(13) {
-          bottom: 310px;
+          bottom: 340px;
           @include center;
+          @include pink;
           z-index: 0;
-          & ellipse {
-            fill: rgb(184, 81, 137);
-          }
+        }
+        &:nth-child(14) {
+          bottom: 340px;
+          @include right;
+          @include violet;
+          z-index: 0;
+        }
+        &:nth-child(15) {
+          bottom: 340px;
+          @include left;
+          @include red;
+          z-index: 0;
         }
       }
     }
     & .fontaine {
       & .balloon {
         & svg {
-          height: 160px;
+          height: 80px;
         }
         & ellipse:hover {
           fill: red !important;
@@ -277,243 +331,232 @@
         &:nth-child(1) {
           bottom: 0px;
           @include f-left;
+          @include blue;
           z-index: 13;
-          & ellipse {
-            fill: rgb(83, 83, 202);
-          }
+
         }
         &:nth-child(2) {
           bottom: 30px;
           @include f-right;
+          @include green;
           z-index: 12;
-
-          & ellipse {
-            fill: rgb(56, 160, 120);
-          }
         }
         &:nth-child(3) {
           bottom: 60px;
           @include f-left;
+          @include yellow;
           z-index: 11;
-          & ellipse {
-            fill: rgb(195, 147, 84);
-          }
         }
         &:nth-child(4) {
           bottom: 90px;
           @include f-right;
+          @include pink;
           z-index: 10;
-          & ellipse {
-            fill: rgb(185, 75, 167);
-          }
         }
         &:nth-child(5) {
           bottom: 120px;
           @include f-left;
+          @include red;
           z-index: 9;
-          & ellipse {
-            fill: rgb(143, 194, 114);
-          }
         }
         &:nth-child(6) {
           bottom: 150px;
           @include f-right;
+          @include blue;
           z-index: 8;
-          & ellipse {
-            fill: rgb(70, 181, 185);
-          }
         }
         &:nth-child(7) {
           bottom: 180px;
           @include f-left;
+          @include green;
           z-index: 7;
-          & ellipse {
-            fill: rgb(87, 167, 163);
-          }
         }
         &:nth-child(8) {
           bottom: 210px;
           @include f-right;
+          @include pink;
           z-index: 6;
-          & ellipse {
-            fill: rgb(168, 103, 163);
-          }
         }
         &:nth-child(9) {
           bottom: 240px;
           @include f-left;
+          @include yellow;
           z-index: 5;
-          & ellipse {
-            fill: rgb(182, 118, 118);
-          }
         }
         &:nth-child(10) {
           bottom: 270px;
           @include f-right;
+          @include violet;
           z-index: 4;
-          & ellipse {
-            fill: rgb(74, 170, 74);
-          }
         }
         &:nth-child(11) {
           bottom: 300px;
           @include f-left;
+          @include green;
           z-index: 3;
-          & ellipse {
-            fill: rgb(76, 102, 158);
-          }
         }
         &:nth-child(12) {
           bottom: 330px;
           @include f-right;
+          @include blue;
           z-index: 2;
-          & ellipse {
-            fill: rgb(75, 153, 86);
-          }
         }
         &:nth-child(13) {
           bottom: 360px;
           @include f-left;
+          @include pink;
           z-index: 1;
-          & ellipse {
-            fill: rgb(5, 5, 5);
-          }
+        }
+        &:nth-child(14) {
+          bottom: 390px;
+          @include f-right;
+          @include red;
+          z-index: 1;
+        }
+        &:nth-child(15) {
+          bottom: 430px;
+          @include blue;
+          z-index: 0;
         }
       }
     }
     & .cascade {
       & .balloon {
         & svg {
-          height: 160px;
+          height: 100px;
         }
         & ellipse:hover {
           fill: red !important;
           cursor: pointer;
           //transform:translateZ(30px);
         }
-        &:last-child(2) {
-          left: 50% !important;
-          transform: translateX(-50%) !important;
+       &:nth-last-child(){
+          left:50%!important;
+          transform: translateX(-50%)!important;
           & ellipse {
-            fill: rgb(0, 2, 1) !important;
+            fill: rgb(0, 2, 1)!important;
           }
         }
         &:nth-child(1) {
           bottom: 0px;
-          @include f-left;
+          @include c-left;
+          @include blue;
           z-index: 13;
-          & ellipse {
-            fill: rgb(83, 83, 202);
-          }
+
         }
         &:nth-child(2) {
-          bottom: 30px;
-          @include f-right;
+          bottom: 10px;
+          @include c-right;
+          @include green;
           z-index: 12;
-
-          & ellipse {
-            fill: rgb(56, 160, 120);
-          }
         }
         &:nth-child(3) {
-          bottom: 60px;
-          @include f-left;
+          bottom: 70px;
+          @include c-left;
+          @include yellow;
           z-index: 11;
-          & ellipse {
-            fill: rgb(195, 147, 84);
-          }
         }
         &:nth-child(4) {
-          bottom: 90px;
-          @include f-right;
+          bottom: 60px;
+          @include c-right;
+          @include pink;
           z-index: 10;
-          & ellipse {
-            fill: rgb(185, 75, 167);
-          }
         }
         &:nth-child(5) {
           bottom: 120px;
-          @include f-left;
+          @include c-left;
+          @include red;
           z-index: 9;
-          & ellipse {
-            fill: rgb(143, 194, 114);
-          }
         }
         &:nth-child(6) {
-          bottom: 150px;
-          @include f-right;
+          bottom: 130px;
+          @include c-right;
+          @include blue;
           z-index: 8;
-          & ellipse {
-            fill: rgb(70, 181, 185);
-          }
         }
         &:nth-child(7) {
-          bottom: 180px;
-          @include f-left;
+          bottom: 190px;
+          @include c-left;
+          @include green;
           z-index: 7;
-          & ellipse {
-            fill: rgb(87, 167, 163);
-          }
         }
         &:nth-child(8) {
-          bottom: 210px;
-          @include f-right;
+          bottom: 180px;
+          @include c-right;
+          @include pink;
           z-index: 6;
-          & ellipse {
-            fill: rgb(168, 103, 163);
-          }
         }
         &:nth-child(9) {
           bottom: 240px;
-          @include f-left;
+          @include c-left;
+          @include yellow;
           z-index: 5;
-          & ellipse {
-            fill: rgb(182, 118, 118);
-          }
         }
         &:nth-child(10) {
-          bottom: 270px;
-          @include f-right;
+          bottom: 230px;
+          @include c-right;
+          @include violet;
           z-index: 4;
-          & ellipse {
-            fill: rgb(74, 170, 74);
-          }
         }
         &:nth-child(11) {
-          bottom: 300px;
-          @include f-left;
+          bottom: 290px;
+          @include c-left;
+          @include green;
           z-index: 3;
-          & ellipse {
-            fill: rgb(76, 102, 158);
-          }
         }
         &:nth-child(12) {
-          bottom: 330px;
-          @include f-right;
+          bottom: 300px;
+          @include c-right;
+          @include blue;
           z-index: 2;
-          & ellipse {
-            fill: rgb(75, 153, 86);
-          }
         }
         &:nth-child(13) {
           bottom: 360px;
-          @include f-left;
+          @include c-left;
+          @include pink;
           z-index: 1;
-          & ellipse {
-            fill: rgb(149, 0, 0);
-          }
+        }
+        &:nth-child(14) {
+          bottom: 350px;
+          @include c-right;
+          @include red;
+          z-index: 1;
+        }
+        &:nth-child(15) {
+          bottom: 430px;
+          @include blue;
+          z-index: 0;
         }
       }
     }
-    & .figure,
+  
+    & .figure{
+      & .balloon {
+      @include center;
+        top: 30%;
+        & svg {
+          height: 300px;
+        }
+
+      }
+    }
     & .numeral {
       & .balloon {
         @include center;
         top: 30%;
         & svg {
           height: 260px;
+          & .cls-2{
+            fill:rgb(165, 98, 154);
+          }
+          & .cls-3{
+            fill:rgb(207, 116, 192);
+          }
+          & .cls-4{
+            fill:rgb(228, 172, 218);
+          }
           & path {
-            fill: pink;
+            // fill: pink;
           }
         }
       }
@@ -524,9 +567,7 @@
         top: 50%;
         & svg {
           height: 260px;
-          & path {
-            fill: pink;
-          }
+          
         }
       }
     }
@@ -538,10 +579,21 @@
           height: 210px;
 
           & path {
-            fill: rgb(94, 255, 0);
+            // fill: rgb(94, 255, 0);
           }
         }
         &:nth-child(1) {
+          & svg {
+            & .cls-2{
+              fill:rgb(1, 113, 141);
+            }
+            & .cls-3{
+              fill:rgb(21, 185, 226);
+            }
+            & .cls-4{
+              fill:rgb(102, 224, 255);
+            }
+          }
           left: 10%;
         }
         &:nth-child(2) {

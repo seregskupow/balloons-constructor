@@ -1,7 +1,7 @@
 import React, {useContext } from "react";
-import { ReactComponent as Round } from "../../data/samplesImgs/round.svg";
-import { ReactComponent as Number } from "../../data/samplesImgs/number.svg";
-import { ReactComponent as Figure } from "../../data/samplesImgs/figure.svg";
+import { ReactComponent as Round } from "../../data/samplesImgs/ball.svg";
+import { ReactComponent as Number } from "../../data/samplesImgs/num.svg";
+import { ReactComponent as Figure } from "../../data/samplesImgs/pony.svg";
 import { MainContext } from '../../context/context'
 export default function Balloon({ balloon,setBData }) {
   const {img,index,type=""} = balloon;
@@ -9,13 +9,16 @@ export default function Balloon({ balloon,setBData }) {
   let balloonType;
   if (type.includes("number") || type.includes("numeral")) {
     balloonType = <Number />;
-  } else if (type.includes("figure") || type.includes("walker")) {
+  } else if (type.includes("figure") || type.includes("walker")) {   
     balloonType = <Figure />;
-  } else if (img !== "") {
-    balloonType = <img className="balloon-img" alt="ballon-img" src={img} height="160px" />;
   } else {
     balloonType = <Round />;
   }
+  if (img!=="") {
+    balloonType = <img className="balloon-img" alt="ballon-img" src={img} height="160px" />;
+  } 
+ 
+
   const findAncestor = (el, cls) => {
     while ((el = el.parentElement) && !el.classList.contains(cls));
     return el;
@@ -26,8 +29,6 @@ export default function Balloon({ balloon,setBData }) {
           var rect = el.getBoundingClientRect(),
           container = findAncestor(el,"balloon"),
           scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          console.log(container.offsetTop);
-          console.log(container.offsetHeight)
           drop.style.bottom = Math.abs(container.offsetTop-container.offsetHeight)+"px";
           drop.style.left = container.offsetLeft+"px";
   }

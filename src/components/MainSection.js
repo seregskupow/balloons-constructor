@@ -5,6 +5,7 @@ import { MainContext } from "../context/context";
 import Controls from "./view/Controls";
 import DrawComponent from "./view/DrawComponent";
 import OrderMenu from "./view/OrderMenu";
+import menuEvent from '../additional/script'
 export default class MainSection extends Component {
   static contextType = MainContext;
   constructor(props) {
@@ -16,7 +17,8 @@ export default class MainSection extends Component {
       cart: [],
       copiedBalloon: { img: "", price: "", id: "" },
       totalPrice: 0,
-      figureClass: ""
+      figureClass: "",
+      orderDisplay:false
     };
     this.createFigure = this.createFigure.bind(this);
     this.deleteBalloon = this.deleteBalloon.bind(this);
@@ -25,6 +27,12 @@ export default class MainSection extends Component {
     this.copyBalloon = this.copyBalloon.bind(this);
     this.clearBalloonImg = this.clearBalloonImg.bind(this);
     this.setFigureClass = this.setFigureClass.bind(this);
+    this.orderHandle = this.orderHandle.bind(this);
+    this.setOrderDisplay = this.setOrderDisplay.bind(this);
+    this.clearAll = this.clearAll.bind(this);
+  }
+  componentDidMount(){
+    menuEvent();
   }
   setFigureClass(classToSet) {
     this.setState({ figureClass: classToSet });
@@ -50,6 +58,7 @@ export default class MainSection extends Component {
     } else {
       balloons = [];
       legitCount = 0;
+      price = 0;
     }
     if (count > legitCount) {
       for (let i = legitCount; i < count; i++) {
@@ -90,6 +99,7 @@ export default class MainSection extends Component {
       addPrice = price;
     }
     balloons[itemIndex] = shouldChange;
+    console.log(balloons)
     this.setState({ balloons, totalPrice: this.state.totalPrice + addPrice });
   }
   deleteBalloon(index) {
@@ -105,13 +115,30 @@ export default class MainSection extends Component {
   copyBalloon(id, img, price, type) {
     this.setState({ copiedBalloon: { img, price, id, type } });
   }
+  setOrderDisplay(){
+    this.setState({orderDisplay:!this.state.orderDisplay})
+  }
+  orderHandle(){
+  let checkIfEmptyBalloon = this.state.balloons.filter(item=>item.img==="");
+  if(checkIfEmptyBalloon.length>0 || this.state.balloons.length===0){
+    alert('Виберите все шарики');
+  }
+  
+  else{
+    this.setOrderDisplay();
+  }
+  }
+  clearAll(){
+    this.createFigure(0);
+    this.setState({copiedBalloon:{ img: "", price: "", id: "" }})
+  }
   render() {
     return (
       <section id="app-body" className="">
         <div className="bg-curve"></div>
         <NavBar totalPrice={this.state.totalPrice} />       
         <div className="app-main-container">
-          {/* <OrderMenu /> */}
+          <OrderMenu setOrderDisplay={this.setOrderDisplay} clearAll={this.clearAll} type={this.state.type} totalPrice={this.state.totalPrice} orderDisplay={this.state.orderDisplay} balloons={this.state.balloons}/>
           <DrawComponent
             figureClass={this.state.figureClass}
             clearBalloonImg={this.clearBalloonImg}
@@ -121,6 +148,7 @@ export default class MainSection extends Component {
             deleteBalloon={this.deleteBalloon}
             balloons={this.state.balloons}
             type={this.state.type}
+            orderDisplay={this.state.orderDisplay}
           />
           <Controls
             figureClass={this.state.figureClass}
@@ -129,6 +157,7 @@ export default class MainSection extends Component {
             totalPrice={this.state.totalPrice}
             saveCart={this.saveCart}
             createFigure={this.createFigure}
+            orderHandler={this.orderHandle}
           />
         </div>
       </section>

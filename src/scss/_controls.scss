@@ -4,11 +4,28 @@
     margin: 0 auto;
     margin-top:0px;
     font-family: "Lora", serif!important;
+    pointer-events:auto;
     & .controls-panel-wrapper{
         display:flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
         & .control-panel-item{
+            display:flex;
+            justify-content: center;
+            & a{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            
+                & .control-item-icon{
+                    height: 100%;
+                    display: inline-flex;
+                    align-items: center;
+                    font-size: 20px;
+                    
+    
+                }
+            }
             & .total{
                 color:$darkgreen;
                 background:$white;
@@ -20,19 +37,24 @@
             }
             margin: 10px 20px;
             &:nth-child(1){
-                width:100%;
+                
             }
             &:nth-child(2){
-                width:70%;
+                & form{
+                    width:80%;
+                }
             }
             &:nth-child(3){
-                width:35%;
+                justify-content: space-around;
+            }
+            &:nth-child(4){
+                
             }
         }
     }
 }
 .balloon-select{
-    width:100%;
+    width:90%;
     background:$white!important;
     border-radius:20px;
     transition: all .3s ease-in-out;
