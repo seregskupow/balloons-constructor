@@ -6,17 +6,17 @@
                 "imgs": [
                     {
                         "id": "12583",
-                        "src": "https://sharograf.ru/images/sempertex-r12-005.png",
+                        "src": "https://i.imgur.com/qpLv4g3.jpeg",
                         "price":200
                     },
                     {
                         "id": "86315",
-                        "src": "https://sharograf.ru/images/sempertex-r12-009.png",
+                        "src": "https://i.imgur.com/qpLv4g3.jpeg",
                         "price":205
                     },
                     {
                         "id": "84521",
-                        "src": "https://sharograf.ru/images/sempertex-r12-020.png",
+                        "src": "https://i.imgur.com/qpLv4g3.jpeg",
                         "price":300
                     },
                     {
@@ -115,35 +115,7 @@
             }
         ]
     },
-    "sphere18": {
-        "categories": [
-            {
-                "categoryName": "standart",
-                "imgs": [
-                    {
-                        "id": "01254",
-                        "src": "https://sharograf.ru/images/bubble-r18-007.png",
-                        "price":258
-                    },
-                    {
-                        "id": "05786",
-                        "src": "https://sharograf.ru/images/bubble-r18-009.png",
-                        "price":212
-                    },
-                    {
-                        "id": "75204",
-                        "src": "https://sharograf.ru/images/bubble-r18-102.png",
-                        "price":235
-                    },
-                    {
-                        "id": "63257",
-                        "src": "https://sharograf.ru/images/bubble-r18-105.png",
-                        "price":325
-                    }
-                ]
-            }
-        ]
-    },
+    
     "foil18": {
         "categories": [
             {

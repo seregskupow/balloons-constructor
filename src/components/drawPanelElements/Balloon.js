@@ -17,8 +17,6 @@ export default function Balloon({ balloon,setBData }) {
   if (img!=="") {
     balloonType = <img className="balloon-img" alt="ballon-img" src={img} height="160px" />;
   } 
- 
-
   const findAncestor = (el, cls) => {
     while ((el = el.parentElement) && !el.classList.contains(cls));
     return el;
@@ -26,11 +24,25 @@ export default function Balloon({ balloon,setBData }) {
   const positionMenu = (el)=>{
     const drop = document.getElementById(dropdown);
           drop.style.display = "block";
-          var rect = el.getBoundingClientRect(),
+          let rect = el.getBoundingClientRect(),
           container = findAncestor(el,"balloon"),
+          menuParent = findAncestor(drop,"app-main-container"),
           scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          drop.style.bottom = Math.abs(container.offsetTop-container.offsetHeight)+"px";
-          drop.style.left = container.offsetLeft+"px";
+          console.log(menuParent.offsetHeight)
+          let posTop = Math.abs(container.offsetTop+320),
+          posLR = container.offsetLeft,
+          differenceTop = menuParent.offsetHeight-posTop,
+          differenceLR = menuParent.offsetWidth - posLR;
+          console.log({posLR,differenceLR})
+          if(differenceTop<drop.offsetHeight){
+            posTop-=drop.offsetHeight-differenceTop+15;
+          }
+          if(differenceLR<drop.offsetWidth){
+            posLR-=drop.offsetWidth-differenceLR+15;
+          }
+          console.log(posLR)
+          drop.style.top = posTop+"px";
+          drop.style.left = posLR+"px";
   }
   return (
     <>

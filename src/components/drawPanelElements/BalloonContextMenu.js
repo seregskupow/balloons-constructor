@@ -22,6 +22,12 @@ export default function BalloonContextMenu({
   }else{
     menuToRender = balloonCategories.filter(item=>!item.type.includes('special') || item.type.includes('standart'))
   }
+  let unavailableStyle = {
+    color:"white",
+    background:"#fa7c73",
+    textDecoration:"line-through",
+    pointerEvents:"none"
+  }
   return (
     <>
       <ul
@@ -60,8 +66,8 @@ export default function BalloonContextMenu({
         {menuToRender.map(item => (
           <>
             <li
-              //class="collection-item"
-              onClick={() => {
+              style={balloonsImages[item.type.split('.').shift()]===undefined?unavailableStyle:null}
+              onClick={(e) => {
                 if(balloonsImages[item.type.split('.').shift()]!==undefined){
                   if (category === item.type) {
                     setDisplay(!display);
@@ -70,11 +76,10 @@ export default function BalloonContextMenu({
                   }
                   setCategory(item.type);
                 }
-                
               }}
               type={item.type}
             >
-              <p>{item.name}</p> 
+              <p style={{color:balloonsImages[item.type.split('.').shift()]===undefined?"white":null}}>{item.name}</p> 
             </li>
             <li className="divider" tabIndex="-1"></li>
           </>
@@ -84,7 +89,7 @@ export default function BalloonContextMenu({
             setDisplay(false);
           }}
         >
-          <p>Закрыть</p> 
+          <p>Закрити</p> 
         </li>
       </ul>
     </>

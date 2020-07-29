@@ -16,14 +16,22 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-            
+                &:nth-child(1){
+                    & .control-item-icon{
+                        color:#fa7c73;
+                    }
+                }
+                &:nth-child(2){
+                    & .control-item-icon{
+                        color:#facf73;
+                    }
+                }
                 & .control-item-icon{
                     height: 100%;
                     display: inline-flex;
                     align-items: center;
                     font-size: 20px;
                     
-    
                 }
             }
             & .total{

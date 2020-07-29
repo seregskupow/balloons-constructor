@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import {MdClear} from 'react-icons/md'
-import {FiShoppingCart} from 'react-icons/fi'
+import React, { useState, useContext } from "react";
+import { MdClear } from "react-icons/md";
+import { FiShoppingCart } from "react-icons/fi";
 import BalloonContextMenu from "../drawPanelElements/BalloonContextMenu";
+import html2canvas from "html2canvas";
+import { MainContext } from "../../context/context";
 export default function Controls({
   createFigure,
   saveCart,
@@ -9,9 +11,10 @@ export default function Controls({
   balloonsCount,
   figureClass,
   setFigureClass,
-  orderHandler
+  orderHandler,
 }) {
   const [startValue, setStartValue] = useState("Оберіть вид композиції");
+  const { dropdown } = useContext(MainContext);
   const categories = [
     { name: "Букет", value: "bouquet" },
     { name: "Каскад", value: "cascade" },
@@ -19,7 +22,7 @@ export default function Controls({
     { name: "Фигура", value: "figure.special/1" },
     { name: "Цифра", value: "numeral.special&standart/1" },
     { name: "Число", value: "number.special/2" },
-    { name: "Ходилка", value: "walker.special/1" }
+    { name: "Ходилка", value: "walker.special/1" },
   ];
   let randomTarget = Math.random();
   const clearBalloons = () => {
@@ -27,7 +30,7 @@ export default function Controls({
     createFigure(0);
     document.getElementById(randomTarget).value = "default";
   };
-  const selectChangeHandler = e => {
+  const selectChangeHandler = (e) => {
     let itemClass = e.target.value;
     if (itemClass.includes("special")) {
       createFigure(+itemClass.split("/").pop(), itemClass);
@@ -41,6 +44,8 @@ export default function Controls({
     setStartValue("");
     setFigureClass(itemClass);
   };
+  const renderImage = () => {};
+  setTimeout(renderImage, 10000);
   return (
     <div className="controls-panel">
       <div className="controls-panel-wrapper">
@@ -48,7 +53,7 @@ export default function Controls({
           <select
             id={randomTarget}
             className="balloon-select"
-            onChange={e => selectChangeHandler(e)}
+            onChange={(e) => selectChangeHandler(e)}
           >
             <option value="default" selected disabled hidden>
               {startValue}
@@ -71,11 +76,11 @@ export default function Controls({
                 }
                 id="test5"
                 value={balloonsCount}
-                //figureClass === "cascade" ? 2 : 
+                //figureClass === "cascade" ? 2 :
                 step={1}
                 min={figureClass.includes("special") ? 1 : 3}
-                max={15}
-                onChange={e => {
+                max={31}
+                onChange={(e) => {
                   //setSValue(+e.target.value);
                   createFigure(+e.target.value, figureClass);
                 }}
@@ -89,13 +94,45 @@ export default function Controls({
             className="waves-effect waves-light btn flow-text"
             onClick={clearBalloons}
           >
-            Очистити <span className="control-item-icon"><MdClear/></span>
+            Очистити{" "}
+            <span className="control-item-icon">
+              <MdClear />
+            </span>
           </a>
           <a
-            className="waves-effect waves-light btn flow-text"
-            onClick={orderHandler}
+            className={`waves-effect waves-light btn flow-text`}
+            id={`canv${+dropdown.replace(/^\D+/g, "")}`}
+            onClick={async () => {
+              document.querySelector(
+                `#plane${+dropdown.replace(/^\D+/g, "")}`
+              ).style.boxShadow = "none";
+              let elem =  document.getElementById(
+                `plane${+dropdown.replace(/^\D+/g, "")}`
+              );
+              await html2canvas(
+               elem,
+                {
+                  useCORS: true,
+                  logging: true,
+                  scrollY: (window.pageYOffset+30) * -1,
+                  width:elem.offsetWidth,
+                  height:elem.offsetHeight
+                  
+                }
+              ).then(function (canvas) {
+                let imgURL = canvas.toDataURL();
+                console.log(imgURL);
+              });
+              document.querySelector(
+                `#plane${+dropdown.replace(/^\D+/g, "")}`
+              ).style.boxShadow =
+                "0 6px 15px rgba(0, 0, 0, 0.068), 0 6px 15px rgba(0, 0, 0, 0.054)";
+            }}
           >
-            Замовити <span className="control-item-icon"><FiShoppingCart/></span> 
+            Замовити{" "}
+            <span className="control-item-icon">
+              <FiShoppingCart />
+            </span>
           </a>
         </div>
         <div className="control-panel-item save-btn">
