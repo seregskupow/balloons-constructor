@@ -1,3 +1,4 @@
 {
-    "url":"http://185.157.76.4/sharlar-shop/index.php?route=api/product"
+    "url":"http://185.157.76.4/sharlar-shop/index.php?route=api/product",
+    "sendOrder":"http://reco.fun:8080/sharlar-shop/index.php?route=api/cart/addimg"
 }

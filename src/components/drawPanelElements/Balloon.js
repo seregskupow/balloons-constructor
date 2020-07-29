@@ -28,21 +28,18 @@ export default function Balloon({ balloon,setBData }) {
           container = findAncestor(el,"balloon"),
           menuParent = findAncestor(drop,"app-main-container"),
           scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          console.log(menuParent.offsetHeight)
           let posTop = Math.abs(container.offsetTop+320),
           posLR = container.offsetLeft,
           differenceTop = menuParent.offsetHeight-posTop,
           differenceLR = menuParent.offsetWidth - posLR;
-          console.log({posLR,differenceLR})
           if(differenceTop<drop.offsetHeight){
             posTop-=drop.offsetHeight-differenceTop+15;
           }
           if(differenceLR<drop.offsetWidth){
-            posLR-=drop.offsetWidth-differenceLR+15;
+            posLR-=drop.offsetWidth-differenceLR;
           }
-          console.log(posLR)
           drop.style.top = posTop+"px";
-          drop.style.left = posLR+"px";
+          drop.style.left = posLR+15+"px";
   }
   return (
     <>

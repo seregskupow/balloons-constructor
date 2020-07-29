@@ -13,14 +13,13 @@ function App({dropdown}) {
   const [data,setData] = useState("empty")
   useEffect(() => {
     const getData = async ()=>{
-      // setData(await parseOC());
-      setData(balloonsImages)
+     setData(await parseOC());
+      //setData(balloonsImages)
       
     }
     getData();
   }, []);
   if(data!=="empty"){  
-    console.log(data)
     return (
       <MainContext.Provider value={{
         balloonsImages:data, balloonCategories,dropdown

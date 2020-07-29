@@ -99,7 +99,6 @@ export default class MainSection extends Component {
       addPrice = price;
     }
     balloons[itemIndex] = shouldChange;
-    console.log(balloons)
     this.setState({ balloons, totalPrice: this.state.totalPrice + addPrice });
   }
   deleteBalloon(index) {
@@ -122,10 +121,12 @@ export default class MainSection extends Component {
   let checkIfEmptyBalloon = this.state.balloons.filter(item=>item.img==="");
   if(checkIfEmptyBalloon.length>0 || this.state.balloons.length===0){
     alert('Виберите все шарики');
+    return false;
   }
   
   else{
-    this.setOrderDisplay();
+    // this.setOrderDisplay();
+    return true
   }
   }
   clearAll(){

@@ -28,7 +28,6 @@ export default function DrawComponent({
     if(balloons.length>19){
       let num = balloons.length-19;
       if(num%3===0){
-        console.log({num})
         return 800+num*30
       }
     }else{

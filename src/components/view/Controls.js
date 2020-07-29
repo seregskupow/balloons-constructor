@@ -4,6 +4,8 @@ import { FiShoppingCart } from "react-icons/fi";
 import BalloonContextMenu from "../drawPanelElements/BalloonContextMenu";
 import html2canvas from "html2canvas";
 import { MainContext } from "../../context/context";
+import sendOrder from '../../additional/sendOrderToOP';
+import styled from 'styled-components';
 export default function Controls({
   createFigure,
   saveCart,
@@ -14,6 +16,7 @@ export default function Controls({
   orderHandler,
 }) {
   const [startValue, setStartValue] = useState("Оберіть вид композиції");
+  const [showPop, setShowPop] = useState(false);
   const { dropdown } = useContext(MainContext);
   const categories = [
     { name: "Букет", value: "bouquet" },
@@ -24,7 +27,7 @@ export default function Controls({
     { name: "Число", value: "number.special/2" },
     { name: "Ходилка", value: "walker.special/1" },
   ];
-  let randomTarget = Math.random();
+  let randomTarget = Math.floor(Math.random() * (999999 - 10000 + 1)) + 10000;
   const clearBalloons = () => {
     setStartValue("Оберіть вид композиції");
     createFigure(0);
@@ -44,10 +47,57 @@ export default function Controls({
     setStartValue("");
     setFigureClass(itemClass);
   };
-  const renderImage = () => {};
-  setTimeout(renderImage, 10000);
+  const renderImage = async () => {
+    try{
+      document.querySelector(
+        `#plane${+dropdown.replace(/^\D+/g, "")}`
+      ).style.boxShadow = "none";
+      let elem =  document.getElementById(
+        `plane${+dropdown.replace(/^\D+/g, "")}`
+      );
+      await html2canvas(
+       elem,
+        {
+          useCORS: true,
+          logging: true,
+          scrollY: (window.pageYOffset+30) * -1,
+          width:elem.offsetWidth,
+          height:elem.offsetHeight,
+          scrollX:0
+          
+        }
+      ).then(function (canvas) {
+        let imgURL = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+        console.log(imgURL);
+        var a = document.createElement('a');
+        a.href = imgURL;
+        a.download = 'Композиція.jpg';
+        a.click();
+      });
+      document.querySelector(
+        `#plane${+dropdown.replace(/^\D+/g, "")}`
+      ).style.boxShadow =
+        "0 6px 15px rgba(0, 0, 0, 0.068), 0 6px 15px rgba(0, 0, 0, 0.054)";
+        setShowPop(true)
+        setTimeout(()=>{setShowPop(false)},10000)
+    }catch(e){
+      alert('Нажаль виникла помилка')
+    }
+    
+      
+  };
+  const managePopup = ()=>{
+
+  }
   return (
     <div className="controls-panel">
+      <Popup show = {showPop} className={`popup popup${randomTarget}`}>
+        <div className="popup-wrapper">
+          <p>Ваше замовлення додане до корзини</p>
+          <p>Перейдіть у Каталог та відкрийте кошик</p>
+          <a onClick={()=>setShowPop(false)}className="waves-effect waves-light btn flow-text">Закрити</a>
+        </div>
+      </Popup>
       <div className="controls-panel-wrapper">
         <div className="control-panel-item">
           <select
@@ -102,32 +152,7 @@ export default function Controls({
           <a
             className={`waves-effect waves-light btn flow-text`}
             id={`canv${+dropdown.replace(/^\D+/g, "")}`}
-            onClick={async () => {
-              document.querySelector(
-                `#plane${+dropdown.replace(/^\D+/g, "")}`
-              ).style.boxShadow = "none";
-              let elem =  document.getElementById(
-                `plane${+dropdown.replace(/^\D+/g, "")}`
-              );
-              await html2canvas(
-               elem,
-                {
-                  useCORS: true,
-                  logging: true,
-                  scrollY: (window.pageYOffset+30) * -1,
-                  width:elem.offsetWidth,
-                  height:elem.offsetHeight
-                  
-                }
-              ).then(function (canvas) {
-                let imgURL = canvas.toDataURL();
-                console.log(imgURL);
-              });
-              document.querySelector(
-                `#plane${+dropdown.replace(/^\D+/g, "")}`
-              ).style.boxShadow =
-                "0 6px 15px rgba(0, 0, 0, 0.068), 0 6px 15px rgba(0, 0, 0, 0.054)";
-            }}
+            onClick={()=>{if(orderHandler()=== true) {renderImage();clearBalloons()}}}
           >
             Замовити{" "}
             <span className="control-item-icon">
@@ -146,3 +171,6 @@ export default function Controls({
     </div>
   );
 }
+const Popup = styled.div`
+top:${props=>props.show === true?"10px":"-100%"}
+`;

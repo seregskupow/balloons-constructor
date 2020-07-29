@@ -8,13 +8,14 @@
 @import "balloonsCompositions";
 @import "contextMenu";
 @import "orderMenu";
-
+@import "utils";
 ////////////////////////App-body//////////////////
 select {
     display: block !important;
 }
 body {
     position: relative;
+    overflow-x:hidden;
     & .ball-context-menu {
         position: absolute;
     }

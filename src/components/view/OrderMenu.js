@@ -70,7 +70,6 @@ export default function OrderMenu({
     zIndex:'3'
   };
   useEffect(() => {
-    console.log(balloons);
   }, [balloons]);
   return (
     <OrderMenuComponent display={orderDisplay} className="order-menu">
