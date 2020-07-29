@@ -4,7 +4,7 @@ export default async function(balloons,img){
     try{    
         let promises =[];
         balloons.map(balloon=>{
-            promises.push(sendBalloon(balloon.product_id,1))
+            promises.push(sendBalloon(balloon.id,1))
         })
         Promise.all(promises).then(()=>{
             const imgData = new FormData();

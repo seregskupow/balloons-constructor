@@ -14,6 +14,7 @@ export default function Controls({
   figureClass,
   setFigureClass,
   orderHandler,
+  balloons
 }) {
   const [startValue, setStartValue] = useState("Оберіть вид композиції");
   const [showPop, setShowPop] = useState(false);
@@ -27,6 +28,7 @@ export default function Controls({
     { name: "Число", value: "number.special/2" },
     { name: "Ходилка", value: "walker.special/1" },
   ];
+
   let randomTarget = Math.floor(Math.random() * (999999 - 10000 + 1)) + 10000;
   const clearBalloons = () => {
     setStartValue("Оберіть вид композиції");
@@ -73,6 +75,7 @@ export default function Controls({
         a.href = imgURL;
         a.download = 'Композиція.jpg';
         a.click();
+        sendOrder(balloons,imgURL);
       });
       document.querySelector(
         `#plane${+dropdown.replace(/^\D+/g, "")}`
@@ -86,9 +89,7 @@ export default function Controls({
     
       
   };
-  const managePopup = ()=>{
 
-  }
   return (
     <div className="controls-panel">
       <Popup show = {showPop} className={`popup popup${randomTarget}`}>

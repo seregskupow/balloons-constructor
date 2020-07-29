@@ -152,6 +152,7 @@ export default class MainSection extends Component {
             orderDisplay={this.state.orderDisplay}
           />
           <Controls
+          balloons={this.state.balloons}
             figureClass={this.state.figureClass}
             setFigureClass={this.setFigureClass}
             balloonsCount={this.state.balloons.length}
