@@ -3,7 +3,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  background: $darkgreen;
+  background: #fff;
   cursor: pointer;
   margin-top: -10px;
   transition:all .3s ease-in-out;
@@ -12,7 +12,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 25px;
     width: 25px;
     margin-top: -10px;
-    box-shadow: 0 0 2px 5px $lightviolet;
+    box-shadow: 0 0 2px 5px rgba(255, 255, 255, 0.603);
   }
  
   }
@@ -21,7 +21,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: $darkgreen;
+    background: #fff;
     cursor: pointer;
     margin-top: -10px;
     transition:all .3s ease-in-out;
@@ -30,7 +30,7 @@ input[type=range]::-webkit-slider-thumb {
       height: 25px;
       width: 25px;
       margin-top: -10px;
-      box-shadow: 0 0 2px 5px $lightviolet;
+      box-shadow: 0 0 2px 5px rgba(255, 255, 255, 0.603);
     }
   }
   
@@ -40,7 +40,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: $darkgreen;
+    background: #fff;
     cursor: pointer;
     margin-top: -10px;
     transition:all .3s ease-in-out;
@@ -49,7 +49,7 @@ input[type=range]::-webkit-slider-thumb {
       height: 25px;
       width: 25px;
       margin-top: -10px;
-      box-shadow: 0 0 2px 5px $lightviolet;
+      box-shadow: 0 0 2px 5px rgba(255, 255, 255, 0.603);
     }
   }
   .range-field{
@@ -57,4 +57,32 @@ input[type=range]::-webkit-slider-thumb {
           font-size:20px;
           color:$darkgreen;
       }
+  }
+//Slider track
+  input[type=range]::-webkit-slider-runnable-track {
+    background: #000;
+  }
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #000;
+  }
+  
+  input[type=range]::-moz-range-track {
+    background: #000;
+  }
+  
+  input[type=range]::-ms-track {
+    background: #000;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: #000;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: #000;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: #000;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: #000;
   }

@@ -13,8 +13,8 @@ function App({dropdown}) {
   const [data,setData] = useState("empty")
   useEffect(() => {
     const getData = async ()=>{
-     setData(await parseOC());
-      //setData(balloonsImages)
+     //setData(await parseOC());
+      setData(balloonsImages)
       
     }
     getData();

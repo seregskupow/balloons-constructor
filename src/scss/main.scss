@@ -57,8 +57,6 @@ body {
 .navbar {
     width: 100%;
     height: 60px;
-    // background-color: #7ee8fa;
-    // background-image: linear-gradient(315deg, #7ee7faab 0%, #80ff729f 74%);
     background: $maingreen;
     display: flex;
     align-items: center;
@@ -67,20 +65,12 @@ body {
     box-shadow: $farShadow;
     & .navbar-wrapper {
         width: 80%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        text-align: center;
 
         & .app-name {
-            text-align: center;
-            font-family: "Marck Script", cursive;
-            color: $darkgreen;
-            background: $lightGreen;
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.151), inset 0 -1px 1px rgba(0, 0, 0, 0.103),
-                inset 0 1px 2px rgba(0, 0, 0, 0.089), inset 0 -1px 2px rgba(0, 0, 0, 0.151),
-                inset 0 1px 6px rgba(0, 0, 0, 0.082), inset 0 -1px 6px rgba(0, 0, 0, 0.137);
-            padding: 4px 10px;
-            border-radius: 20px;
+           color:#fff;
+           text-transform: uppercase;
+           font-weight: bolder;
         }
     }
 }

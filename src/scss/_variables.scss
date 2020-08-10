@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Lobster|Marck+Script&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Lobster|Marck+Script&display=swap');
 
 // $maingreen:#b2dee1;
 // $darkgreen:#7d9799;
 // $lightGreen:#d1ebed;
 // $darkestgreen:#586869;
-$maingreen:#4CAF50;
-$darkgreen:#9c27b0;
+$maingreen:#57d301;
+$darkgreen:#000;
 $lviolet:#d5b3db;
 $lightviolet:#9b27b08a;
-$lightGreen:#cff1d0;
-$darkestgreen:#2a5d2b;
+$lightGreen:#c8f542;
+$darkestgreen:#57d301;
+$textColor:#000000;
 $white:rgb(255, 255, 255);
 $maingradient:linear-gradient(315deg, #7cffcb 0%, #74f2ce 74%);
 $mainShadow: 0 6px 15px rgba(0, 0, 0, 0.068), 0 6px 15px rgba(0, 0, 0, 0.054);
@@ -19,11 +20,10 @@ $nearShadow:0 1px 4px rgba(0, 0, 0, 0.116), 0 1px 4px rgba(0, 0, 0, 0.144);
 
 .btn{
     // background:$maingreen!important;
-    background-color:$white;
-    
+    background-color:$white;   
     border-radius: 15px;
     color:$darkgreen;
-    font-family: "Lora", serif!important;
+    // font-family: "Lora", serif!important;
     box-shadow: $farShadow;
     &:hover{
         color:$white;

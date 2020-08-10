@@ -12,7 +12,9 @@ export default async function(balloons,img){
             fetch('index.php?route=api/cart/addimg',{
                 method:'post',
                   body:imgData                
-            }).then(res=>res.json()).then(response=>console.log(response))
+            }).then(res=>res.json()).then(response=>{
+               // console.log(response)
+            })
             // $('#cart > .cart-menu-wrapper > .cart-menu > .cart-items').load('index.php?route=common/cart/info ul li')
         })
     }catch(e){}

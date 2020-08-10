@@ -25,13 +25,14 @@ export default function DrawComponent({
   type = type.includes('special') ? type.split('.').shift() : type;
   let randomTarget = Math.random();
   const changeHeight = ()=>{
-    if(balloons.length>19){
-      let num = balloons.length-19;
+    if(balloons.length>10){
+      let num = balloons.length-10;
       if(num%3===0){
-        return 800+num*30
+        // console.log(500+num*50)
+        return 550+num*30
       }
     }else{
-      return 800
+      return 550
     }
   }
   return (

@@ -70,7 +70,7 @@ export default function Controls({
         }
       ).then(function (canvas) {
         let imgURL = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-        console.log(imgURL);
+        // console.log(imgURL);
         var a = document.createElement('a');
         a.href = imgURL;
         a.download = 'Композиція.jpg';
@@ -80,7 +80,7 @@ export default function Controls({
       document.querySelector(
         `#plane${+dropdown.replace(/^\D+/g, "")}`
       ).style.boxShadow =
-        "0 6px 15px rgba(0, 0, 0, 0.068), 0 6px 15px rgba(0, 0, 0, 0.054)";
+        "0 1px 4px rgba(0, 0, 0, 0.116), 0 1px 4px rgba(0, 0, 0, 0.144)";
         setShowPop(true)
         setTimeout(()=>{setShowPop(false)},10000)
     }catch(e){
@@ -100,7 +100,7 @@ export default function Controls({
         </div>
       </Popup>
       <div className="controls-panel-wrapper">
-        <div className="control-panel-item">
+        <div className="control-panel-item control-select">
           <select
             id={randomTarget}
             className="balloon-select"
@@ -116,7 +116,7 @@ export default function Controls({
             ))}
           </select>
         </div>
-        <div className="control-panel-item">
+        <div className="control-panel-item control-range">
           <form action="#">
             <p className="range-field">
               <input
@@ -140,7 +140,7 @@ export default function Controls({
             </p>
           </form>
         </div>
-        <div className="control-panel-item">
+        <div className="control-panel-item control-buttons">
           <a
             className="waves-effect waves-light btn flow-text"
             onClick={clearBalloons}
@@ -161,12 +161,8 @@ export default function Controls({
             </span>
           </a>
         </div>
-        <div className="control-panel-item save-btn">
-          <p className="flow-text total">Всього: {totalPrice} грн.</p>
-        </div>
-
-        <div className="control-panel-item">
-          <BalloonContextMenu />
+        <div className="control-panel-item total">
+          <p className="flow-text">Всього: {totalPrice} грн.</p>
         </div>
       </div>
     </div>
