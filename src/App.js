@@ -5,6 +5,7 @@ import Loader from './components/Loader'
 import balloonCategories from './data/balloonCategories.json'
 import balloonsImages from './data/balloonsImgs.json'
 import parseOC from './additional/parseOC'
+import getContentful from './additional/contentful';
 import "./scss/main.scss";
 import "materialize-css";
 
@@ -14,7 +15,7 @@ function App({dropdown}) {
   useEffect(() => {
     const getData = async ()=>{
      //setData(await parseOC());
-      setData(balloonsImages)
+      setData(await getContentful())
       
     }
     getData();

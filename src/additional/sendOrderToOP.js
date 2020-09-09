@@ -9,9 +9,9 @@ export default async function(balloons,img){
         Promise.all(promises).then(()=>{
             const imgData = new FormData();
             imgData.append('image',img.toString())
-            fetch('index.php?route=api/cart/addimg',{
+            fetch('index.php?route=api/order/addimg',{
                 method:'post',
-                  body:imgData                
+                body:imgData                
             }).then(res=>res.json()).then(response=>{
                // console.log(response)
             })

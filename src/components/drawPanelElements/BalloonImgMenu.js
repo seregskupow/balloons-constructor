@@ -31,7 +31,7 @@ export default function BalloonImgMenu({
                 "0 6px 15px rgba(0, 0, 0, 0.068), 0 6px 15px rgba(0, 0, 0, 0.054)";
             }}
           >
-            Закрыть
+            Закрити
           </a>
         </div>
 

@@ -57,20 +57,28 @@ export default function Controls({
       let elem =  document.getElementById(
         `plane${+dropdown.replace(/^\D+/g, "")}`
       );
+      let positionToScroll = window.scrollY;
+      if (/(iPad|iPhone|iPod)/g.test(navigator.userAgent)){
+        window.scrollTo( 0,0 );
+      }
+      
       await html2canvas(
        elem,
         {
           useCORS: true,
           logging: true,
-          scrollY: (window.pageYOffset+30) * -1,
+          scrollY: (positionToScroll +30 ) * -1,
           width:elem.offsetWidth,
           height:elem.offsetHeight,
           scrollX:0
           
         }
       ).then(function (canvas) {
-        let imgURL = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-        // console.log(imgURL);
+        if (/(iPad|iPhone|iPod)/g.test(navigator.userAgent)){
+          window.scrollTo( 0, positionToScroll);
+        }
+        let imgURL = canvas.toDataURL("image/jpeg");
+         console.log(imgURL);
         var a = document.createElement('a');
         a.href = imgURL;
         a.download = 'Композиція.jpg';
