@@ -39,7 +39,7 @@ export default function BalloonImgMenu({
           balloonsImages[category].categories.map(item => (
             <div key={Math.random()} className="menu-container">
               <div className="menu-item">
-                {item.categoryName === "standart" ? null : (
+                {item.categoryName === "standart" ? <h3>Стандарт</h3> : (
                   <h3>{item.categoryName}</h3>
                 )}
                 <div className="menu-item-imgs">
@@ -57,6 +57,7 @@ export default function BalloonImgMenu({
                           setDisplay(false);
                         }}
                       />
+                      <PriceTag>{img.price} грн</PriceTag>
                     </div>
                   ))}
                 </div>
@@ -67,6 +68,9 @@ export default function BalloonImgMenu({
     </BalloonsOptions>
   );
 }
+const PriceTag = styled.p`
+  font-weight:bolder;
+`;
 const BalloonsOptions = styled.div`
   /* display: ${props => (props.displayMenu === false ? `none` : `flex`)}; */
   /* transform:translate(${props =>

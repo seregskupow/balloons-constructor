@@ -15,8 +15,8 @@ function App({dropdown}) {
   useEffect(() => {
     const getData = async ()=>{
      //setData(await parseOC());
-      setData(await getContentful())
-      
+      // setData(await getContentful())
+      setData(balloonsImages)
     }
     getData();
   }, []);

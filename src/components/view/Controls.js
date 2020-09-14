@@ -18,6 +18,7 @@ export default function Controls({
 }) {
   const [startValue, setStartValue] = useState("Оберіть вид композиції");
   const [showPop, setShowPop] = useState(false);
+  const [iterator,setIterator] = useState(3)
   const { dropdown } = useContext(MainContext);
   const categories = [
     { name: "Букет", value: "bouquet" },
@@ -27,6 +28,7 @@ export default function Controls({
     { name: "Цифра", value: "numeral.special&standart/1" },
     { name: "Число", value: "number.special/2" },
     { name: "Ходилка", value: "walker.special/1" },
+    { name: "Елочка", value: "tree" }
   ];
 
   let randomTarget = Math.floor(Math.random() * (999999 - 10000 + 1)) + 10000;
@@ -41,7 +43,7 @@ export default function Controls({
       createFigure(+itemClass.split("/").pop(), itemClass);
     } else {
       if (balloonsCount >= 3) {
-        createFigure(balloonsCount, itemClass);
+        createFigure(Math.min(Math.max(parseInt(balloonsCount), 3), setMax(itemClass)), itemClass);
       } else {
         createFigure(3, itemClass);
       }
@@ -49,6 +51,12 @@ export default function Controls({
     setStartValue("");
     setFigureClass(itemClass);
   };
+  const setMax = (figure = '')=>{
+    if(figure.includes('fontaine')) return 10;
+    else if(figure.includes('cascade')) return 20;
+    else if(figure.includes('tree')) return 28;
+    else return 30;
+  }
   const renderImage = async () => {
     try{
       document.querySelector(
@@ -78,7 +86,6 @@ export default function Controls({
           window.scrollTo( 0, positionToScroll);
         }
         let imgURL = canvas.toDataURL("image/jpeg");
-         console.log(imgURL);
         var a = document.createElement('a');
         a.href = imgURL;
         a.download = 'Композиція.jpg';
@@ -138,7 +145,7 @@ export default function Controls({
                 //figureClass === "cascade" ? 2 :
                 step={1}
                 min={figureClass.includes("special") ? 1 : 3}
-                max={31}
+                max={setMax(figureClass)}
                 onChange={(e) => {
                   //setSValue(+e.target.value);
                   createFigure(+e.target.value, figureClass);

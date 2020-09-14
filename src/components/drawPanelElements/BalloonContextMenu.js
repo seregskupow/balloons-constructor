@@ -19,7 +19,11 @@ export default function BalloonContextMenu({
   let menuToRender=[];
   if(figureClass.includes('special')){
     menuToRender=balloonCategories.filter(item=>item.type===figureClass)
-  }else{
+  }
+  else if(figureClass.includes('cascade')){
+    menuToRender=balloonCategories.filter(item=>!item.type.includes('numeral'));
+  }
+  else{
     menuToRender = balloonCategories.filter(item=>!item.type.includes('special') || item.type.includes('standart'))
   }
   let unavailableStyle = {

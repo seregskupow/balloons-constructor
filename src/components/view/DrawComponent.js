@@ -25,7 +25,7 @@ export default function DrawComponent({
   type = type.includes('special') ? type.split('.').shift() : type;
   let randomTarget = Math.random();
   const changeHeight = ()=>{
-    if(balloons.length>10){
+    if(balloons.length>10 && figureClass!=='tree'){
       let num = balloons.length-10;
       if(num%3===0){
         // console.log(500+num*50)
@@ -63,6 +63,7 @@ export default function DrawComponent({
           <div className={`balloons-container ${type}`}>
             {/* {count>0 && Array(+count).fill(<Balloon type={type}/>)} */}
             {/* {Array(13).fill(<Round/>)} */}
+            <div className="tree-helper">
             {balloons.map(item => (
               <Balloon
                 key={Math.random()}
@@ -75,6 +76,7 @@ export default function DrawComponent({
                 balloon={item}
               />
             ))}
+            </div>
           </div>
         </Plane>
       </div>

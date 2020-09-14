@@ -40,10 +40,11 @@ export default class MainSection extends Component {
   saveCart() {
     this.setState({ cart: this.state.balloons });
   }
-  createFigure(count, type) {
+  createFigure(count, type,max=30) {
     let balloons;
     let legitCount;
     let price = this.state.totalPrice;
+    console.log({count});
     if (
       type === this.state.type ||
       (type === "bouquet" &&
@@ -64,10 +65,17 @@ export default class MainSection extends Component {
       for (let i = legitCount; i < count; i++) {
         balloons.push({ type, img: "", index: i, price: "", id: "" });
       }
+    }else if(legitCount - count > 1){
+      console.log('hahas')
+      console.log({legitCount});
+      for(let i = count;i<legitCount;i++){
+        price -= balloons[i].price;
+      }
+      balloons.splice(count, legitCount - count);
     } else if (count < legitCount) {
       price -= balloons[count].price;
       balloons.splice(count, legitCount - count);
-    }
+    } 
     if (count === 0) price = 0;
     this.setState({ type: type, balloons: balloons, count, totalPrice: price });
   }

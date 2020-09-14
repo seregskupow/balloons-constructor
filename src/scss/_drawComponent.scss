@@ -287,13 +287,20 @@ $Rrights:(1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31);
     & .balloons-container {
       position: relative;
       margin: 0 auto;
-      width: 40%;
+      width: 60%;
       height: 100%;
       & .balloon {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        & .balloon-inner{
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          height:100%;
+        }
         &:hover {
+          cursor:pointer;
           z-index: 32 !important;
         }
         & .balloon-img {
@@ -315,9 +322,11 @@ $Rrights:(1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31);
           }
         }
       }
+      @media (min-width: 768px){
+        width: 40%;
+      }
     }
     & .bouquet {
-      width:100%;
       & .balloon {
         width:22%;
         min-width:100px;
@@ -530,7 +539,80 @@ $Rrights:(1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31);
         // }
       }
     }
+    & .tree {
+      width:300px;
+      margin:0 auto;
+      padding-top:60px;
+      transform:scale(1.4);
+      @media screen and (min-width:1600px){
+        transform:scale(1.5);
+      }
+      &::before, & .tree-helper::before{
+        content:"";
+        float:var(--d,left);
+        height:100%;
+        width:50%;
+        shape-outside:linear-gradient(to top var(--d,left),transparent 50%,#fff 0);
+        /* To illustrate */
+        // background   :linear-gradient(to top left,transparent 50%,yellow 0);
+      } 
+      & .tree-helper{
+        height:100%;
+        &::before{
+          --d:right;
+          /* To illustrate */
+          // background   :linear-gradient(to top right,transparent 50%,grey 0);
+        }
+      }
+      & .balloon {
+        display: inline-block;
+        position: static;
+        width:26px;
+        height:45px;
+        transform:translate(0,0);
+        & img{
+          width:90%;
+          height: auto;
+          margin: 0 auto;
+        }
+        & svg {
+          width:90%;
+          height: auto;
+          margin:0 auto;
+        }
+        & ellipse:hover {
+          fill: red !important;
+          cursor: pointer;
+          //transform:translateZ(30px);
+        }
+     
   
+  // @each $elem in  $lefts {
+  //   &:nth-child(#{$elem}) {
+  //               bottom:30px * $elem;
+  //               @include left;
+  //               z-index:31-$elem;
+  //               @include svg(random(6))
+  //             }
+  // }
+  // @each $elem in  $lefts {
+  //   &:nth-child(#{$elem + 1 }) {
+  //               bottom:30px * $elem;
+  //               @include right;
+  //               z-index:31-$elem;
+  //               @include svg(random(6))
+  //             }
+  // }
+  // @each $elem in  $centers {
+  //   &:nth-child(#{$elem}) {
+  //               bottom:30px * $elem;
+  //               @include center;
+  //               z-index:31-$elem;
+  //               @include svg(random(6))
+  //             }
+  // }
+      }
+    }
     & .figure{
       & .balloon {
       @include center;
