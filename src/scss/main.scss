@@ -10,72 +10,79 @@
 @import "orderMenu";
 @import "utils";
 ////////////////////////App-body//////////////////
+.lazy-load-image-background {
+	color: inherit !important;
+}
+.lazy-img-preloader {
+	height: 100px;
+	width: 100px;
+}
 select {
-    display: block !important;
+	display: block !important;
 }
 body {
-    position: relative;
-    overflow-x:hidden;
-    & .ball-context-menu {
-        position: absolute;
-    }
+	position: relative;
+	overflow-x: hidden;
+	& .ball-context-menu {
+		position: absolute;
+	}
 }
-.body-overflow-y{
-    overflow-y:hidden;
-    height:100vh;
+.body-overflow-y {
+	overflow-y: hidden;
+	height: 100vh;
 }
 #app-body {
-    width: 100%;
-    //max-height: 60vh;
-    max-width: 600px;
-    //border:2px solid #00bcd4;
-    border-radius: 20px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.171);
-    position: relative;
-    overflow: hidden;
-    & .bg-curve {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background: $lightGreen;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-        box-shadow: $farShadow;
-        z-index: -1;
-    }
-    position: relative;
-    & .app-main-container {
-        margin: 0 auto;
-        width: 100%;
-        display: flex;
-        flex-direction: column-reverse;
-        position: relative;
-    }
+	width: 100%;
+	//max-height: 60vh;
+	max-width: 600px;
+	//border:2px solid #00bcd4;
+	border-radius: 20px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.171);
+	position: relative;
+	overflow: hidden;
+	& .bg-curve {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 50%;
+		background: $lightGreen;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		border-bottom-left-radius: 30px;
+		border-bottom-right-radius: 30px;
+		box-shadow: $farShadow;
+		z-index: -1;
+	}
+	position: relative;
+	& .app-main-container {
+		margin: 0 auto;
+		width: 100%;
+		display: flex;
+		flex-direction: column-reverse;
+		position: relative;
+	}
 }
 ////////////////////////App-body//////////////////
 ///////////////////////NavBar////////////////////
 .navbar {
-    width: 100%;
-    height: 60px;
-    background: $maingreen;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    box-shadow: $farShadow;
-    & .navbar-wrapper {
-        width: 80%;
-        text-align: center;
+	width: 100%;
+	height: 60px;
+	background: $maingreen;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	box-shadow: $farShadow;
+	& .navbar-wrapper {
+		width: 80%;
+		text-align: center;
 
-        & .app-name {
-           color:#fff;
-           text-transform: uppercase;
-           font-weight: bolder;
-        }
-    }
+		& .app-name {
+			color: #fff;
+			text-transform: uppercase;
+			font-weight: bolder;
+		}
+	}
 }
 ///////////////////////NavBar////////////////////
