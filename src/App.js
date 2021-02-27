@@ -30,7 +30,7 @@ function App({dropdown}) {
     );
   }
   return (
-    <><Loader/></>
+    <Loader/>
   )
 }
 

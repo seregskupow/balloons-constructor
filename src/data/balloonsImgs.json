@@ -125,21 +125,6 @@
                         "id": "21067",
                         "src": "https://sharograf.ru/images/flexmetal-301500P.png",
                         "price":563
-                    },
-                    {
-                        "id": "30157",
-                        "src": "https://sharograf.ru/images/flexmetal-301500RSL.png",
-                        "price":326
-                    },
-                    {
-                        "id": "86325",
-                        "src": "https://sharograf.ru/images/flexmetal-301500R.png",
-                        "price":125
-                    },
-                    {
-                        "id": "13027",
-                        "src": "https://sharograf.ru/images/flexmetal-301500VE.png",
-                        "price":365
                     }
                 ]
             },
@@ -165,7 +150,22 @@
                         "id": "63728",
                         "src": "https://sharograf.ru/images/conver-f18-70791.png",
                         "price":254
-                    }
+                    },
+										{
+											"id": "30157",
+											"src": "https://sharograf.ru/images/flexmetal-301500RSL.png",
+											"price":326
+									},
+									{
+											"id": "86325",
+											"src": "https://sharograf.ru/images/flexmetal-301500R.png",
+											"price":125
+									},
+									{
+											"id": "13027",
+											"src": "https://sharograf.ru/images/flexmetal-301500VE.png",
+											"price":365
+									}
                 ]
             },
             {

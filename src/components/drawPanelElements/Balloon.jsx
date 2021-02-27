@@ -3,6 +3,8 @@ import { ReactComponent as Round } from "../../data/samplesImgs/ball.svg";
 import { ReactComponent as Number } from "../../data/samplesImgs/num.svg";
 import { ReactComponent as Figure } from "../../data/samplesImgs/pony.svg";
 import { MainContext } from '../../context/context'
+
+
 export default function Balloon({ balloon, setBData }) {
   const { img, index, type = "" } = balloon;
   const { dropdown } = useContext(MainContext);
@@ -14,7 +16,7 @@ export default function Balloon({ balloon, setBData }) {
   } else {
     balloonType = <Round />;
   }
-  if (img !== "") {
+  if (img !== null) {
     balloonType = <img className="balloon-img" alt="ballon-img" src={img} height="160px" />;
   }
   const findAncestor = (el, cls) => {

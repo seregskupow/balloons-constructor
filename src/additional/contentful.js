@@ -1,17 +1,3 @@
-// import * as contentful from "contentful";
-
-// export const client = contentful.createClient({
-//     // This is the space ID. A space is like a project folder in Contentful terms
-//     space: process.env.REACT_APP_SPACE_ID,
-//     // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
-//     accessToken: process.env.REACT_APP_ACCESS_TOKEN
-//   });
-//   client
-//   .getEntries({
-//     content_type: "Balloon"
-//   })
-//   .then(response => this.setProducts(response.items))
-//   .catch(console.error);
 const query = `
 {
 	balloonCollection{
@@ -53,7 +39,6 @@ const transformData = (raw)=>{
     raw.forEach(item=>{
         let category = item.category !== null ? item.category : "standart"
         data[item.model.split(',')[0]] = data[item.model.split(',')[0]] || {categories:[]}
-        // var index2 = cat.map(function(e) { return e.m; }).indexOf('s');
         let categoryIndex = data[item.model.split(',')[0]].categories.map(e=> e.categoryName).indexOf(category);
         if(categoryIndex!==-1){
             data[item.model.split(',')[0]].categories[categoryIndex].imgs.push({id:item.id,src:item.src.url,price:parseInt(item.price)})

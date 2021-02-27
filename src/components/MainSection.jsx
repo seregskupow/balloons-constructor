@@ -6,6 +6,8 @@ import Controls from "./view/Controls";
 import DrawComponent from "./view/DrawComponent";
 import OrderMenu from "./view/OrderMenu";
 import menuEvent from '../additional/script'
+import Balloon from "./Balloon";
+
 export default class MainSection extends Component {
   static contextType = MainContext;
   constructor(props) {
@@ -63,7 +65,8 @@ export default class MainSection extends Component {
     }
     if (count > legitCount) {
       for (let i = legitCount; i < count; i++) {
-        balloons.push({ type, img: "", index: i, price: "", id: "" });
+        //balloons.push({ type, img: "", index: i, price: "", id: "" });
+				balloons.push(new Balloon(type,null,i,null,null));
       }
     }else if(legitCount - count > 1){
       console.log('hahas')

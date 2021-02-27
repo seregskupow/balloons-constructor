@@ -48,8 +48,7 @@ export default function DrawComponent({
         copiedBalloon={copiedBalloon}
         copyBalloon={copyBalloon}
         balloonData={balloonData}
-        changeBalloonImg={changeBalloonImg}
-        
+        changeBalloonImg={changeBalloonImg}      
       />
        <BalloonImgMenu
             balloonData={balloonData}
