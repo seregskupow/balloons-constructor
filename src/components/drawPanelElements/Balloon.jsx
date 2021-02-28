@@ -44,7 +44,8 @@ export default function Balloon({ balloon, setBData }) {
   };
   return (
     <>
-      <div
+      <button
+        type="button"
         className="balloon dropdown-triggerr"
         data-target={dropdown}
         data-index={index}
@@ -56,7 +57,7 @@ export default function Balloon({ balloon, setBData }) {
         <div className="balloon-inner">
           {balloonType}
         </div>
-      </div>
+      </button>
     </>
   );
 }

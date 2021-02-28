@@ -27,6 +27,11 @@ body {
 		position: absolute;
 	}
 }
+button {
+	outline: none;
+	border: none;
+	background: transparent;
+}
 .body-overflow-y {
 	overflow-y: hidden;
 	height: 100vh;
@@ -79,9 +84,39 @@ body {
 		text-align: center;
 
 		& .app-name {
-			color: #fff;
-			text-transform: uppercase;
-			font-weight: bolder;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			& p {
+				color: #fff;
+
+				text-transform: uppercase;
+				font-weight: bolder;
+			}
+			$imgHeight: 50px;
+			& .app-logo-container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				height: $imgHeight;
+				width: $imgHeight;
+
+				margin-right: 10px;
+
+				background-color: $white;
+
+				border: 2px solid $lightGreen;
+				border-radius: 999px;
+
+				overflow: hidden;
+
+				& img {
+					height: 40px;
+					width: auto;
+				}
+			}
 		}
 	}
 }

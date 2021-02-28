@@ -151,8 +151,9 @@ export default function Controls({
           </form>
         </div>
         <div className="control-panel-item control-buttons">
-          <a
-            className="waves-effect waves-light btn flow-text"
+          <button
+            type="button"
+            className="control-btn rnd-button btn__click"
             onClick={clearBalloons}
           >
             Очистити
@@ -160,9 +161,10 @@ export default function Controls({
             <span className="control-item-icon">
               <MdClear />
             </span>
-          </a>
-          <a
-            className="waves-effect waves-light btn flow-text"
+          </button>
+          <button
+            type="button"
+            className="control-btn rnd-button btn__click"
             id={`canv${+dropdown.replace(/^\D+/g, '')}`}
             onClick={() => { if (orderHandler() === true) { renderImage(); clearBalloons(); } }}
           >
@@ -171,7 +173,7 @@ export default function Controls({
             <span className="control-item-icon">
               <FiShoppingCart />
             </span>
-          </a>
+          </button>
         </div>
         <div className="control-panel-item total">
           <p className="flow-text">

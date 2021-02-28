@@ -1,516 +1,598 @@
 @function random_element($elements...) {
-  @return nth($elements, random(length($elements)));
+	@return nth($elements, random(length($elements)));
 }
 @mixin left {
-  left: calc(50% - 90px);
-  transform: translateX(-50%) rotate(-30deg);
+	left: calc(50% - 90px);
+	transform: translateX(-50%) rotate(-30deg);
+
+	&:active {
+		transform: translateX(-50%) rotate(-30deg) scale(0.95);
+	}
 }
 @mixin right {
-  left: calc(50% + 90px);
-  transform: translateX(-50%) rotate(30deg);
+	left: calc(50% + 90px);
+	transform: translateX(-50%) rotate(30deg);
+
+	&:active {
+		transform: translateX(-50%) rotate(30deg) scale(0.95);
+	}
 }
 @mixin center {
-  left: 50%;
-  transform: translateX(-50%);
+	left: 50%;
+	transform: translateX(-50%);
+
+	&:active {
+		transform: translateX(-50%) scale(0.95);
+	}
 }
 @mixin f-left {
-  left: calc(50% - 40px);
-  transform: translateX(-50%) rotate(-30deg);
+	left: calc(50% - 40px);
+	transform: translateX(-50%) rotate(-30deg);
+
+	&:active {
+		transform: translateX(-50%) rotate(-30deg) scale(0.95);
+	}
 }
 
 @mixin f-right {
-  left: calc(50% + 40px);
-  transform: translateX(-50%) rotate(30deg);
+	left: calc(50% + 40px);
+	transform: translateX(-50%) rotate(30deg);
+
+	&:active {
+		transform: translateX(-50%) rotate(30deg) scale(0.95);
+	}
 }
 @mixin c-left {
-  left: calc(50% - 30px);
-  transform: translateX(-50%) rotate(-12deg);
+	left: calc(50% - 30px);
+	transform: translateX(-50%) rotate(-12deg);
+
+	&:active {
+		transform: translateX(-50%) rotate(-12deg) scale(0.95);
+	}
 }
 
 @mixin c-right {
-  left: calc(50% + 30px);
-  transform: translateX(-50%) rotate(12deg);
+	left: calc(50% + 30px);
+	transform: translateX(-50%) rotate(12deg);
+
+	&:active {
+		transform: translateX(-50%) rotate(12deg) scale(0.95);
+	}
 }
 @mixin svg($num) {
-  @if ($num == 1) {
-    & .cls-1{
-      fill: darken(#ffbc04, 10%);
-    }
-    & .cls-2{
-      fill:#ffbc04;
-    }
-    & .cls-3{
-      fill: lighten(#ffbc04, 20%);
-    }
-  }
+	@if ($num == 1) {
+		& .cls-1 {
+			fill: darken(#ffbc04, 10%);
+		}
+		& .cls-2 {
+			fill: #ffbc04;
+		}
+		& .cls-3 {
+			fill: lighten(#ffbc04, 20%);
+		}
+	}
 
-  @if ($num == 2) {
-    & .cls-1{
-      fill:darken(#00be5f, 10%);
-    }
-    & .cls-2{
-      fill:#00be5f;
-    }
-    & .cls-3{
-      fill:lighten(#00be5f, 20%);
-    }
-  }
+	@if ($num == 2) {
+		& .cls-1 {
+			fill: darken(#00be5f, 10%);
+		}
+		& .cls-2 {
+			fill: #00be5f;
+		}
+		& .cls-3 {
+			fill: lighten(#00be5f, 20%);
+		}
+	}
 
-  @if ($num == 3) {
-    & .cls-1{
-      fill:rgb(1, 113, 141);
-    }
-    & .cls-2{
-      fill:#0098be;
-    }
-    & .cls-3{
-      fill:rgb(102, 224, 255);
-    }
-  }
-  @if ($num == 4) {
-    & .cls-1{
-      fill:rgb(165, 98, 154);
-    }
-    & .cls-2{
-      fill:#cf74c0;
-    }
-    & .cls-3{
-      fill:rgb(228, 172, 218);
-    }
-  }
-  @if ($num == 5) {
-    & .cls-1{
-      fill:rgb(148, 61, 61);
-    }
-    & .cls-2{
-      fill:#c55050;
-    }
-    & .cls-3{
-      fill:rgb(236, 152, 152);
-    }
-  }
-  @if ($num == 6) {
-    & .cls-1{
-      fill:rgb(113, 59, 144);
-    }
-    & .cls-2{
-      fill:#9a50c5;
-    }
-    & .cls-3{
-      fill:rgb(184, 140, 209);
-    }
-  }
+	@if ($num == 3) {
+		& .cls-1 {
+			fill: rgb(1, 113, 141);
+		}
+		& .cls-2 {
+			fill: #0098be;
+		}
+		& .cls-3 {
+			fill: rgb(102, 224, 255);
+		}
+	}
+	@if ($num == 4) {
+		& .cls-1 {
+			fill: rgb(165, 98, 154);
+		}
+		& .cls-2 {
+			fill: #cf74c0;
+		}
+		& .cls-3 {
+			fill: rgb(228, 172, 218);
+		}
+	}
+	@if ($num == 5) {
+		& .cls-1 {
+			fill: rgb(148, 61, 61);
+		}
+		& .cls-2 {
+			fill: #c55050;
+		}
+		& .cls-3 {
+			fill: rgb(236, 152, 152);
+		}
+	}
+	@if ($num == 6) {
+		& .cls-1 {
+			fill: rgb(113, 59, 144);
+		}
+		& .cls-2 {
+			fill: #9a50c5;
+		}
+		& .cls-3 {
+			fill: rgb(184, 140, 209);
+		}
+	}
 }
-$lefts:(2,5,8,11,14,17,20,23,26,29);
-$rights:(3,6,9,12,15,18,21,24,27,30);
-$centers:(1,4,7,10,13,16,19,22,25,28,31);
-$Llefts:(2,4,6,8,10,12,14,16,18,20,22,24,26,28,30);
-$Rrights:(1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31);
+$lefts: (2, 5, 8, 11, 14, 17, 20, 23, 26, 29);
+$rights: (3, 6, 9, 12, 15, 18, 21, 24, 27, 30);
+$centers: (1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31);
+$Llefts: (2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30);
+$Rrights: (1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31);
 .ball-context-menu {
-  background: white;
-  border-radius: 20px;
-  box-shadow: $mainShadow;
-  overflow: hidden;
+	background: white;
+	border-radius: 20px;
+	box-shadow: $mainShadow;
+	overflow: hidden;
 
-  & li {
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    & p {
-      font-size: 20px;
-      padding: 5px;
-      color: $darkgreen;
-      transition: all 0.3s ease-in-out;
-    }
-    &:hover {
-      background: $maingreen;
-      box-shadow: inset $mainShadow;
-      & p {
-        color: $white;
-      }
-    }
-  }
+	& li {
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
+		& p {
+			font-size: 20px;
+			padding: 5px;
+			color: $darkgreen;
+			transition: all 0.3s ease-in-out;
+		}
+		&:hover {
+			background: $maingreen;
+			box-shadow: inset $mainShadow;
+			& p {
+				color: $white;
+			}
+		}
+	}
 }
 .balloon-img-menu {
-  display:flex;
-  justify-content: center;
-  width: 100%;
-  height: 50%;
-  position: absolute;
-  z-index: 100; 
-  left:0;
-  box-shadow: $mainShadow;
-  background: $lightGreen;
-  /* border: 2px dotted #2bbbad; */
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  transition: all 0.3s ease;
-  & .balloon-img-menu-wrapper {
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-    width:100%;
-    margin-top:20px;
-		padding:0 20px;
-    & .close-btn{
-      text-align: center;
-      & a{
-        width: 100%;
-        color:#fa7c73;
-        font-weight: bolder;
-      }
-    }
-    & .menu-container{
-      margin-top:20px;
-      & .menu-item{
-        & h3{
-          background: #fff;
-          color:$textColor;
-          padding:10px;
-          font-size:1.5em;
-          font-weight: bolder;
-          text-align: center;
-          border-radius:20px;
-          box-shadow: $nearShadow;
-        }
-        & .menu-item-imgs{
-          max-width: 100%;
-          display: inline-flex;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 50%;
+	position: absolute;
+	z-index: 100;
+	left: 0;
+	box-shadow: $mainShadow;
+	background: $lightGreen;
+	/* border: 2px dotted #2bbbad; */
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	transition: all 0.3s ease;
+	& .balloon-img-menu-wrapper {
+		display: flex;
+		flex-direction: column;
+		overflow: auto;
+		width: 100%;
+		margin-top: 20px;
+		padding: 0 20px;
+
+		&::-webkit-scrollbar {
+			width: 8px;
+			height: 8px;
+			border-radius: 20px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: $white;
+			border-radius: 20px;
+			border: 1px solid #d3d4d4;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			border-radius: 8px;
+			border-radius: 20px;
+			background-color: $maingreen;
+
+			cursor: pointer;
+		}
+
+		& .close-btn-container {
+			position: sticky;
+			top: 0;
+
+			z-index: 2;
+
+			& .close-btn {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				width: 50px;
+				height: 50px;
+
+				background-color: #fa7c73;
+
+				border: 1px solid #e93d34;
+				border-radius: 999px;
+
+				color: $white;
+				font-weight: bolder;
+				font-size: 1.5rem;
+
+				cursor: pointer;
+
+				&:hover {
+					background-color: #ff928a;
+				}
+			}
+		}
+		& .menu-container {
+			margin-top: 20px;
+			& .menu-item {
+				& h3 {
+					background: #fff;
+					margin: 0;
+					margin-bottom: 10px;
+					color: $textColor;
+					padding: 10px;
+					font-size: 1.5em;
+					font-weight: bolder;
+					text-align: center;
+					border-radius: 20px;
+					box-shadow: $nearShadow;
+				}
+				& .menu-item-imgs {
+					max-width: 100%;
+					display: inline-flex;
 					flex-wrap: wrap;
-          & .img-container{
+					& .img-container {
 						width: calc(25% - 12px);
 
 						display: flex;
 						flex-direction: column;
 						justify-content: center;
+						align-items: center;
 
 						margin: 6px;
 						padding: 5px;
 
 						background: #fff;
 
-						border-radius:20px;
+						border: 3px solid #fff;
+						border-radius: 20px;
 						box-shadow: $nearShadow;
 
 						text-align: center;
 
 						overflow: hidden;
-            // margin:0 10px;
-            & img{
-              height:100%;
-              width: auto;
-              margin:0 auto;
-              transition: transform .3s ease;
-              cursor:pointer;
-            }
-          }
-        }
-      }
-    }
-  }
+
+						cursor: pointer;
+
+						&:hover {
+							border: 3px solid $maingreen;
+						}
+
+						& img {
+							height: 100%;
+							width: auto;
+							margin: 0 auto;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 .draw-component-wrapper {
-  width: 90%;
-  // height: 500px;
-  margin: 0 auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
- 
-  & .plane {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: white;
-    transition: all 0.3s ease;
-    border-radius: 20px;
-    box-shadow: $nearShadow;
-  
+	width: 90%;
+	// height: 500px;
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
 
-    & .balloons-container {
-      position: relative;
-      margin: 0 auto;
-      width: 60%;
-      height: 100%;
-      & .balloon {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        & .balloon-inner{
-          display:flex;
-          justify-content: center;
-          align-items: center;
-          height:100%;
-        }
-        &:hover {
-          cursor:pointer;
-          z-index: 32 !important;
-        }
-        & .balloon-img {
-          transition: all 0.3s ease-in-out;
-          opacity: 0.9;
-          &:hover {
-            transform: scale(1.09);
-            opacity: 1;
-          }
-        }
-        & svg {
-          transition: all 0.3s ease-in-out;
+	& .plane {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background: white;
+		transition: all 0.3s ease;
+		border-radius: 20px;
+		box-shadow: $nearShadow;
 
-          opacity: 0.9;
+		& .balloons-container {
+			position: relative;
+			margin: 0 auto;
+			width: 60%;
+			height: 100%;
+			& .balloon {
+				position: absolute;
 
-          &:hover {
-            transform: scale(1.09);
-            opacity: 1;
-          }
-        }
-      }
-      @media (min-width: 768px){
-        width: 40%;
-      }
-    }
-    & .bouquet {
-      & .balloon {
-        width:22%;
-        min-width:100px;
-        & img{
-          width:100%;
-          height: auto;
-        }
-        & svg {
-          width:90%;
-          height: auto;
-        }
-        & ellipse:hover {
-          fill: red !important;
-          cursor: pointer;
-          //transform:translateZ(30px);
-        }
-     
-  
-  @each $elem in  $lefts {
-    &:nth-child(#{$elem}) {
-                bottom:30px * $elem;
-                @include left;
-                z-index:31-$elem;
-                @include svg(random(6))
-              }
-  }
-  @each $elem in  $lefts {
-    &:nth-child(#{$elem + 1 }) {
-                bottom:30px * $elem;
-                @include right;
-                z-index:31-$elem;
-                @include svg(random(6))
-              }
-  }
-  @each $elem in  $centers {
-    &:nth-child(#{$elem}) {
-                bottom:30px * $elem;
-                @include center;
-                z-index:31-$elem;
-                @include svg(random(6))
-              }
-  }
-      }
-    }
-    & .fontaine {
-      & .balloon {
-        width:22%;
-        min-width:100px;
-        & img{
-          width:100%;
-          height: auto;
-        }
-        & svg {
-          width:90%;
-          height: auto;
-        }
-        & ellipse:hover {
-          fill: red !important;
-          cursor: pointer;
-          //transform:translateZ(30px);
-        }
-        @each $elem in  $Llefts {
-          &:nth-child(#{$elem}) {
-                      bottom:30px * $elem;
-                      @include f-left;
-                      z-index:31-$elem;
-                      @include svg(random(6))
-                    }
-        }
-        @each $elem in  $Rrights {
-          &:nth-child(#{$elem}) {
-                      bottom:30px * $elem;
-                      @include f-right;
-                      z-index:31-$elem;
-                      @include svg(random(6))
-                    }
-        }
-      
-      }
-    }
-    & .cascade {
-      & .balloon {
-        width:22%;
-        min-width:100px;
-        & img{
-          width:100%;
-          height: auto;
-        }
-        & svg {
-          width:90%;
-          height: auto;
-        }
-        & ellipse:hover {
-          fill: red !important;
-          cursor: pointer;
-          //transform:translateZ(30px);
-        }
-       &:nth-last-child(){
-          left:50%!important;
-          transform: translateX(-50%)!important;
-          & ellipse {
-            fill: rgb(0, 2, 1)!important;
-          }
-        }
-        @each $elem in  $Llefts {
-          &:nth-child(#{$elem}) {
-                      bottom:30px * $elem;
-                      @include c-left;
-                      z-index:31-$elem;
-                      @include svg(random(6))
-                    }
-        }
-        @each $elem in  $Rrights {
-          &:nth-child(#{$elem}) {
-                      bottom:30px * $elem;
-                      @include c-right;
-                      z-index:31-$elem;
-                      @include svg(random(6))
-                    }
-        }
+				left: 50%;
 
-      }
-    }
-    & .tree {
-      width:300px;
-      margin:0 auto;
-      padding-top:60px;
-      transform:scale(1.4);
-      @media screen and (min-width:1600px){
-        transform:scale(1.5);
-      }
-      &::before, & .tree-helper::before{
-        content:"";
-        float:var(--d,left);
-        height:100%;
-        width:50%;
-        shape-outside:linear-gradient(to top var(--d,left),transparent 50%,#fff 0);
-        /* To illustrate */
-        // background   :linear-gradient(to top left,transparent 50%,yellow 0);
-      } 
-      & .tree-helper{
-        height:100%;
-        &::before{
-          --d:right;
-          /* To illustrate */
-          // background   :linear-gradient(to top right,transparent 50%,grey 0);
-        }
-      }
-      & .balloon {
-        display: inline-block;
-        position: static;
-        width:26px;
-        height:45px;
-        transform:translate(0,0);
-        & img{
-          width:90%;
-          height: auto;
-          margin: 0 auto;
-        }
-        & svg {
-          width:90%;
-          height: auto;
-          margin:0 auto;
-        }
-        & ellipse:hover {
-          fill: red !important;
-          cursor: pointer;
-          //transform:translateZ(30px);
-        }
-     
+				transform: translateX(-50%);
 
-      }
-    }
-    & .figure{
-      & .balloon {
-      @include center;
-        top: 30%;
-        & svg {
-          height: 260px;
-        }
+				background-color: transparent;
+				border: none;
 
-      }
-    }
-    & .numeral {
-      & .balloon {
-        @include center;
-        top: 30%;
-        & svg {
-          height: 260px;
-          & .cls-2{
-            fill:rgb(165, 98, 154);
-          }
-          & .cls-3{
-            fill:rgb(207, 116, 192);
-          }
-          & .cls-4{
-            fill:rgb(228, 172, 218);
-          }
-          & path {
-            // fill: pink;
-          }
-        }
-      }
-    }
-    & .walker {
-      & .balloon {
-        @include center;
-        top: 50%;
-        & svg {
-          height: 260px;
-          
-        }
-      }
-    }
-    & .number {
-      & .balloon {
-        @include center;
-        top: 30%;
-        & svg {
-          height: 210px;
+				&:active {
+					transition: 0.1s ease;
+				}
 
-          & path {
-            // fill: rgb(94, 255, 0);
-          }
-        }
-        &:nth-child(1) {
-          & svg {
-            & .cls-2{
-              fill:rgb(1, 113, 141);
-            }
-            & .cls-3{
-              fill:rgb(21, 185, 226);
-            }
-            & .cls-4{
-              fill:rgb(102, 224, 255);
-            }
-          }
-          left: 10%;
-        }
-        &:nth-child(2) {
-          left: 90%;
-        }
-      }
-    }
-  }
+				& .balloon-inner {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					height: 100%;
+				}
+				&:hover {
+					cursor: pointer;
+					z-index: 32 !important;
+				}
+				& .balloon-img {
+					transition: all 0.3s ease-in-out;
+					opacity: 0.9;
+					&:hover {
+						transform: scale(1.09);
+						// opacity: 1;
+					}
+				}
+				& svg {
+					transition: all 0.3s ease-in-out;
+
+					opacity: 0.9;
+
+					&:hover {
+						transform: scale(1.09);
+						opacity: 1;
+					}
+				}
+			}
+			@media (min-width: 768px) {
+				width: 40%;
+			}
+		}
+		& .bouquet {
+			& .balloon {
+				width: 22%;
+				min-width: 100px;
+				& img {
+					width: 100%;
+					height: auto;
+				}
+				& svg {
+					width: 90%;
+					height: auto;
+				}
+				& ellipse:hover {
+					fill: red !important;
+					cursor: pointer;
+					//transform:translateZ(30px);
+				}
+
+				@each $elem in $lefts {
+					&:nth-child(#{$elem}) {
+						bottom: 30px * $elem;
+						@include left;
+						z-index: 31-$elem;
+						@include svg(random(6));
+					}
+				}
+				@each $elem in $lefts {
+					&:nth-child(#{$elem + 1 }) {
+						bottom: 30px * $elem;
+						@include right;
+						z-index: 31-$elem;
+						@include svg(random(6));
+					}
+				}
+				@each $elem in $centers {
+					&:nth-child(#{$elem}) {
+						bottom: 30px * $elem;
+						@include center;
+						z-index: 31-$elem;
+						@include svg(random(6));
+					}
+				}
+			}
+		}
+		& .fontaine {
+			& .balloon {
+				width: 22%;
+				min-width: 100px;
+				& img {
+					width: 100%;
+					height: auto;
+				}
+				& svg {
+					width: 90%;
+					height: auto;
+				}
+				& ellipse:hover {
+					fill: red !important;
+					cursor: pointer;
+					//transform:translateZ(30px);
+				}
+				@each $elem in $Llefts {
+					&:nth-child(#{$elem}) {
+						bottom: 30px * $elem;
+						@include f-left;
+						z-index: 31-$elem;
+						@include svg(random(6));
+					}
+				}
+				@each $elem in $Rrights {
+					&:nth-child(#{$elem}) {
+						bottom: 30px * $elem;
+						@include f-right;
+						z-index: 31-$elem;
+						@include svg(random(6));
+					}
+				}
+			}
+		}
+		& .cascade {
+			& .balloon {
+				width: 22%;
+				min-width: 100px;
+				& img {
+					width: 100%;
+					height: auto;
+				}
+				& svg {
+					width: 90%;
+					height: auto;
+				}
+				& ellipse:hover {
+					fill: red !important;
+					cursor: pointer;
+					//transform:translateZ(30px);
+				}
+				&:nth-last-child() {
+					left: 50% !important;
+					transform: translateX(-50%) !important;
+					& ellipse {
+						fill: rgb(0, 2, 1) !important;
+					}
+				}
+				@each $elem in $Llefts {
+					&:nth-child(#{$elem}) {
+						bottom: 30px * $elem;
+						@include c-left;
+						z-index: 31-$elem;
+						@include svg(random(6));
+					}
+				}
+				@each $elem in $Rrights {
+					&:nth-child(#{$elem}) {
+						bottom: 30px * $elem;
+						@include c-right;
+						z-index: 31-$elem;
+						@include svg(random(6));
+					}
+				}
+			}
+		}
+		& .tree {
+			width: 300px;
+			margin: 0 auto;
+			padding-top: 60px;
+			transform: scale(1.4);
+			@media screen and (min-width: 1600px) {
+				transform: scale(1.5);
+			}
+			&::before,
+			& .tree-helper::before {
+				content: "";
+				float: var(--d, left);
+				height: 100%;
+				width: 50%;
+				shape-outside: linear-gradient(to top var(--d, left), transparent 50%, #fff 0);
+				/* To illustrate */
+				// background   :linear-gradient(to top left,transparent 50%,yellow 0);
+			}
+			& .tree-helper {
+				height: 100%;
+				&::before {
+					--d: right;
+					/* To illustrate */
+					// background   :linear-gradient(to top right,transparent 50%,grey 0);
+				}
+			}
+			& .balloon {
+				display: inline-block;
+				position: static;
+				width: 26px;
+				height: 45px;
+				transform: translate(0, 0);
+				& img {
+					width: 90%;
+					height: auto;
+					margin: 0 auto;
+				}
+				& svg {
+					width: 90%;
+					height: auto;
+					margin: 0 auto;
+				}
+				& ellipse:hover {
+					fill: red !important;
+					cursor: pointer;
+					//transform:translateZ(30px);
+				}
+			}
+		}
+		& .figure {
+			& .balloon {
+				@include center;
+				top: 30%;
+				& svg {
+					height: 260px;
+				}
+			}
+		}
+		& .numeral {
+			& .balloon {
+				@include center;
+				top: 30%;
+				& svg {
+					height: 260px;
+					& .cls-2 {
+						fill: rgb(165, 98, 154);
+					}
+					& .cls-3 {
+						fill: rgb(207, 116, 192);
+					}
+					& .cls-4 {
+						fill: rgb(228, 172, 218);
+					}
+					& path {
+						// fill: pink;
+					}
+				}
+			}
+		}
+		& .walker {
+			& .balloon {
+				@include center;
+				top: 50%;
+				& svg {
+					height: 260px;
+				}
+			}
+		}
+		& .number {
+			& .balloon {
+				@include center;
+				top: 30%;
+				& svg {
+					height: 210px;
+
+					& path {
+						// fill: rgb(94, 255, 0);
+					}
+				}
+				&:nth-child(1) {
+					& svg {
+						& .cls-2 {
+							fill: rgb(1, 113, 141);
+						}
+						& .cls-3 {
+							fill: rgb(21, 185, 226);
+						}
+						& .cls-4 {
+							fill: rgb(102, 224, 255);
+						}
+					}
+					left: 10%;
+				}
+				&:nth-child(2) {
+					left: 90%;
+				}
+			}
+		}
+	}
 }
