@@ -9,7 +9,7 @@
 	cursor: pointer;
 
 	&:hover {
-		background-color: $maingreen;
+		background-color: #cacaca;
 	}
 }
 
@@ -22,35 +22,55 @@
 
 input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
+
+	position: relative;
+
 	height: 20px;
 	width: 20px;
-	border-radius: 50%;
+
 	background: #fff;
-	cursor: pointer;
+
 	margin-top: -10px;
+
+	border-radius: 50%;
+
 	transition: all 0.3s ease-in-out;
-	position: relative;
+
+	cursor: pointer;
+
 	&:hover {
 		height: 25px;
 		width: 25px;
+
 		margin-top: -10px;
+
 		box-shadow: 0 0 2px 5px rgba(255, 255, 255, 0.603);
 	}
 }
 input[type="range"]::-moz-range-thumb {
 	-webkit-appearance: none;
+
+	position: relative;
+
 	height: 20px;
 	width: 20px;
-	border-radius: 50%;
-	background: #fff;
-	cursor: pointer;
+
 	margin-top: -10px;
+
+	background: #fff;
+
+	border-radius: 50%;
+
 	transition: all 0.3s ease-in-out;
-	position: relative;
+
+	cursor: pointer;
+
 	&:hover {
 		height: 25px;
 		width: 25px;
+
 		margin-top: -10px;
+
 		box-shadow: 0 0 2px 5px rgba(255, 255, 255, 0.603);
 	}
 }
@@ -58,18 +78,28 @@ input[type="range"]::-moz-range-thumb {
 /* All the same stuff for IE */
 input[type="range"]::-ms-thumb {
 	-webkit-appearance: none;
+
+	position: relative;
+
 	height: 20px;
 	width: 20px;
-	border-radius: 50%;
-	background: #fff;
-	cursor: pointer;
+
 	margin-top: -10px;
+
+	background: #fff;
+
+	border-radius: 50%;
+
 	transition: all 0.3s ease-in-out;
-	position: relative;
+
+	cursor: pointer;
+
 	&:hover {
 		height: 25px;
 		width: 25px;
+
 		margin-top: -10px;
+
 		box-shadow: 0 0 2px 5px rgba(255, 255, 255, 0.603);
 	}
 }

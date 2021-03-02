@@ -1,10 +1,11 @@
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
-import { findAllByDisplayValue } from '@testing-library/react';
+import PropTypes from 'prop-types';
 import Balloon from '../drawPanelElements/Balloon';
 import BalloonContextMenu from '../drawPanelElements/BalloonContextMenu';
 import BalloonImgMenu from '../drawPanelElements/BalloonImgMenu';
-import { MainContext } from '../../context/context';
+import MainContext from '../../context/context';
+import BalloonClass from '../Balloon';
 
 export default function DrawComponent({
   type = '',
@@ -59,8 +60,6 @@ export default function DrawComponent({
       <div className="draw-component-wrapper" style={{ height: `${changeHeight()}px` }}>
         <Plane translate={orderDisplay} className="plane" id={`plane${+dropdown.replace(/^\D+/g, '')}`}>
           <div className={`balloons-container ${type}`}>
-            {/* {count>0 && Array(+count).fill(<Balloon type={type}/>)} */}
-            {/* {Array(13).fill(<Round/>)} */}
             <div className="tree-helper">
               {balloons.map((item) => (
                 <Balloon
@@ -68,9 +67,6 @@ export default function DrawComponent({
                   setBData={setBData}
                   deleteBalloon={deleteBalloon}
                   randomTarget={randomTarget}
-                // index={item.index}
-                // type={item.type}
-                // img={item.img}
                   balloon={item}
                 />
               ))}
@@ -81,6 +77,19 @@ export default function DrawComponent({
     </>
   );
 }
+
+DrawComponent.propTypes = {
+  type: PropTypes.string.isRequired,
+  balloons: PropTypes.arrayOf(BalloonClass).isRequired,
+  deleteBalloon: PropTypes.func.isRequired,
+  changeBalloonImg: PropTypes.func.isRequired,
+  copyBalloon: PropTypes.func.isRequired,
+  copiedBalloon: PropTypes.object.isRequired,
+  clearBalloonImg: PropTypes.func.isRequired,
+  figureClass: PropTypes.string.isRequired,
+  orderDisplay: PropTypes.bool.isRequired,
+
+};
 const Plane = styled.div`
 transform:translateX(${(props) => (props.translate === true ? '-120%' : '0%')});
 `;

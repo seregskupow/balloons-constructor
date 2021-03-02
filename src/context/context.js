@@ -1,7 +1,7 @@
-import {createContext} from 'react'
-export const MainContext = createContext({
-    balloonsImages:[],
-    balloonCategories:[],
-    dropdown:""
+import { createContext } from 'react';
 
-})
+export default createContext({
+  balloonsImages: [],
+  balloonCategories: [],
+  dropdown: '',
+});

@@ -3,9 +3,11 @@ import { MdClear } from 'react-icons/md';
 import { FiShoppingCart } from 'react-icons/fi';
 import html2canvas from 'html2canvas';
 import styled from 'styled-components';
-import BalloonContextMenu from '../drawPanelElements/BalloonContextMenu';
-import { MainContext } from '../../context/context';
+import PropTypes from 'prop-types';
+import { RiErrorWarningLine } from 'react-icons/ri';
+import MainContext from '../../context/context';
 import sendOrder from '../../additional/sendOrderToOP';
+import BalloonClass from '../Balloon';
 
 export default function Controls({
   createFigure,
@@ -84,10 +86,13 @@ export default function Controls({
           window.scrollTo(0, positionToScroll);
         }
         const imgURL = canvas.toDataURL('image/jpeg');
-        const a = document.createElement('a');
-        a.href = imgURL;
-        a.download = 'Композиція.jpg';
-        a.click();
+        if (window.confirm('Завантажити зображення?')) {
+          const a = document.createElement('a');
+          a.href = imgURL;
+          a.download = 'Композиція.jpg';
+          a.click();
+          a.remove();
+        }
         sendOrder(balloons, imgURL);
       });
       document.querySelector(
@@ -184,10 +189,24 @@ export default function Controls({
             грн.
           </p>
         </div>
+        <div className="price-warning">
+          <RiErrorWarningLine />
+          {' '}
+          <span>Ціни в конструкторі можуть відрізнятися від цін в магазині</span>
+        </div>
       </div>
     </div>
   );
 }
+Controls.propTypes = {
+  createFigure: PropTypes.func.isRequired,
+  totalPrice: PropTypes.number.isRequired,
+  balloonsCount: PropTypes.number.isRequired,
+  figureClass: PropTypes.string.isRequired,
+  setFigureClass: PropTypes.func.isRequired,
+  orderHandler: PropTypes.func.isRequired,
+  balloons: PropTypes.arrayOf(BalloonClass).isRequired,
+};
 const Popup = styled.div`
 top:${(props) => (props.show === true ? '10px' : '-100%')}
 `;

@@ -1,343 +1,340 @@
 {
-    "standart12": {
-        "categories": [
-            {
-                "categoryName": "standart",
-                "imgs": [
-                    {
-                        "id": 58,
-                        "src": "https://i.imgur.com/qpLv4g3.jpeg",
-                        "price":200
-                    },
-                    {
-                        "id": 58,
-                        "src": "//images.ctfassets.net/hp723wqnvmp5/5Rnvir6gh7MYo3gzcp7Gmu/f01e37048040492bb75c87c9d66091aa/Note10_Auraglow1.jpg",
-                        "price":205
-                    },
-                    {
-                        "id": 58,
-                        "src": "https://i.imgur.com/qpLv4g3.jpeg",
-                        "price":300
-                    },
-                    {
-                        "id": "87515",
-                        "src": "https://sharograf.ru/images/sempertex-r12-040.png",
-                        "price":100
-                    }
-                ]
-            }
-        ]
-    },
-    "standart12Img": {
-        "categories": [
-            {
-                "categoryName": "standart",
-                "imgs": [
-                    {
-                        "id": "87514",
-                        "src": "https://sharograf.ru/images/sempertex-confetti-390.png",
-                        "price":115
-                    },
-                    {
-                        "id": "25672",
-                        "src": "https://sharograf.ru/images/sempertex-dots-041.png",
-                        "price":421
-                    },
-                    {
-                        "id": "32147",
-                        "src": "https://sharograf.ru/images/sempertex-smiley-020.png",
-                        "price":210
-                    },
-                    {
-                        "id": "32467",
-                        "src": "https://sharograf.ru/images/qualatex-39922.png",
-                        "price":536
-                    }
-                ]
-            }
-        ]
-    },
-    "standart12Heart": {
-        "categories": [
-            {
-                "categoryName": "standart",
-                "imgs": [
-                    {
-                        "id": "21547",
-                        "src": "https://sharograf.ru/images/heart-r12-fuchsia.png",
-                        "price":112
-                    },
-                    {
-                        "id": "32567",
-                        "src": "https://sharograf.ru/images/heart-r12-pink.png",
-                        "price":98
-                    },
-                    {
-                        "id": "25701",
-                        "src": "https://sharograf.ru/images/sempertex-smiley-020.png",
-                        "price":225
-                    },
-                    {
-                        "id": "03657",
-                        "src": "https://sharograf.ru/images/heart-r12-white.png",
-                        "price":200
-                    }
-                ]
-            }
-        ]
-    },
-    "standart12Confetti": {
-        "categories": [
-            {
-                "categoryName": "standart",
-                "imgs": [
-                    {
-                        "id": "86324",
-                        "src": "https://sharograf.ru/images/confetti-r12-101.png",
-                        "price":400
-                    },
-                    {
-                        "id": "23147",
-                        "src": "https://sharograf.ru/images/confetti-r12-102.png",
-                        "price":563
-                    },
-                    {
-                        "id": "01247",
-                        "src": "https://sharograf.ru/images/confetti-r12-111.png",
-                        "price":458
-                    },
-                    {
-                        "id": "02364",
-                        "src": "https://sharograf.ru/images/confetti-r12-112.png",
-                        "price":221
-                    }
-                ]
-            }
-        ]
-    },
-    
-    "foil18": {
-        "categories": [
-            {
-                "categoryName": "Шары без рисунка",
-                "imgs": [
-                    {
-                        "id": "21067",
-                        "src": "https://sharograf.ru/images/flexmetal-301500P.png",
-                        "price":563
-                    }
-                ]
-            },
-            {
-                "categoryName": "Шары на День Рождения",
-                "imgs": [
-                    {
-                        "id": "87624",
-                        "src": "https://sharograf.ru/images/anagram-f18-28591.png",
-                        "price":365
-                    },
-                    {
-                        "id": "96345",
-                        "src": "https://sharograf.ru/images/anagram-f18-34452.png",
-                        "price":236
-                    },
-                    {
-                        "id": "78634",
-                        "src": "https://sharograf.ru/images/conver-f18-70601.png",
-                        "price":236
-                    },
-                    {
-                        "id": "63728",
-                        "src": "https://sharograf.ru/images/conver-f18-70791.png",
-                        "price":254
-                    },
-										{
-											"id": "30157",
-											"src": "https://sharograf.ru/images/flexmetal-301500RSL.png",
-											"price":326
-									},
-									{
-											"id": "86325",
-											"src": "https://sharograf.ru/images/flexmetal-301500R.png",
-											"price":125
-									},
-									{
-											"id": "13027",
-											"src": "https://sharograf.ru/images/flexmetal-301500VE.png",
-											"price":365
-									}
-                ]
-            },
-            {
-                "categoryName": "Шары для Детей",
-                "imgs": [
-                    {
-                        "id": "89635",
-                        "src": "https://sharograf.ru/images/anagram-f18-02510.png",
-                        "price":521
-                    },
-                    {
-                        "id": "87524",
-                        "src": "https://sharograf.ru/images/anagram-f18-155600.png",
-                        "price":125
-                    },
-                    {
-                        "id": "30247",
-                        "src": "https://sharograf.ru/images/anagram-f18-26437.png",
-                        "price":541
-                    },
-                    {
-                        "id": "86374",
-                        "src": "https://sharograf.ru/images/anagram-f18-24813.png",
-                        "price":236
-                    }
-                ]
-            }
-        ]
-    },
-    "figure": {
-        "categories": [
-            {
-                "categoryName": "standart",
-                "imgs": [
-                    {
-                        "id": "12583",
-                        "src": "https://sharograf.ru/images/anagram-07255.png",
-                        "price":200
-                    },
-                    {
-                        "id": "86315",
-                        "src": "https://sharograf.ru/images/anagram-07764.png",
-                        "price":205
-                    },
-                    {
-                        "id": "84521",
-                        "src": "https://sharograf.ru/images/anagram-07765.png",
-                        "price":300
-                    },
-                    {
-                        "id": "87515",
-                        "src": "https://sharograf.ru/images/anagram-15555.png",
-                        "price":100
-                    },
-                    {
-                        "id": "87534",
-                        "src": "https://sharograf.ru/images/anagram-17755.png",
-                        "price":100
-                    },
-                    {
-                        "id": "87534",
-                        "src": "https://sharograf.ru/images/anagram-21768.png",
-                        "price":100
-                    }
-                ]
-            }
-        ]
-    },
-    "walker": {
-        "categories": [
-            {
-                "categoryName": "standart",
-                "imgs": [
-                    {
-                        "id": "12583",
-                        "src": "https://sharograf.ru/images/anagram-07255.png",
-                        "price":200
-                    },
-                    {
-                        "id": "86315",
-                        "src": "https://sharograf.ru/images/anagram-07764.png",
-                        "price":205
-                    },
-                    {
-                        "id": "84521",
-                        "src": "https://sharograf.ru/images/anagram-07765.png",
-                        "price":300
-                    },
-                    {
-                        "id": "87515",
-                        "src": "https://sharograf.ru/images/anagram-15555.png",
-                        "price":100
-                    },
-                    {
-                        "id": "87534",
-                        "src": "https://sharograf.ru/images/anagram-17755.png",
-                        "price":100
-                    },
-                    {
-                        "id": "87534",
-                        "src": "https://sharograf.ru/images/anagram-21768.png",
-                        "price":100
-                    }
-                ]
-            }
-        ]
-    },
-    "numeral": {
-        "categories": [
-            {
-                "categoryName": "0",
-                "imgs": [
-                    {
-                        "id": "12583",
-                        "src": "https://sharograf.ru/images/flexmetal-r40-0-blue.png",
-                        "price":200
-                    },
-                    {
-                        "id": "86315",
-                        "src": "https://sharograf.ru/images/flexmetal-r40-0-fuchsia.png",
-                        "price":205
-                    },
-                    {
-                        "id": "84521",
-                        "src": "https://sharograf.ru/images/flexmetal-r40-0-gold.png",
-                        "price":300
-                    }
-                ]
-            },
-            {
-                "categoryName": "1",
-                "imgs": [
-                    {
-                        "id": "12583",
-                        "src": "https://sharograf.ru/images/flexmetal-r40-1-blue.png",
-                        "price":200
-                    },
-                    {
-                        "id": "86315",
-                        "src": "https://sharograf.ru/images/flexmetal-r40-1-fuchsia.png",
-                        "price":205
-                    },
-                    {
-                        "id": "84521",
-                        "src": "https://sharograf.ru/images/flexmetal-r40-1-gold.png",
-                        "price":300
-                    }
-                ]
-            },
-            {
-                "categoryName": "2",
-                "imgs": [
-                    {
-                        "id": "12583",
-                        "src": "https://sharograf.ru/images/flexmetal-r40-2-blue.png",
-                        "price":200
-                    },
-                    {
-                        "id": "86315",
-                        "src": "https://sharograf.ru/images/flexmetal-r40-2-fuchsia.png",
-                        "price":205
-                    },
-                    {
-                        "id": "84521",
-                        "src": "https://sharograf.ru/images/flexmetal-r40-2-gold.png",
-                        "price":300
-                    }
-                ]
-            }
-        ]
-    },
-    "number":{
-        
-    }
+	"standart12": {
+		"categories": [
+			{
+				"categoryName": "standart",
+				"imgs": [
+					{
+						"id": 58,
+						"src": "https://i.imgur.com/qpLv4g3.jpeg",
+						"price": 200
+					},
+					{
+						"id": 58,
+						"src": "//images.ctfassets.net/hp723wqnvmp5/5Rnvir6gh7MYo3gzcp7Gmu/f01e37048040492bb75c87c9d66091aa/Note10_Auraglow1.jpg",
+						"price": 205
+					},
+					{
+						"id": 58,
+						"src": "https://i.imgur.com/qpLv4g3.jpeg",
+						"price": 300
+					},
+					{
+						"id": "87515",
+						"src": "https://sharograf.ru/images/sempertex-r12-040.png",
+						"price": 100
+					}
+				]
+			}
+		]
+	},
+	"standart12Img": {
+		"categories": [
+			{
+				"categoryName": "standart",
+				"imgs": [
+					{
+						"id": "87514",
+						"src": "https://sharograf.ru/images/sempertex-confetti-390.png",
+						"price": 115
+					},
+					{
+						"id": "25672",
+						"src": "https://sharograf.ru/images/sempertex-dots-041.png",
+						"price": 421
+					},
+					{
+						"id": "32147",
+						"src": "https://sharograf.ru/images/sempertex-smiley-020.png",
+						"price": 210
+					},
+					{
+						"id": "32467",
+						"src": "https://sharograf.ru/images/qualatex-39922.png",
+						"price": 536
+					}
+				]
+			}
+		]
+	},
+	"standart12Heart": {
+		"categories": [
+			{
+				"categoryName": "standart",
+				"imgs": [
+					{
+						"id": "21547",
+						"src": "https://sharograf.ru/images/heart-r12-fuchsia.png",
+						"price": 112
+					},
+					{
+						"id": "32567",
+						"src": "https://sharograf.ru/images/heart-r12-pink.png",
+						"price": 98
+					},
+					{
+						"id": "25701",
+						"src": "https://sharograf.ru/images/sempertex-smiley-020.png",
+						"price": 225
+					},
+					{
+						"id": "03657",
+						"src": "https://sharograf.ru/images/heart-r12-white.png",
+						"price": 200
+					}
+				]
+			}
+		]
+	},
+	"standart12Confetti": {
+		"categories": [
+			{
+				"categoryName": "standart",
+				"imgs": [
+					{
+						"id": "86324",
+						"src": "https://sharograf.ru/images/confetti-r12-101.png",
+						"price": 400
+					},
+					{
+						"id": "23147",
+						"src": "https://sharograf.ru/images/confetti-r12-102.png",
+						"price": 563
+					},
+					{
+						"id": "01247",
+						"src": "https://sharograf.ru/images/confetti-r12-111.png",
+						"price": 458
+					},
+					{
+						"id": "02364",
+						"src": "https://sharograf.ru/images/confetti-r12-112.png",
+						"price": 221
+					}
+				]
+			}
+		]
+	},
+	"foil18": {
+		"categories": [
+			{
+				"categoryName": "Шары без рисунка",
+				"imgs": [
+					{
+						"id": "21067",
+						"src": "https://sharograf.ru/images/flexmetal-301500P.png",
+						"price": 563
+					}
+				]
+			},
+			{
+				"categoryName": "Шары на День Народження",
+				"imgs": [
+					{
+						"id": "87624",
+						"src": "https://sharograf.ru/images/anagram-f18-28591.png",
+						"price": 365
+					},
+					{
+						"id": "96345",
+						"src": "https://sharograf.ru/images/anagram-f18-34452.png",
+						"price": 236
+					},
+					{
+						"id": "78634",
+						"src": "https://sharograf.ru/images/conver-f18-70601.png",
+						"price": 236
+					},
+					{
+						"id": "63728",
+						"src": "https://sharograf.ru/images/conver-f18-70791.png",
+						"price": 254
+					},
+					{
+						"id": "30157",
+						"src": "https://sharograf.ru/images/flexmetal-301500RSL.png",
+						"price": 326
+					},
+					{
+						"id": "86325",
+						"src": "https://sharograf.ru/images/flexmetal-301500R.png",
+						"price": 125
+					},
+					{
+						"id": "13027",
+						"src": "https://sharograf.ru/images/flexmetal-301500VE.png",
+						"price": 365
+					}
+				]
+			},
+			{
+				"categoryName": "Шари для Дітей",
+				"imgs": [
+					{
+						"id": "89635",
+						"src": "https://sharograf.ru/images/anagram-f18-02510.png",
+						"price": 521
+					},
+					{
+						"id": "87524",
+						"src": "https://sharograf.ru/images/anagram-f18-155600.png",
+						"price": 125
+					},
+					{
+						"id": "30247",
+						"src": "https://sharograf.ru/images/anagram-f18-26437.png",
+						"price": 541
+					},
+					{
+						"id": "86374",
+						"src": "https://sharograf.ru/images/anagram-f18-24813.png",
+						"price": 236
+					}
+				]
+			}
+		]
+	},
+	"figure": {
+		"categories": [
+			{
+				"categoryName": "standart",
+				"imgs": [
+					{
+						"id": "12583",
+						"src": "https://sharograf.ru/images/anagram-07255.png",
+						"price": 200
+					},
+					{
+						"id": "86315",
+						"src": "https://sharograf.ru/images/anagram-07764.png",
+						"price": 205
+					},
+					{
+						"id": "84521",
+						"src": "https://sharograf.ru/images/anagram-07765.png",
+						"price": 300
+					},
+					{
+						"id": "87515",
+						"src": "https://sharograf.ru/images/anagram-15555.png",
+						"price": 100
+					},
+					{
+						"id": "87534",
+						"src": "https://sharograf.ru/images/anagram-17755.png",
+						"price": 100
+					},
+					{
+						"id": "87534",
+						"src": "https://sharograf.ru/images/anagram-21768.png",
+						"price": 100
+					}
+				]
+			}
+		]
+	},
+	"walker": {
+		"categories": [
+			{
+				"categoryName": "standart",
+				"imgs": [
+					{
+						"id": "12583",
+						"src": "https://sharograf.ru/images/anagram-07255.png",
+						"price": 200
+					},
+					{
+						"id": "86315",
+						"src": "https://sharograf.ru/images/anagram-07764.png",
+						"price": 205
+					},
+					{
+						"id": "84521",
+						"src": "https://sharograf.ru/images/anagram-07765.png",
+						"price": 300
+					},
+					{
+						"id": "87515",
+						"src": "https://sharograf.ru/images/anagram-15555.png",
+						"price": 100
+					},
+					{
+						"id": "87534",
+						"src": "https://sharograf.ru/images/anagram-17755.png",
+						"price": 100
+					},
+					{
+						"id": "87534",
+						"src": "https://sharograf.ru/images/anagram-21768.png",
+						"price": 100
+					}
+				]
+			}
+		]
+	},
+	"numeral": {
+		"categories": [
+			{
+				"categoryName": "0",
+				"imgs": [
+					{
+						"id": "12583",
+						"src": "https://sharograf.ru/images/flexmetal-r40-0-blue.png",
+						"price": 200
+					},
+					{
+						"id": "86315",
+						"src": "https://sharograf.ru/images/flexmetal-r40-0-fuchsia.png",
+						"price": 205
+					},
+					{
+						"id": "84521",
+						"src": "https://sharograf.ru/images/flexmetal-r40-0-gold.png",
+						"price": 300
+					}
+				]
+			},
+			{
+				"categoryName": "1",
+				"imgs": [
+					{
+						"id": "12583",
+						"src": "https://sharograf.ru/images/flexmetal-r40-1-blue.png",
+						"price": 200
+					},
+					{
+						"id": "86315",
+						"src": "https://sharograf.ru/images/flexmetal-r40-1-fuchsia.png",
+						"price": 205
+					},
+					{
+						"id": "84521",
+						"src": "https://sharograf.ru/images/flexmetal-r40-1-gold.png",
+						"price": 300
+					}
+				]
+			},
+			{
+				"categoryName": "2",
+				"imgs": [
+					{
+						"id": "12583",
+						"src": "https://sharograf.ru/images/flexmetal-r40-2-blue.png",
+						"price": 200
+					},
+					{
+						"id": "86315",
+						"src": "https://sharograf.ru/images/flexmetal-r40-2-fuchsia.png",
+						"price": 205
+					},
+					{
+						"id": "84521",
+						"src": "https://sharograf.ru/images/flexmetal-r40-2-gold.png",
+						"price": 300
+					}
+				]
+			}
+		]
+	},
+	"number": {}
 }

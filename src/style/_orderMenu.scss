@@ -1,0 +1,77 @@
+.order-menu {
+	position: absolute;
+	top: 0;
+
+	display: flex;
+	justify-content: center;
+
+	width: 90%;
+	height: 98%;
+
+	background: white;
+
+	border-radius: 30px;
+
+	box-shadow: $mainShadow;
+
+	transform: translateX(-50%);
+
+	transition: all 0.3s ease-out;
+
+	overflow: hidden;
+
+	z-index: 20;
+	.curve {
+		position: absolute;
+		bottom: -12px;
+
+		height: 300px;
+	}
+	.curve-1 {
+		left: -12px;
+
+		height: 600px;
+
+		animation: wave1 5s ease-in-out infinite;
+
+		z-index: -1;
+	}
+	.curve-2 {
+		right: -12px;
+
+		height: 550px;
+
+		animation: wave1 4s ease-in-out infinite;
+	}
+	.curve-3 {
+		left: -12px;
+
+		height: 400px;
+
+		animation: wave1 4s ease-in-out infinite;
+	}
+	& .order-menu-wrapper {
+		width: 70%;
+
+		margin: 30px 0;
+
+		& .submit-container {
+			display: flex;
+			justify-content: center;
+			& button {
+				font-size: 1.5em;
+			}
+		}
+	}
+}
+@keyframes wave1 {
+	0% {
+		transform: scaleX(1.1);
+	}
+	50% {
+		transform: scaleX(1);
+	}
+	100% {
+		transform: scaleX(1.1);
+	}
+}

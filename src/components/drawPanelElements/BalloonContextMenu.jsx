@@ -1,5 +1,7 @@
-import React, { useContext, useState } from 'react';
-import { MainContext } from '../../context/context';
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import MainContext from '../../context/context';
+import BalloonClass from '../Balloon';
 
 export default function BalloonContextMenu({
   display = false,
@@ -42,7 +44,7 @@ export default function BalloonContextMenu({
         {img && (
           <>
             <li onClick={() => copyBalloon(id, img, price, type)}>
-              <p>Копировать</p>
+              <p>Копіювати</p>
             </li>
             <li className="divider" tabIndex="-1"></li>
           </>
@@ -50,7 +52,7 @@ export default function BalloonContextMenu({
         {copiedBalloon.img && (
           <>
             <li onClick={() => changeBalloonImg(index, copiedBalloon.id, copiedBalloon.img, copiedBalloon.price, copiedBalloon.type)}>
-              <p>Вставить</p>
+              <p>Вставити</p>
             </li>
             <li className="divider" tabIndex="-1"></li>
           </>
@@ -58,13 +60,13 @@ export default function BalloonContextMenu({
         {img && (
           <>
             <li onClick={() => clearBalloonImg(index)}>
-              <p>Удалить картинку</p>
+              <p>Видалити картинку</p>
             </li>
             <li className="divider" tabIndex="-1"></li>
           </>
         )}
         <li onClick={() => deleteBalloon(index)}>
-          <p>Удалить шарик</p>
+          <p>Видалити шарик</p>
         </li>
         <li className="divider" tabIndex="-1"></li>
         {menuToRender.map((item) => (
@@ -99,3 +101,17 @@ export default function BalloonContextMenu({
     </>
   );
 }
+
+BalloonContextMenu.propTypes = {
+  display: PropTypes.bool.isRequired,
+  balloonData: PropTypes.instanceOf(BalloonClass).isRequired,
+  changeBalloonImg: PropTypes.func.isRequired,
+  copyBalloon: PropTypes.func.isRequired,
+  deleteBalloon: PropTypes.func.isRequired,
+  clearBalloonImg: PropTypes.func.isRequired,
+  copiedBalloon: PropTypes.instanceOf(BalloonClass).isRequired,
+  setDisplay: PropTypes.func.isRequired,
+  setCategory: PropTypes.func.isRequired,
+  category: PropTypes.string.isRequired,
+  figureClass: PropTypes.string.isRequired,
+};

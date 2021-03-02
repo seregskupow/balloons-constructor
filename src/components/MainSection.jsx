@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import NavBar from './view/NavBar';
-import { MainContext } from '../context/context';
+import MainContext from '../context/context';
 // import Balloon from './drawPanelElements/Balloon'
 import Controls from './view/Controls';
 import DrawComponent from './view/DrawComponent';
-import OrderMenu from './view/OrderMenu';
 import menuEvent from '../additional/script';
 import Balloon from './Balloon';
 
@@ -95,7 +94,9 @@ export default class MainSection extends Component {
     const shouldChange = balloons.find((item) => item.index === index);
     const itemIndex = balloons.indexOf(shouldChange);
     let addPrice = 0;
+    let minusPrice = 0;
     if (shouldChange && shouldChange.img !== src) {
+      minusPrice = shouldChange.price;
       shouldChange.img = src;
       shouldChange.id = id;
       shouldChange.price = price;
@@ -103,7 +104,7 @@ export default class MainSection extends Component {
       addPrice = price;
     }
     balloons[itemIndex] = shouldChange;
-    this.setState({ balloons, totalPrice: this.state.totalPrice + addPrice });
+    this.setState({ balloons, totalPrice: this.state.totalPrice - minusPrice + addPrice });
   }
 
   deleteBalloon(index) {
@@ -149,14 +150,6 @@ export default class MainSection extends Component {
         <div className="bg-curve" />
         <NavBar totalPrice={this.state.totalPrice} />
         <div className="app-main-container">
-          <OrderMenu
-            setOrderDisplay={this.setOrderDisplay}
-            clearAll={this.clearAll}
-            type={this.state.type}
-            totalPrice={this.state.totalPrice}
-            orderDisplay={this.state.orderDisplay}
-            balloons={this.state.balloons}
-          />
           <DrawComponent
             figureClass={this.state.figureClass}
             clearBalloonImg={this.clearBalloonImg}

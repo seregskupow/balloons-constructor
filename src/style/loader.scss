@@ -1,0 +1,61 @@
+@import "variables";
+.loader-wrapper {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+
+	height: 900px;
+	width: 100%;
+	max-width: 600px;
+
+	background-color: $maingreen;
+
+	border-radius: 20px;
+	& .loader {
+		position: relative;
+
+		width: 100px;
+		height: 100px;
+
+		margin: 0 auto;
+
+		border-radius: 100%;
+		& span {
+			display: inline-block;
+
+			width: 20px;
+			height: 20px;
+
+			margin: 35px 5px;
+
+			background-color: #7d9799;
+
+			border-radius: 100%;
+			opacity: 0;
+
+			&:nth-child(1) {
+				animation: opacitychange 1s ease-in-out infinite;
+			}
+
+			&:nth-child(2) {
+				animation: opacitychange 1s ease-in-out 0.33s infinite;
+			}
+
+			&:nth-child(3) {
+				animation: opacitychange 1s ease-in-out 0.66s infinite;
+			}
+		}
+	}
+}
+
+@keyframes opacitychange {
+	0%,
+	100% {
+		opacity: 0;
+	}
+
+	60% {
+		opacity: 1;
+	}
+}

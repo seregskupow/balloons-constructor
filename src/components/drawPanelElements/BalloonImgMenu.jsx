@@ -2,8 +2,10 @@ import React, { useEffect, useContext, useRef } from 'react';
 import styled from 'styled-components';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { RiCloseFill } from 'react-icons/ri';
-import { MainContext } from '../../context/context';
+import PropTypes from 'prop-types';
+import MainContext from '../../context/context';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import BalloonClass from '../Balloon';
 
 export default function BalloonImgMenu({
   balloonData = {},
@@ -97,6 +99,14 @@ export default function BalloonImgMenu({
     </BalloonsOptions>
   );
 }
+
+BalloonImgMenu.propTypes = {
+  balloonData: PropTypes.instanceOf(BalloonClass).isRequired,
+  display: PropTypes.bool.isRequired,
+  category: PropTypes.string.isRequired,
+  setDisplay: PropTypes.func.isRequired,
+  changeBalloonImg: PropTypes.func.isRequired,
+};
 const PriceTag = styled.p`
   font-weight:bolder;
 `;

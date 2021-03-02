@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { ReactComponent as Round } from '../../data/samplesImgs/ball.svg';
 import { ReactComponent as Number } from '../../data/samplesImgs/num.svg';
 import { ReactComponent as Figure } from '../../data/samplesImgs/pony.svg';
-import { MainContext } from '../../context/context';
+import MainContext from '../../context/context';
+import BalloonClass from '../Balloon';
 
 export default function Balloon({ balloon, setBData }) {
   const { img, index, type = '' } = balloon;
@@ -25,10 +27,8 @@ export default function Balloon({ balloon, setBData }) {
   const positionMenu = (el) => {
     const drop = document.getElementById(dropdown);
     drop.style.display = 'block';
-    const rect = el.getBoundingClientRect();
     const container = findAncestor(el, 'balloon');
     const menuParent = findAncestor(drop, 'app-main-container');
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     let posTop = Math.abs(container.offsetTop + 320);
     let posLR = container.offsetLeft;
     const differenceTop = menuParent.offsetHeight - posTop;
@@ -61,3 +61,7 @@ export default function Balloon({ balloon, setBData }) {
     </>
   );
 }
+Balloon.propTypes = {
+  balloon: PropTypes.instanceOf(BalloonClass).isRequired,
+  setBData: PropTypes.func.isRequired,
+};
